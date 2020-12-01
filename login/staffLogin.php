@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Staff Login</title>
+    <title>COVIDSYM - Staff Login</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com/ ">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     
+    <link rel="icon" href="../img/icon.ico" type="image/icon type">
+
     <link rel="stylesheet" type="text/css" href="../css/navbar.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
@@ -14,13 +16,13 @@
 <body>
     <div class="wrapper">
         <div class="title-container">
-            <h1>COVIDSYM</h1>
+            <img src="../img/logo.png" alt="Logo" height="50px" style="margin: auto;">
         </div>
     
         <div class="login-container">
             <div class="header-wrapper">
                 <div class="header">
-                    <h4>Login</h4>
+                    <h4>Staff Login</h4>
                 </div>
             </div>
     

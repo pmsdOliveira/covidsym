@@ -1,5 +1,7 @@
 :root {
     --backgroundColor: #eaeaea;
+    --mainColor: 
+    --darkerColor: #116eb4;
 }
 
 html, body {
@@ -60,7 +62,7 @@ input::placeholder {
     display: grid;
     text-align: center;
     align-content: center;
-    background-color: aqua;
+    background-color: var(--mainColor);
     border: 0px solid black;
     border-radius: 5px 5px 0 0;
 }
@@ -99,7 +101,7 @@ input::placeholder {
     padding-top: 10px;
     padding-bottom: 10px;
     color: #ffffff;
-    background-color: aqua;
+    background-color: var(--mainColor);
     border-radius: 5px;
     border: 0px solid black;;
 }
