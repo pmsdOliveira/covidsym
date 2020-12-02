@@ -1,42 +1,40 @@
 :root {
-    --backgroundColor: #f7f7f7;
-    --lighterColor: #00addf;
-    --mainColor: #0e6ab2;
-    --darkerColor: #1f61ac;
+  --backgroundColor: #f7f7f7;
+  --lighterColor: #00addf;
+  --mainColor: #0e6ab2;
+  --darkerColor: #1f61ac;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-html, body{
-    display: grid;
-    place-items: center;
-    background: var(--backgroundColor);
+body {
+  background: var(--backgroundColor);
 }
 
 img {
-    margin: 10px;
+  margin: 10px;
 }
 
 p {
-    font-size: 15px;
-    font-weight: bold;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .footer {
-    position: fixed;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    place-items: center;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
-    color: white;
-    text-align: center;
+  position: fixed;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  place-items: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  color: white;
+  text-align: center;
 }

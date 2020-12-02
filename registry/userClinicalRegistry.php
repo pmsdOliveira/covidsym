@@ -9,42 +9,71 @@
     </script>
   </head>
   <body>
-    <div class="container">
-      <div class="title">
-        <i class="fa fa-arrow-left goBack"></i>
-        <h2 class="title">User Clinical Registry</h2>
+    <div class="modal">
+      <div class="modal-header">
+        <i class="fa fa-arrow-left goBackBtn">
+          <a href="#"></a>
+        </i>
+        <h1 class="title">User Clinical Registry</h1>
       </div>
-      <form style="display: block" action="submitUserRegistry.php" method="POST">
-        <label>Name</label>
-        <input name="name" type="text">
-        <label>Username</label>
-        <input name="username" type="text">
-        <label>Email</label>
-        <input name="email" type="email">
-        <label>Phone Number</label>
-        <input name="phone" type="text">
-        <label>Address</label>
-        <input name="address" type="text">
-        <label>Local</label>
-        <input name="local" type="text">
-        <label>District</label>
-        <input name="district" type="text">
-        <label>Birthdate</label>
-        <input name="phone" type="date">
-        <label>Gender</label>
-        <label>Male</label>
-        <input name="gender" type="radio" value="male">
-        <label>Female</label>
-        <input name="gender" type="radio" value="female">
-        <label>Other</label>
-        <input name="gender" type="radio" value="other">
-        <label>Fiscal Number</label>
-        <input name="fiscal" type="text">
-        <label>Healthcare Number</label>
-        <input name="healthcare" type="text">
-        <input type="reset" value="Limpar">
+      <form action="submitUserRegistry.php" method="POST">
+        <table class="form">
+          <tr>
+            <td><label>Name</label></td>
+            <td><input name="name" type="text"></td>
+          </tr>
+          <tr>
+            <td><label>Username</label></td>
+            <td><input name="username" type="text"></td>
+          </tr>
+          <tr>
+            <td><label>Email</label></td>
+            <td><input name="email" type="email"></td>
+          </tr>
+          <tr>
+            <td><label>Phone Number</label></td>
+            <td><input name="phone" type="text"></td>
+          </tr>
+          <tr>
+            <td><label>Address</label></td>
+            <td><input name="address" type="text"></td>
+          </tr>
+          <tr>
+            <td><label>Local</label></td>
+            <td><input name="local" type="text"></td>
+          </tr>
+          <tr>
+            <td><label>District</label></td>
+            <td><input name="district" type="text"></td>
+          </tr>
+          <tr>
+            <td><label>Birthdate</label></td>
+            <td><input name="birthdate" type="date"></td>
+          </tr>
+          <tr>
+            <td><label>Gender</label></td>
+            <td><div class="gender">
+              <label>Male<input name="gender" type="radio" value="male"></label>
+              <label>Female<input name="gender" type="radio" value="female"></label>
+              <label>Other<input name="gender" type="radio" value="other"></label>
+            </div></td>
+          </tr>
+          <tr>
+            <td><label>Fiscal Number</label></td>
+            <td><input name="fiscal" type="text"></td>
+          </tr>
+          <tr>
+            <td><label>Healthcare Number</label></td>
+            <td><input name="healthcare" type="text"></td>
+          </tr>
+        </table>
         <input type="submit" value="Guardar">
       </form>
     </div>
   </body>
+  <footer>
+    <?php
+      include('../commons/footer.php');
+    ?>
+  </footer>
 </html>
