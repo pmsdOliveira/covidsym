@@ -1,6 +1,9 @@
 <html>
   <head>
     <title>COVIDSYM - User Clinical Registry</title>
+    
+    <link rel="icon" href="../img/icon.ico" type="image/icon type">
+
     <link rel="stylesheet" href="../css/registry.css">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
