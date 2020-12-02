@@ -1,3 +1,11 @@
+:root {
+  --backgroundColor: #f7f7f7;
+  --onTopColor: #f2f2f2;
+  --lighterColor: #00addf;
+  --mainColor: #0e6ab2;
+  --darkerColor: #1f61ac;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -6,44 +14,93 @@
 }
 
 body {
-  background-color: #204baa;
+  background-color: var(--backgroundColor);
+  overflow: hidden;
 }
 
-.container {
-  background-color: #ffffff;
-  border-radius: 1%;
+.modal {
+  background-color: white;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   display: block;
-  margin: 2% auto;
-  padding: 4vh 4vw;
+  margin: 3% auto;
   width: 50%;
 }
 
-.container label {
-  display: block;
-  margin: 2vh 0 0;
-}
-
-.container input {
-  display: block;
+.modal-header {
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 4vh 4vw;
+  margin: 0 0 2vh 0;
   width: 100%;
 }
 
-.goBack {
-  background-color: #204baa;
+.modal-header h1 {
+  color: white;
+  font-size: 35px;
+}
+
+.goBackBtn {
+  background-color: white;
   border-radius: 50%;
-  color: #ffffff;
-  padding: 1%;
+  color: var(--lighterColor);
+  padding: 2%;
   transition: 0.3s;
 }
 
-.goBack:hover {
-  background-color: #ffffff;
-  color: #204baa;
+.goBackBtn:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.title {
+.form {
+  padding: 0 4vw;
+  width: 100%;
+}
+
+.form label {
+  display: block;
+  margin: 1.3vh 0;
+}
+
+.form input {
+  background: var(--backgroundColor);
+  border: 0px;
+  border-radius: 5px;
+  font-size: 17px;
+  outline: none;
+  padding-left: 1vw;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.gender {
   display: flex;
-  margin: auto;
-  text-align: center;
+  font-size: 0.8rem;
+  justify-content: space-around;
+}
+
+input[type="submit"] {
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 5% 0 8% 61.5%;
+  padding: 0.5vh 0;
+  transition: all 0.3s ease;
+  width: 30%;
+}
+
+input[type="submit"]:active {
+  transform: scale(0.95);
 }
