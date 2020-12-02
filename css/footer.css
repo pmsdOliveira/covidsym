@@ -13,13 +13,12 @@
 }
 
 html, body{
-    display: grid;
-    place-items: center;
     background: var(--backgroundColor);
 }
 
 img {
     margin: 10px;
+    cursor: pointer;
 }
 
 p {

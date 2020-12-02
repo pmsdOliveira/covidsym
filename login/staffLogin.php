@@ -15,41 +15,47 @@
     </head>
 
     <body>
-        <div class="image-wrapper">
-            <img src="../img/logo.png" alt="Logo" height="50px" style="margin: auto;">
-        </div>
-
-        <div class="login-wrapper">
-            <div class="header">
-                Staff Login
+        <?php
+            include "../commons/navbar.php";
+        ?>
+        
+        <div class="container">
+            <div class="image-wrapper">
+                <img src="../img/logo.png" alt="Logo" height="50px" style="margin: auto;">
             </div>
 
-            <form action="../login/checkLogin.php" method="POST">
-                <div class="field">
-                    <input type="text" name="Email" required>
-                    <label>Email</label>
+            <div class="login-wrapper">
+                <div class="header">
+                    Staff Login
                 </div>
 
-                <div class="field">
-                    <input type="password" required>
-                    <label>Password</label>
-                </div>
-
-                <div class="content">
-                    <div class="checkbox">
-                        <input type="checkbox" id="remember-me">
-                        <label for="remember-me">Remember me</label>
+                <form action="../login/checkLogin.php" method="POST">
+                    <div class="field">
+                        <input type="text" name="Email" required>
+                        <label>Email</label>
                     </div>
 
-                    <div class="pass-link">
-                        <a href="#">Forgot your password?</a>
+                    <div class="field">
+                        <input type="password" required>
+                        <label>Password</label>
                     </div>
-                </div>
 
-                <div class="field">
-                    <input type="submit" value="Login">
-                </div>
-            </form>
+                    <div class="content">
+                        <div class="checkbox">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+
+                        <div class="pass-link">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
         </div>
 
         <?php

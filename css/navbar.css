@@ -1,0 +1,67 @@
+:root {
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body{
+    background: var(--backgroundColor);
+}
+
+header {
+    background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 10%;
+}
+
+li, a, button {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+img {
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover{
+    color: #00addf
+}
+
+button {
+    color: var(--mainColor);
+    padding: 9px 25px;
+    background: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}

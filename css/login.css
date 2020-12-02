@@ -13,9 +13,12 @@
 }
 
 html, body{
+    background: var(--backgroundColor);
+}
+
+.container {
     display: grid;
     place-items: center;
-    background: var(--backgroundColor);
 }
 
 .image-wrapper {
