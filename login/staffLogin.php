@@ -51,5 +51,9 @@
                 </div>
             </form>
         </div>
+
+        <?php
+            include "../commons/footer.php";
+        ?>
     </body>
 </html>
