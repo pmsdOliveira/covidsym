@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="../css/registry.css">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
+
+
+
+">
     <script>
     </script>
   </head>
@@ -18,7 +22,7 @@
 
     <div class="modal">
       <div class="modal-header">
-        <i class="fa fa-arrow-left goBackBtn">
+        <i class="fas fa-arrow-alt-circle-left goBackBtn">
           <a href="#"></a>
         </i>
         <h1 class="title">User Clinical Registry</h1>
@@ -27,7 +31,7 @@
         <table class="form">
           <tr>
             <td><label>Name</label></td>
-            <td><input name="name" type="text"></td>
+            <td style="width: 70%;"><input name="name" type="text"></td>
           </tr>
           <tr>
             <td><label>Username</label></td>

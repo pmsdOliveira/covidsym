@@ -24,8 +24,8 @@ body {
   -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   display: block;
-  margin: 3% auto;
-  width: 50%;
+  margin: 2% auto;
+  width: 70%;
 }
 
 .modal-header {
@@ -34,28 +34,30 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 4vh 4vw;
+  padding: 1.5vh 4vw;
   margin: 0 0 2vh 0;
   width: 100%;
 }
 
 .modal-header h1 {
   color: white;
-  font-size: 35px;
+  font-size: 32px;
 }
 
 .goBackBtn {
-  background-color: white;
-  border-radius: 50%;
-  color: var(--lighterColor);
-  padding: 2%;
+  color: white;
+  font-size: 32px;
+  padding: 0.5% 0;
   transition: 0.3s;
 }
 
 .goBackBtn:hover {
-  background-color: rgba(0, 0, 0, 0);
-  color: white;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.goBackBtn:active {
+  transform: scale(0.9);
   transition: 0.3s;
 }
 
@@ -66,7 +68,7 @@ body {
 
 .form label {
   display: block;
-  margin: 1.3vh 0;
+  margin: 0.8vh 0;
 }
 
 .form input {
@@ -94,12 +96,12 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  margin: 5% 0 8% 61.5%;
+  margin: 2% 0 2% 64.5%;
   padding: 0.5vh 0;
   transition: all 0.3s ease;
   width: 30%;
 }
 
 input[type="submit"]:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
