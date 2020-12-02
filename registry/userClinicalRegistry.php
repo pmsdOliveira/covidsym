@@ -9,6 +9,10 @@
     </script>
   </head>
   <body>
+    <?php
+        include "../commons/navbar.php";
+    ?>
+
     <div class="modal">
       <div class="modal-header">
         <i class="fa fa-arrow-left goBackBtn">
