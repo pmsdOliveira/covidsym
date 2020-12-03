@@ -19,9 +19,9 @@ html, body{
 header {
     background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 10%;
+    padding: 10px 2%;
 }
 
 li, a, button {
@@ -44,24 +44,6 @@ img {
     padding: 0px 20px;
 }
 
-.nav-links li a {
-    transition: all 0.3s ease 0s;
-}
-
 .nav-links li a:hover{
-    color: var(--lighterColor);
-}
-
-button {
-    color: var(--mainColor);
-    padding: 9px 25px;
-    background: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:active {
-    transform: scale(0.95);
+    text-decoration: underline;
 }

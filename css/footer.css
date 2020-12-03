@@ -29,9 +29,10 @@ p {
 .footer {
   position: fixed;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   place-items: center;
+  padding: 0px 2%;
   left: 0;
   bottom: 0;
   width: 100%;

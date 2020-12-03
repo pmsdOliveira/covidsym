@@ -17,10 +17,8 @@
             <a href="#"><img src="../img/logo-white.png" alt="Logo" height="15px"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#">Bananas</a></li>
-                    <li><a href="#">Maças</a></li>
-                    <li><a href="#">Morangos</a></li>
-                    <li><a class="cta" href="#">Contact</a></li>
+                    <li><a href="#">User</a></li>
+                    <li><a href="#">Logout</a></li>
                 </ul>
             </nav>
         </header>

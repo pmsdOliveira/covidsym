@@ -78,7 +78,7 @@
             <td><input name="healthcare" type="text"></td>
           </tr>
         </table>
-        <input type="submit" value="Guardar">
+        <input type="submit" value="Submit">
       </form>
     </div>
   </body>
