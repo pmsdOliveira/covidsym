@@ -60,7 +60,7 @@
             <div class="info-wrapper">
                 <h1>O que é o COVIDSYM?</h1>
                 <p class="info-text">
-                    By now you should be quite happy about what's happening here. You can bend rivers. But when I get home, the only thing I have power over is the garbage. We don't really know where this goes - and I'm not sure we really care. A beautiful little sunset. The more we do this - the more it will do good things to our heart.
+                    O COVIDSYM consiste num sistema de registo e análise de sintomas e fatores de risco, que apoia o médico na decisão de prescrever o teste ao COVID-19, com base na avaliação do risco do utente estar diagnosticado com COVID-19. A avaliação de risco é feita de forma automática com base nos indicadores registados pelo utente, recorrendo a um Sistema de Apoio ao Diagnóstico, de alta fidelidade.
                 </p>
                 <p class="more-info">Para mais informações, consulte:</p>
                 <a href="#">Perguntas frequentes</a>
