@@ -8,10 +8,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         
         <link rel="icon" href="../img/icon.ico" type="image/icon type">
-    
-        <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+        
         <link rel="stylesheet" type="text/css" href="../css/userLogin.css">
-        <link rel="stylesheet" type="text/css" href="../css/footer.css">
     </head>
 
     <body>
@@ -54,16 +52,20 @@
                     <div class="field">
                         <input type="submit" value="Login">
                     </div>
+
+                    <div class="signup-link">
+                            <a href="#">Don't have an account yet?</a>
+                        </div>
                 </form>
             </div>
 
             <div class="info-wrapper">
-                <h1>O que é o COVIDSYM?</h1>
+                <h1>What is COVIDSYM?</h1>
                 <p class="info-text">
-                    O COVIDSYM consiste num sistema de registo e análise de sintomas e fatores de risco, que apoia o médico na decisão de prescrever o teste ao COVID-19, com base na avaliação do risco do utente estar diagnosticado com COVID-19. A avaliação de risco é feita de forma automática com base nos indicadores registados pelo utente, recorrendo a um Sistema de Apoio ao Diagnóstico, de alta fidelidade.
+                    COVIDSYM consists in a symptom and risk factor registry and analysis system, that supports medical staff in deciding to prescribe a test to COVID-19, based on the assessment of the user's risk of being diagnosed with it. The risk assessment is done automatically based on the indicators registered by the user, using a high-fidelity Diagnostic Support System.
                 </p>
-                <p class="more-info">Para mais informações, consulte:</p>
-                <a href="#">Perguntas frequentes</a>
+                <p class="more-info">For more information:</p>
+                <a href="#">Frequently asked questions</a>
             </div>
         </div>
 
