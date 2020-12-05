@@ -10,7 +10,7 @@
         <link rel="icon" href="../img/icon.ico" type="image/icon type">
     
         <link rel="stylesheet" type="text/css" href="../css/navbar.css">
-        <link rel="stylesheet" type="text/css" href="../css/login.css">
+        <link rel="stylesheet" type="text/css" href="../css/staffLogin.css">
         <link rel="stylesheet" type="text/css" href="../css/footer.css">
     </head>
 

@@ -3,6 +3,7 @@
     --lighterColor: #00addf;
     --mainColor: #0e6ab2;
     --darkerColor: #1f61ac;
+    --textColor: #3d3d3d;
 }
 
 * {
@@ -102,6 +103,8 @@ form .content .checkbox{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 form .content input{
@@ -110,7 +113,7 @@ form .content input{
 }
 
 form .content label{
-    color: #262626;
+    color: var(--textColor);
     user-select: none;
     padding-left: 5px;
 }
