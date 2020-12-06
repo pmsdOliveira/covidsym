@@ -17,12 +17,10 @@
 
     <div class="modal">
       <div class="modal-header">
-        <div class="modal-header-top">
-          <i class="fas fa-arrow-alt-circle-left goBackBtn">
-            <a href="#"></a>
-          </i>
-          <h1 class="title">Medical Staff</h1>
-        </div>
+        <i class="fas fa-arrow-alt-circle-left goBackBtn">
+          <a href="#"></a>
+        </i>
+        <h1 class="title">Medical Staff</h1>
       </div>
       <div class="medic-list">
         <p>Select which doctor should do the consultation</p>

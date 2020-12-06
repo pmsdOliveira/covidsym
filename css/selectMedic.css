@@ -35,13 +35,13 @@ body {
   width: 100%;
 }
 
-.modal-header-top {
+.modal-header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
 
-.modal-header-top h1 {
+.modal-header h1 {
   color: white;
   font-size: 32px;
 }
@@ -93,6 +93,11 @@ body {
   font-weight: bold;
   outline: none;
   padding: 0.5vh 1vw;
+  transition: all 0.3s ease;
+}
+
+.medic button:active {
+  transform: scaleX(0.9);
   transition: all 0.3s ease;
 }
 
