@@ -14,7 +14,16 @@
 }
 
 body {
-  background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--backgroundColor);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    height: max-content;
 }
 
 .modal {
