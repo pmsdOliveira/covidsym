@@ -16,8 +16,6 @@ html, body{
 }
 
 .sidebar {
-    position: sticky;
-    position: -webkit-sticky;
     width: 200px;
     height: 100%;
     display: flex;

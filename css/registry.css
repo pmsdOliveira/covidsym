@@ -1,9 +1,9 @@
 :root {
-  --backgroundColor: #f7f7f7;
-  --lighterColor: #00addf;
-  --mainColor: #0e6ab2;
-  --darkerColor: #1f61ac;
-  --textColor: #3d3d3d;
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --textColor: #3d3d3d;
 }
 
 * {
@@ -33,7 +33,7 @@ body {
   -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   display: block;
-  margin: 3% auto;
+  margin: 5% auto;
   width: 50%;
 }
 
@@ -71,6 +71,8 @@ body {
 }
 
 .form {
+    font-weight: bold;
+    color: var(--textColor);
   padding: 0 4vw;
   width: 100%;
 }
@@ -105,7 +107,7 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  margin: 2% 0 2% 31vw;
+  margin: 2% 0 3% 31vw;
   padding: 0.5vh 0;
   transition: all 0.3s ease;
   width: 30%;

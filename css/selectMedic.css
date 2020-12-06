@@ -18,6 +18,13 @@ body {
   background-color: var(--backgroundColor);
 }
 
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    height: max-content;
+}
+
 .modal {
   background-color: white;
   border-radius: 25px;
@@ -97,7 +104,7 @@ body {
 }
 
 .medic button:active {
-  transform: scaleX(0.9);
+  transform: scale(0.95);
   transition: all 0.3s ease;
 }
 
