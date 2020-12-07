@@ -16,32 +16,37 @@
         include "../commons/navbar.php";
     ?>
 
-    <div class="modal">
-        <div class="modal-header">
-            <img src="../img/logo-white.png" height="30px" style="margin: auto;">
-            <h1 class="title">Welcome, [Username]</h1>
+    <div class="wrapper">
+        <div>
+            <?php include "../commons/sidebar.php"; ?>
         </div>
-        <div class="modal-body">
-            <h1>What is COVID-19?</h1>
-            <div class="modal-text">
-                <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.</p>
-                <br>
-                <p>Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and
-                    recover without requiring special treatment. Older people, and those with underlying medical
-                    problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more
-                    likely to develop serious illness.</p><br>
-                <p>The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus,
-                    the disease it causes and how it spreads. Protect yourself and others from infection by washing your
-                    hands or using an alcohol based rub frequently and not touching your face. </p><br>
+
+        <div class="modal">
+            <div class="modal-header">
+                <img src="../img/logo-white.png" height="30px" style="margin: auto;">
+                <h1 class="title">Welcome, [Username]</h1>
             </div>
-            <button>Make an appointment</button>
+            <div class="modal-body">
+                <h1>What is COVID-19?</h1>
+                <div class="modal-text">
+                    <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.</p>
+                    <br>
+                    <p>Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and
+                        recover without requiring special treatment. Older people, and those with underlying medical
+                        problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more
+                        likely to develop serious illness.</p><br>
+                    <p>The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus,
+                        the disease it causes and how it spreads. Protect yourself and others from infection by washing your
+                        hands or using an alcohol based rub frequently and not touching your face. </p><br>
+                </div>
+                <button>Make an appointment</button>
+            </div>
         </div>
     </div>
-</body>
-<footer>
+
     <?php
       include('../commons/footer.php');
     ?>
-</footer>
+</body>
 
 </html>

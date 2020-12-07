@@ -16,6 +16,13 @@
   body {
     background-color: var(--backgroundColor);
   }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    height: max-content;
+  }
   
   .modal {
     background-color: white;
@@ -27,6 +34,7 @@
     margin: 5% auto;
     width: 50%;
   }
+
   .modal-header {
     background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
     border-radius: 25px 25px 0 0;
@@ -40,9 +48,9 @@
   
   .modal-header h1 {
     color: white;
-    font-size: 32px;
+    font-size: 20px;
     align-self: center;
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
 .modal-body{
@@ -52,9 +60,6 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
-    
-   
 }
 
 .modal-body h1{
@@ -78,7 +83,7 @@
     display: flex;
     align-items: left;
     flex-direction: column;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 .modal-body button {
