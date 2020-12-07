@@ -1,0 +1,53 @@
+:root {
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --textColor: #3d3d3d;
+    --contrastColor: #e6e6e6;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+html, body{
+    background: var(--backgroundColor);
+}
+
+.sidebar {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+}
+
+.sidebar-button {
+    font-size: 15px;
+    background: white;
+    text-align: start;
+    width: 100%;
+    padding: 20px 0px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--textColor);
+    border-bottom: 1px solid var(--contrastColor);
+}
+
+.sidebar-button:hover {
+    color: white;
+    transition: all 0.3s ease-out;
+    background: var(--lighterColor);
+}
+
+.sidebar-button:hover .icon {
+    color: white;
+    transition: all 0.3s ease-out;
+}
+
+.icon {
+    color: var(--textColor);
+    padding: 0px 10px 0px 20px;
+}

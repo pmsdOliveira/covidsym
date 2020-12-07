@@ -17,7 +17,6 @@
             <a href="#"><img src="../img/logo-white.png" alt="Logo" height="15px"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#">User</a></li>
                     <li><a href="#">Logout</a></li>
                 </ul>
             </nav>
