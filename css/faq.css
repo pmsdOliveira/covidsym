@@ -1,0 +1,179 @@
+:root {
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --contrastColor: #e6e6e6;
+    --textColor: #3d3d3d;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    height: max-content;
+  }
+
+  .modal {
+    background-color:var(--backgroundColor);
+    border-radius: 25px;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 5% auto;
+    width: 60%;
+  }
+
+  .modal-header {
+    background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 2vh 4vw;
+    width: 100%;
+  }
+  
+  .modal-header h1 {
+    color: white;
+    font-size: 32px;
+  }
+
+  
+  .goBackBtn {
+    color: white;
+    font-size: 32px;
+    padding: 0.5% 0;
+    transition: 0.3s;
+  }
+  
+  .goBackBtn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .goBackBtn:active {
+    transform: scale(0.9);
+    transition: 0.3s;
+    
+  }
+
+  .info{
+      
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      
+      border-radius:  0 0 0 25px;
+      
+  }
+
+  .info h1{
+    color: var(--mainColor);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 2vh 0vw;
+    
+  }
+  .info p{
+    
+    text-align: justify;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: var(--textColor);
+}
+
+.info-text{
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+
+
+/*--------Accordion-------*/
+.faq{
+    width: 60%;
+    
+}
+.acc-kontainer {
+    width: 100%;
+    margin: auto;
+    
+}
+.acc-kontainer .acc-body {
+    width:90%;
+    font-size: 16px;
+    height: 0;
+    color: rgba(0, 0, 0, 0);;
+    line-height: 28px;
+    padding: 0 15px;
+    background-color: white;
+    box-sizing: border-box;
+    transition: 0.5s;
+    border-radius:  0 0 20px 20px ;
+    margin-bottom: 2vh;
+}
+    .acc-kontainer label {
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: white;
+    border-radius: 20px 20px;
+    width: 90%;
+    color:var(--textColor); /*font*/
+    font-weight: 400;
+    box-sizing: border-box;
+    z-index: 100;
+    
+    }
+    .acc-kontainer input{
+    display: none;
+    }
+    .acc-kontainer label:before {
+    font-weight: bolder;
+    float: right;
+    }
+    .acc-kontainer input:checked+label {
+     width: 90%;
+     border-radius: 20px 20px 0 0 ;
+    }
+    .acc-kontainer input:checked+label:before {
+    transition: 0.5s;
+    }
+
+    .acc-kontainer input:checked~.acc-body {
+    height: auto;
+    color:var(--textColor);
+   
+    transition: 0.5s;
+    }
+
+    .down {
+        
+        color: var(--textColor);
+        font-size: 15px;
+        
+    }
