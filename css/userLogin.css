@@ -13,8 +13,19 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-html, body{
+body{
     background: var(--backgroundColor);
+}
+
+.image-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 50px;
+}
+
+.image-wrapper img {
+    height: 50px;
+    margin: auto;
 }
 
 .container {
@@ -23,12 +34,6 @@ html, body{
     justify-content: space-around;
     flex-wrap: wrap;
     margin: auto 10%;
-}
-
-.image-wrapper {
-    display: flex;
-    align-items: center;
-    margin: 50px;
 }
 
 .login-wrapper{
@@ -146,6 +151,16 @@ form .signup-link{
     text-align: center;
 }
 
+form .signup-link a {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+form .pass-link a {
+    font-size: 15px;
+    font-weight: bold;
+}
+
 form .pass-link a, form .signup-link a{
     color: var(--mainColor);
     text-decoration: none;
@@ -168,19 +183,30 @@ form .pass-link a:hover, form .signup-link a:hover{
     padding-bottom: 20px;
 }
 
+.info-wrapper a {
+
+}
+
 .info-text {
+    font-size: 15px;
+    font-weight: bold;
     text-align: justify;
     padding-bottom: 20px;
     color: var(--textColor);
 }
 
 .more-info {
+    font-size: 15px;
+    font-weight: bold;
     color: var(--textColor);
 }
 
 .info-wrapper a {
+    font-size: 15px;
+    font-weight: bold;
     text-align: center;
     color: var(--mainColor);
+    text-decoration: none;
 }
 
 .info-wrapper a:hover {

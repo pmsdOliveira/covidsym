@@ -11,31 +11,40 @@
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
-    background-color: var(--backgroundColor);
-  }
+}
 
-  .wrapper {
+body {
+    background-color: var(--backgroundColor);
+}
+
+.wrapper {
     display: flex;
+    flex-direction: row nowrap;
     justify-content: space-between;
-    flex-flow: row nowrap;
     height: max-content;
-  }
-  
-  .modal {
+}
+
+.content-wrapper {
+    display: grid;
+    place-items: center;
+    margin-left: 200px;
+}
+
+.image-wrapper {
+    margin: 50px;
+}
+
+.modal {
     background-color: white;
     border-radius: 25px;
     -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     display: block;
-    margin: 5% auto;
     width: 50%;
   }
 
-  .modal-header {
+.modal-header {
     background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
     border-radius: 25px 25px 0 0;
     display: flex;
@@ -44,14 +53,13 @@
     padding: 2vh 4vw;
     margin: 0 0 2vh 0;
     width: 100%;
-  }
-  
-  .modal-header h1 {
+}
+
+.modal-header h1 {
     color: white;
     font-size: 20px;
     align-self: center;
-    padding-top: 20px;
-  }
+}
 
 .modal-body{
     margin: auto 0px;
@@ -67,23 +75,22 @@
     font-size: 35px;
     font-weight: bold;
     text-align: center;
-    padding: 10px 0px 30px 0px ;
+    padding: 5px 0px 15px 0px ;
 }
 
-.modal-body p{
-    
-    text-align: justify;
-    font-size: 15px;
-    font-weight: bold;
-    padding-left: 5%;
-    padding-right: 5%;
-    color: var(--textColor);
-}
 .modal-text{
     display: flex;
     align-items: left;
     flex-direction: column;
     padding-bottom: 10px;
+}
+
+.modal-text p{
+    text-align: justify;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0px 5% 15px 5%;
+    color: var(--textColor);
 }
 
 .modal-body button {
@@ -98,10 +105,9 @@
     outline: none;
     padding: 0.5vh 1vw;
     transition: all 0.3s ease;
-    
-  }
-  
-  .modal-body button:active {
+}
+
+.modal-body button:active {
     transform: scale(0.95);
     transition: all 0.3s ease;
-  }
+}

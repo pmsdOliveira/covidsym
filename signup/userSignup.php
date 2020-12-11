@@ -13,9 +13,7 @@
     </head>
 
     <body>
-        <?php
-            include "../commons/navbar.php";
-        ?>
+        <?php include "../commons/navbar.php"; ?>
         
         <div class="container">
             <div class="image-wrapper">
@@ -65,8 +63,6 @@
             </div>
         </div>
 
-        <?php
-            include "../commons/footer.php";
-        ?>
+        <?php include "../commons/footer.php"; ?>
     </body>
 </html>

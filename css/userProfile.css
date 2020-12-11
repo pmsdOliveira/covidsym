@@ -12,33 +12,37 @@
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
-    background-color: var(--backgroundColor);
-    display: flex;
-    flex-direction: column;
-  }
+}
 
-  .wrapper {
+body {
+    background-color: var(--backgroundColor);
+}
+
+.wrapper {
     display: flex;
+    flex-direction: row nowrap;
     justify-content: space-between;
-    flex-flow: row nowrap;
     height: max-content;
-  }
-  
-  .modal {
+}
+
+.content-wrapper {
+    display: grid;
+    place-items: center;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+.modal {
     background-color: white;
     border-radius: 25px;
     -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     display: block;
-    margin: 5% auto;
-    width: 50%;
-  }
+    width: 100%;
+}
 
-  .modal-header {
+.modal-header {
     background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
     border-radius: 25px 25px 0 0;
     display: flex;
@@ -46,42 +50,26 @@
     justify-content: space-between;
     padding: 2vh 4vw;
     width: 100%;
-  }
-  
-  .modal-header h1 {
+}
+
+.modal-header h1 {
     color: white;
     font-size: 32px;
-  }
+    align-self: center;
+}
 
-  
-  .goBackBtn {
-    color: white;
-    font-size: 32px;
-    padding: 0.5% 0;
-    transition: 0.3s;
-  }
-  
-  .goBackBtn:hover {
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .goBackBtn:active {
-    transform: scale(0.9);
-    transition: 0.3s;
-  }
-
-  .profile{
+.profile{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+}
 
-  }
-  .profile h2{
+.profile h2{
     margin-bottom: 10px;
-  }
-  .profile button {
+}
+
+.profile button {
     width: 70%;
     background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
     border: none;
@@ -94,75 +82,70 @@
     padding: 0.5vh 1vw;
     transition: all 0.3s ease;
     margin: 2vh 0;
-    
-  }
-  
-  
-  .profile button:active {
+}
+
+.profile button:active {
     transform: scale(0.95);
     transition: all 0.3s ease;
-  }
-  .profileIcon{
+}
+.profileIcon{
     font-size: 80px;
-  }
+}
 
-  .table{
+.table{
     width: 100%;
-  }
-  
-  .table_left{
+}
+
+.table_left{
     background-color: var(--contrastColor);
     width: 30%;
     padding-top: -20px;
     border-radius:  0 0 0 25px;
-    
+}
 
-  }
-
-  .form {
+.form {
     font-weight: bold;
     color: var(--textColor);
     padding: 2vh 1vw;
     width: 100%;
-  }
+}
 
 .form label {
-  display: block;
-  margin: 0.8vh 0;
+    display: block;
+    margin: 0.8vh 0;
 }
 
 .form input {
-  background: var(--backgroundColor);
-  border: 0px;
-  border-radius: 5px;
-  font-size: 17px;
-  outline: none;
-  padding-left: 1vw;
-  transition: all 0.3s ease;
-  width: 100%;
+    background: var(--backgroundColor);
+    border: 0px;
+    border-radius: 5px;
+    font-size: 17px;
+    outline: none;
+    padding-left: 1vw;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .gender {
-  display: flex;
-  font-size: 0.8rem;
-  justify-content: space-around;
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: space-around;
 }
 
 input[type="submit"] {
-  
-  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
-  border: none;
-  border-radius: 25px;
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.5vh 0;
-  transition: all 0.3s ease;
-  width: 30%;
-  margin-bottom: 1vh;
+    background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5vh 0;
+    transition: all 0.3s ease;
+    width: 30%;
+    margin-bottom: 1vh;
 }
 
 input[type="submit"]:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }

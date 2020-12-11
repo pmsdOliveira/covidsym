@@ -13,13 +13,11 @@
     </head>
 
     <body>
-        <header>
-            <a href="#"><img src="../img/logo-white.png" alt="Logo" height="15px"></a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#">Logout</a></li>
-                </ul>
-            </nav>
-        </header>
+        <div class="navbar">
+            <a href="#"><img src="../img/logo-white.png" alt="Logo"></a>
+            <div class="nav-links">
+                <a href="#">Logout</a>
+            </div>
+        </div>
     </body>
 </html>

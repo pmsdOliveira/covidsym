@@ -13,12 +13,10 @@
     </head>
 
     <body>
-        <?php
-            include "../commons/navbar.php";
-        ?>
+        <?php include "../commons/navbar.php"; ?>
         
         <div class="image-wrapper">
-            <img src="../img/logo.png" alt="Logo" height="50px" style="margin: auto;">
+            <img src="../img/logo.png" alt="Logo">
         </div>
 
         <div class="container">

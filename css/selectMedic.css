@@ -25,6 +25,10 @@ body {
     height: max-content;
 }
 
+.sidebar-wrapper {
+    position: fixed;
+}
+
 .modal {
   background-color: white;
   border-radius: 25px;
