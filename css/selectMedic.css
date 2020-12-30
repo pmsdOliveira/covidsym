@@ -19,14 +19,16 @@ body {
 }
 
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row nowrap;
-    height: max-content;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
-.sidebar-wrapper {
-    position: fixed;
+.content-wrapper {
+  display: grid;
+  margin-left: 200px;
+  place-items: center;
+  width: 100%;
 }
 
 .modal {
@@ -35,18 +37,19 @@ body {
   -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  margin: 3% auto 5%;
+  margin: 5vh 0;
   width: 50%;
 }
 
 .modal-header {
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border-radius: 25px 25px 0 0;
-  padding: 2vh 4vw;
+  padding: 1vh 4vw;
   width: 100%;
 }
 
 .modal-header {
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -54,13 +57,12 @@ body {
 
 .modal-header h1 {
   color: white;
-  font-size: 32px;
+  font-size: 1.5rem;
 }
 
 .goBackBtn {
   color: white;
-  font-size: 32px;
-  padding: 0.5% 0;
+  font-size: 2rem;
   transition: 0.3s;
 }
 

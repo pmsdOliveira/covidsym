@@ -1,9 +1,9 @@
 :root {
-    --backgroundColor: #f7f7f7;
-    --lighterColor: #00addf;
-    --mainColor: #0e6ab2;
-    --darkerColor: #1f61ac;
-    --textColor: #3d3d3d;
+  --backgroundColor: #f7f7f7;
+  --lighterColor: #00addf;
+  --mainColor: #0e6ab2;
+  --darkerColor: #1f61ac;
+  --textColor: #3d3d3d;
 }
 
 * {
@@ -14,14 +14,20 @@
 }
 
 body {
-    background-color: var(--backgroundColor);
+  background-color: var(--backgroundColor);
 }
 
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row nowrap;
-    height: max-content;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.content-wrapper {
+  display: grid;
+  place-items: center;
+  margin-left: 200px;
+  width: 100%;
 }
 
 .modal {
@@ -30,47 +36,45 @@ body {
   -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 5% auto;
+  margin: 5vh 0;
   width: 50%;
 }
 
 .modal-header {
+  align-items: center;
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border-radius: 25px 25px 0 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 2vh 4vw;
+  padding: 1vh 4vw;
   margin: 0 0 2vh 0;
   width: 100%;
 }
 
 .modal-header h1 {
   color: white;
-  font-size: 32px;
+  font-size: 1.5rem;
 }
 
 .goBackBtn {
   color: white;
-  font-size: 32px;
-  padding: 0.5% 0;
-  transition: 0.3s;
+  font-size: 2rem;
+  transition: all 0.3s ease;
 }
 
 .goBackBtn:hover {
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .goBackBtn:active {
   transform: scale(0.9);
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .form {
-    font-weight: bold;
-    color: var(--textColor);
+  font-weight: bold;
+  color: var(--textColor);
   padding: 0 4vw;
   width: 100%;
 }
@@ -84,7 +88,7 @@ body {
   background: var(--backgroundColor);
   border: 0px;
   border-radius: 5px;
-  font-size: 17px;
+  font-size: 1rem;
   outline: none;
   padding-left: 1vw;
   transition: all 0.3s ease;
@@ -97,7 +101,7 @@ body {
   justify-content: space-around;
 }
 
-input[type="submit"] {
+form input[type="submit"] {
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border: none;
   border-radius: 25px;
@@ -105,12 +109,13 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  margin: 2% 0 3% 31vw;
+  margin: 0 0 3% 65.5%;
+  outline: none;
   padding: 0.5vh 0;
   transition: all 0.3s ease;
-  width: 30%;
+  width: 25%;
 }
 
-input[type="submit"]:active {
+form input[type="submit"]:active {
   transform: scale(0.95);
 }

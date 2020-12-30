@@ -15,31 +15,29 @@
         <?php include "../commons/navbar.php"; ?>
 
         <div class="wrapper">
-            <div class="sidebar-wrapper">
-                <?php
-                    include "../commons/sidebar.php"
-                ?>
-            </div>
+            <?php include "../commons/sidebar.php"?>
 
-            <div class="modal">
-                <div class="modal-header">
-                    <i class="fas fa-arrow-alt-circle-left goBackBtn">
-                        <a href="#"></a>
-                    </i>
-                    <h1 class="title">Medical Staff</h1>
-                </div>
-                <div class="medic-list">
-                    <p>Select which doctor should do the consultation</p>
-                    <?php
-                        for ($i = 0; $i < 11; $i++) {
-                            echo '<div class="medic">
-                                    <i class="fas fa-user-circle"></i>
-                                    <p>Hipólito Asdrubal</p>
-                                    <p>Users waiting list: XX</p>
-                                    <button>Select</button>
-                                </div>';
-                        }
-                    ?>
+            <div class="content-wrapper">
+                <div class="modal">
+                    <div class="modal-header">
+                        <i class="fas fa-arrow-alt-circle-left goBackBtn">
+                            <a href="#"></a>
+                        </i>
+                        <h1 class="title">Medical Staff</h1>
+                    </div>
+                    <div class="medic-list">
+                        <p>Select which doctor should do the consultation</p>
+                        <?php
+                            for ($i = 0; $i < 11; $i++) {
+                                echo '<div class="medic">
+                                        <i class="fas fa-user-circle"></i>
+                                        <p>Hipólito Asdrubal</p>
+                                        <p>Users waiting list: XX</p>
+                                        <button>Select</button>
+                                    </div>';
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
