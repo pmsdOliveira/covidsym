@@ -12,23 +12,20 @@
 </head>
 
 <body>
-    <?php
-        include "../commons/navbar.php";
-    ?>
+    <?php include "../commons/navbar.php";?>
 
     <div class="wrapper">
-        <div>
-            <?php include "../commons/sidebar.php"; ?>
-        </div>
+        <?php include "../commons/sidebar.php"; ?>
 
-        <div class="modal">
-            <div class="modal-header">
-                <i class="fas fa-arrow-alt-circle-left goBackBtn">
-                    <a href="#"></a>
-                </i>
-                <h1 class="title">FAQ</h1>
-            </div>
-            <div >
+        <div class="content-wrapper">
+            <div class="modal">
+                <div class="modal-header">
+                    <i class="fas fa-arrow-alt-circle-left goBackBtn">
+                        <a href="#"></a>
+                    </i>
+                    <h1 class="title">FAQ</h1>
+                </div>
+                
                 <table>
                     <tr>
                         <th class="info">
@@ -39,7 +36,6 @@
                                 <p>To find answers to your questions choose one of the question categories and identify
                                     your question.</p><br>
                                 <p>If your question is not answered on this page, do not hesitate to contact us.</p><br>
-
                             </div>
                         </th>
                         <th class="faq">
@@ -73,9 +69,7 @@
         </div>
     </div>
 
-    <?php
-      include('../commons/footer.php');
-    ?>
+    <?php include('../commons/footer.php');?>
 </body>
 
 </html>
