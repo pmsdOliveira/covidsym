@@ -2,22 +2,22 @@
 
 <html>
     <head>
-        <title>COVIDSYM - Staff Login</title>
+        <title>COVIDSYM - User Login</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com/ ">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         
         <link rel="icon" href="../img/icon.ico" type="image/icon type">
     
-        <link rel="stylesheet" type="text/css" href="../css/signUp.css">
+        <link rel="stylesheet" type="text/css" href="../css/userSignup.css">
     </head>
 
     <body>
-        <?php include "../commons/navbar.php"; ?>
+        <?php include "../commons/navbar.php";?>
         
         <div class="container">
             <div class="image-wrapper">
-                <img src="../img/logo.png" alt="Logo" height="50px" style="margin: auto;">
+                <img src="../img/logo.png" alt="Logo">
             </div>
 
             <div class="sign-up-wrapper">
