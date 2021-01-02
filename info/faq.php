@@ -23,48 +23,39 @@
                     <i class="fas fa-arrow-alt-circle-left goBackBtn">
                         <a href="#"></a>
                     </i>
-                    <h1 class="title">FAQ</h1>
+                    <h1 class="title">Frequently Asked Questions</h1>
                 </div>
                 
-                <table>
-                    <tr>
-                        <th class="info">
-                            <h1>Frequently Asked Questions</h1>
-                            <div class="info-text">
-                                <p>The Frequently Asked Questions page aims to address the issues considered most
-                                    important by our clients.</p><br>
-                                <p>To find answers to your questions choose one of the question categories and identify
-                                    your question.</p><br>
-                                <p>If your question is not answered on this page, do not hesitate to contact us.</p><br>
+                <div class="modal-content">
+                    <p>The Frequently Asked Questions page aims to address the issues considered most
+                        important by our clients.To find answers to your questions choose one of the 
+                        question categories and identify your question.If your question is not answered
+                        on this page, do not hesitate to contact us.</p>
+
+                    <div class="acc-kontainer">
+                        <div>
+                            <input type="radio" name="acc" id="acc1">
+                            <label for="acc1"> My name? <i class="fas fa-chevron-down down"></i></label>
+                            <div class="acc-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet semper velit. Duis vel ex tincidunt, gravida libero sed, fermentum enim. Vivamus non risus sed urna fermentum aliquet. Ut tincidunt diam et orci auctor facilisis. In hac habitasse platea dictumst. Praesent id varius lectus. Duis facilisis viverra turpis ac consequat.
                             </div>
-                        </th>
-                        <th class="faq">
-                            <div class="acc-kontainer">
-                                <div>
-                                    <input type="radio" name="acc" id="acc1">
-                                    <label for="acc1"> My name? <i class="fas fa-chevron-down down"></i></label>
-                                    <div class="acc-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet semper velit. Duis vel ex tincidunt, gravida libero sed, fermentum enim. Vivamus non risus sed urna fermentum aliquet. Ut tincidunt diam et orci auctor facilisis. In hac habitasse platea dictumst. Praesent id varius lectus. Duis facilisis viverra turpis ac consequat.
-                                    </div>
-                                </div>
-                                <div>
-                                    <input type="radio" name="acc" id="acc2">
-                                    <label for="acc2"> What am I interesting for?<i class="fas fa-chevron-down down"></i></label>
-                                    <div class="acc-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet semper velit. Duis vel ex tincidunt, gravida libero sed, fermentum enim. Vivamus non risus sed urna fermentum aliquet. Ut tincidunt diam et orci auctor facilisis. In hac habitasse platea dictumst. Praesent id varius lectus. Duis facilisis viverra turpis ac consequat.
-                                    </div>
-                                </div>
-                                <div>
-                                    <input type="radio" name="acc" id="acc3">
-                                    <label for="acc3"> What is my hobby?<i class="fas fa-chevron-down down"></i></label>
-                                    <div class="acc-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet semper velit. Duis vel ex tincidunt, gravida libero sed, fermentum enim. Vivamus non risus sed urna fermentum aliquet. Ut tincidunt diam et orci auctor facilisis. In hac habitasse platea dictumst. Praesent id varius lectus. Duis facilisis viverra turpis ac consequat.
-                                    </div>
-                                </div>
+                        </div>
+                        <div>
+                            <input type="radio" name="acc" id="acc2">
+                            <label for="acc2"> What am I interesting for?<i class="fas fa-chevron-down down"></i></label>
+                            <div class="acc-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet semper velit. Duis vel ex tincidunt, gravida libero sed, fermentum enim. Vivamus non risus sed urna fermentum aliquet. Ut tincidunt diam et orci auctor facilisis. In hac habitasse platea dictumst. Praesent id varius lectus. Duis facilisis viverra turpis ac consequat.
                             </div>
-                        </th>
-                    </tr>
-                </table>
+                        </div>
+                        <div>
+                            <input type="radio" name="acc" id="acc3">
+                            <label for="acc3"> What is my hobby?<i class="fas fa-chevron-down down"></i></label>
+                            <div class="acc-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet semper velit. Duis vel ex tincidunt, gravida libero sed, fermentum enim. Vivamus non risus sed urna fermentum aliquet. Ut tincidunt diam et orci auctor facilisis. In hac habitasse platea dictumst. Praesent id varius lectus. Duis facilisis viverra turpis ac consequat.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
