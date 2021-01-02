@@ -40,7 +40,7 @@
                             hands or using an alcohol based rub frequently and not touching your face.</p>
                         </div>
         
-                        <button>Make an appointment</button>
+                        <button>Make an Appointment</button>
                     </div>
                 </div>
             </div>
