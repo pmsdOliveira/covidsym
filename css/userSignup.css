@@ -23,7 +23,7 @@ body {
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  height: 90vh; /* use the entire viewport height to center vertically */
+  height: 90vh;
   justify-content: center;
 }
 
@@ -120,9 +120,7 @@ form .field input:valid ~ label {
 form .field input[type="submit"] {
   color: white;
   border: none;
-  padding-left: 0;
-  margin-top: -10px;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
@@ -135,7 +133,7 @@ form .field input[type="submit"]:active {
 
 .terms-of-service {
   color: var(--textColor);
-  padding: 10px 0px;
+  padding: 1vh 0;
   font-weight: bold;
   text-align: center;
 }
