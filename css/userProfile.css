@@ -26,10 +26,12 @@ body {
 }
 
 .content-wrapper {
+  align-items: center;
   display: flex;
+  height: 90vh;
+  justify-content: center;
   margin-left: 200px;
   width: 100%;
-  justify-content: center;
 }
 
 .modal {
@@ -39,24 +41,39 @@ body {
   -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   display: block;
-  width: 65%;
-  margin-top: 10vh;
+  width: 50%;
 }
 
 .modal-header {
+  align-items: center;
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border-radius: 25px 25px 0 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 2vh 4vw;
+  padding: 1.5vh 4vw;
   width: 100%;
 }
 
 .modal-header h1 {
   color: white;
-  font-size: 32px;
+  font-size: 2rem;
   align-self: center;
+}
+
+.goBackBtn {
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.goBackBtn:hover {
+  cursor: pointer;
+}
+
+.goBackBtn:active {
+  transform: scale(0.9);
+  transition: all 0.3s ease;
 }
 
 .profile {
@@ -64,14 +81,15 @@ body {
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  padding-top: 2vh;
 }
 
 .profile h2 {
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
 }
 
 .profile button {
-  width: 70%;
+  width: 10vw;
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border: none;
   border-radius: 25px;
@@ -80,7 +98,7 @@ body {
   font-size: 1rem;
   font-weight: bold;
   outline: none;
-  padding: 0.5vh 1vw;
+  padding: 1vh 0;
   transition: all 0.3s ease;
   margin: 2vh 0;
 }
@@ -89,27 +107,30 @@ body {
   transform: scale(0.95);
   transition: all 0.3s ease;
 }
+
 .profileIcon {
-  font-size: 80px;
+  font-size: 7rem;
 }
 
 .table {
   width: 100%;
   border: 0px;
 }
+
 .table th {
   border: 0px;
 }
+
 .table tr {
   border: 0px;
 }
 
 .table_left {
-  background-color: var(--contrastColor);
-  width: 30%;
   border-radius: 0 0 0 25px;
-  background-size: cover;
+  vertical-align: top;
+  width: 30%;
 }
+
 .form {
   font-weight: bold;
   color: var(--textColor);
@@ -126,7 +147,7 @@ body {
   background: var(--backgroundColor);
   border: 0px;
   border-radius: 5px;
-  font-size: 17px;
+  font-size: 1rem;
   outline: none;
   padding-left: 1vw;
   transition: all 0.3s ease;
@@ -147,10 +168,11 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  padding: 0.5vh 0;
+  padding: 1vh 0;
   transition: all 0.3s ease;
-  width: 30%;
-  margin-bottom: 1vh;
+  width: 10vw;
+  margin: 0 1vw 1vh;
+  float: right;
 }
 
 input[type="submit"]:active {
