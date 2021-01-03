@@ -1,0 +1,114 @@
+root {
+  --backgroundColor: #f7f7f7;
+  --lighterColor: #00addf;
+  --mainColor: #0e6ab2;
+  --darkerColor: #1f61ac;
+  --textColor: #3d3d3d;
+  --contrastColor: #e6e6e6;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--backgroundColor);
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.content-wrapper {
+  align-items: center;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  margin-left: 200px;
+  width: 100%;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+.modal-header {
+  align-items: center;
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 1vh 4vw;
+  width: 100%;
+}
+
+.modal-header h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.goBackBtn {
+  color: white;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+
+.goBackBtn:hover {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.goBackBtn:active {
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+.appointment-header {
+  line-height: 1.5;
+  margin: 2vh 2vw;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.grid {
+  display: grid;
+  gap: 8% 2%;
+  grid-template-columns: 49% 49%;
+  grid-template-rows: 46% 46%;
+  margin: -1vh 2vw 4vh;
+  place-items: center center;
+}
+
+.diagnosis,
+.prescription,
+.notes {
+  width: 100%;
+}
+
+.notes {
+  grid-column: 1 / span 2;
+}
+
+.grid textarea {
+  background-color: var(--backgroundColor);
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.5vh 0.5vw;
+  resize: none;
+  width: 100%;
+}
