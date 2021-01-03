@@ -106,6 +106,7 @@ body {
 
 .appointment {
   align-items: center;
+  border-bottom: 1px solid var(--contrastColor);
   color: var(--textColor);
   display: flex;
   flex-flow: row nowrap;
@@ -116,11 +117,11 @@ body {
 }
 
 .appointment:nth-child(odd) {
-  background-color: var(--contrastColor);
+  background-color: var(--backgroundColor);
 }
 
 .appointment:nth-child(even) {
-  background-color: var(--backgroundColor);
+  background-color: white;
 }
 
 .appointment i {
