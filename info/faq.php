@@ -43,23 +43,17 @@
                 <button class="accordion">Who are we?</button>
 
                 <div class="panel">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Quisque sit amet semper velit. Duis vel ex tincidunt, gravida
-                  libero sed, fermentum enim. Vivamus non risus sed urna
-                  fermentum aliquet. Ut tincidunt diam et orci auctor facilisis.
-                  In hac habitasse platea dictumst. Praesent id varius lectus.
-                  Duis facilisis viverra turpis ac consequat.
+                  A group of students of FTC-NOVA, it's part of a final project
+                  for the subject "Sistemas de Informação Médica"
                 </div>
               </div>
               <div>
                 <button class="accordion">What do we do?</button>
                 <div class="panel">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Quisque sit amet semper velit. Duis vel ex tincidunt, gravida
-                  libero sed, fermentum enim. Vivamus non risus sed urna
-                  fermentum aliquet. Ut tincidunt diam et orci auctor facilisis.
-                  In hac habitasse platea dictumst. Praesent id varius lectus.
-                  Duis facilisis viverra turpis ac consequat.
+                  The COVIDSYM system is a system for registering and analysing
+                  symptoms, which supports the doctor in prescribing COVID-19
+                  tests through the assessment of the risk of the user being
+                  diagnosed with COVID-19.
                 </div>
               </div>
               <div>
@@ -67,23 +61,16 @@
                   How does the Diagnostic Support System do?
                 </button>
                 <div class="panel">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Quisque sit amet semper velit. Duis vel ex tincidunt, gravida
-                  libero sed, fermentum enim. Vivamus non risus sed urna
-                  fermentum aliquet. Ut tincidunt diam et orci auctor facilisis.
-                  In hac habitasse platea dictumst. Praesent id varius lectus.
-                  Duis facilisis viverra turpis ac consequat.
+                  The risk assessment will be carried out automatically on the
+                  basis of the recorded indicators, using a Diagnostic Support
+                  System (SAD) implemented using decision trees
                 </div>
               </div>
               <div>
                 <button class="accordion">How can you prevent COVID-19</button>
                 <div class="panel">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Quisque sit amet semper velit. Duis vel ex tincidunt, gravida
-                  libero sed, fermentum enim. Vivamus non risus sed urna
-                  fermentum aliquet. Ut tincidunt diam et orci auctor facilisis.
-                  In hac habitasse platea dictumst. Praesent id varius lectus.
-                  Duis facilisis viverra turpis ac consequat.
+                  Wash your hands regularly. Maintain at least 1m of social
+                  distancing. Stay home if you feel unwell. Wear a mask.
                 </div>
               </div>
             </div>
