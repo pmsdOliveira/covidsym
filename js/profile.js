@@ -20,18 +20,11 @@ const validateBirthdate = birthdate => {{
   const month = parseInt(parts[1]);
   const year = parseInt(parts[2]);
 
-  if(year < currentYear - 150 || year > currentYear || month < 1 || month > 12)
+  if(year < currentYear - 150 || year > currentYear)
       return false;
 
-  let monthsLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
-
-  // Ano bissexto
-  if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-      monthsLength[1] = 29;
-
-  if (day > 0 && day <= monthsLength[month - 1]) {
-    let dateFormat = year.toString() + "/" + month.toString() + "/" + day.toString();
-    document.getElementById("profile-birthdate").value = dateFormat;
+  let dateFormat = year.toString() + "/" + month.toString() + "/" + day.toString();
+  document.getElementById("profile-birthdate").value = dateFormat;
 
     return true;
   }
@@ -99,5 +92,4 @@ const validateUserProfileForm = () => {
   }
 
   return true
-}
 }
