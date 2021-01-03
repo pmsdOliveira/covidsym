@@ -25,35 +25,35 @@
                     Sign Up
                 </div>
 
-                <form action="../login/checkLogin.php" method="POST">
+                <form action="../login/checkLogin.php" method="POST" onsubmit="return validateSignupForm()">
                     <div class="form-wrapper">
                         <div class="left-form">
                             <div class="field">
-                                <input type="text" name="Username" required>
+                                <input id="signup-username" type="text" name="Username" required>
                                 <label>Username</label>
                             </div>
 
                             <div class="field">
-                                <input type="text" name="Email" required>
+                                <input id="signup-email" type="email" name="Email" required>
                                 <label>Email</label>
                             </div>
                         </div>
 
                         <div class="right-form">
                             <div class="field">
-                                <input type="password" required>
+                                <input id="signup-password" type="password" required>
                                 <label>Password</label>
                             </div>
 
                             <div class="field">
-                                <input type="password" required>
+                                <input id="signup-confirm-password" type="password" required>
                                 <label>Confirm Password</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="terms-of-service">
-                        By submiting, you are accepting our <a href="#">Terms of Service</a>.
+                        By submiting, you are accepting our <a href="../info/termsOfService">Terms of Service</a>.
                     </div>
 
                     <input type="submit" value="Next Step">
@@ -62,5 +62,7 @@
         </div>
 
         <?php include "../commons/footer.php"; ?>
+
+        <script src="../js/userSignup.js"></script>
     </body>
 </html>
