@@ -32,13 +32,13 @@
                                     <p class="p">Select a Staff Member to see his profile:</p>
                                 </td>
                                 <td>
-                                    <form class="dropdown" action="....">
+                                   
                                         <select name="staff" id="staff">
                                             <option value="Medic">Medic</option>
                                             <option value="Investigator">Investigator</option>
                                             <option value="Admin">Admin</option>
                                         </select>
-                                    </form>
+                                    
                                 </td>
                             </tr>
                         </table>
