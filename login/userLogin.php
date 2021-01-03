@@ -48,12 +48,10 @@
                             </div>
                         </div>
 
-                        <div class="field">
-                            <input type="submit" value="Login">
-                        </div>
+                        <input type="submit" value="Login">
 
                         <div class="signup-link">
-                            <a href="#">Don't have an account yet?</a>
+                            <a href="../signup/userSignup">Don't have an account yet?</a>
                         </div>
                     </form>
                 </div>
@@ -64,7 +62,7 @@
                         COVIDSYM consists in a symptom and risk factor registry and analysis system, that supports medical staff in deciding to prescribe a test to COVID-19, based on the assessment of the user's risk of being diagnosed with it. The risk assessment is done automatically based on the indicators registered by the user, using a high-fidelity Diagnostic Support System.
                     </p>
                     <p class="more-info">For more information:</p>
-                    <a href="#">Frequently asked questions</a>
+                    <a href="../info/faq">Frequently asked questions</a>
                 </div>
             </div>
         </div>

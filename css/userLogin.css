@@ -63,7 +63,7 @@ body {
 }
 
 .login-wrapper form {
-  margin: 4vh 3vw;
+  margin: 4vh 3vw 2vh;
 }
 
 .login-wrapper form .field {
@@ -135,23 +135,26 @@ form .content label {
   padding-left: 0.5vw;
 }
 
-form .field input[type="submit"] {
-  color: white;
+form input[type="submit"] {
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
   font-size: 1.5rem;
   font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  padding: 1vh 0;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
-form .field input[type="submit"]:active {
+form input[type="submit"]:active {
   transform: scale(0.95);
 }
 
 form .signup-link {
   color: #262626;
-  margin-top: 1vh;
+  margin-top: 2vh;
   text-align: center;
 }
 
