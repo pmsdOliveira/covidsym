@@ -25,7 +25,7 @@
                     Sign Up
                 </div>
 
-                <form action="../login/checkLogin.php" method="POST" onsubmit="return validateSignupForm()">
+                <form action="../login/checkLogin.php" method="POST" onsubmit="return validateUserSignupForm()">
                     <div class="form-wrapper">
                         <div class="left-form">
                             <div class="field">
@@ -63,6 +63,6 @@
 
         <?php include "../commons/footer.php"; ?>
 
-        <script src="../js/userSignup.js"></script>
+        <script src="../js/signup.js"></script>
     </body>
 </html>

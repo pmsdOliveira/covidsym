@@ -1,4 +1,4 @@
-const validateUsername = username => /^(?=.{8,50}$)[a-zA-Z0-9_]+$/.test(username)
+const validateUsername = username => /^(?=.{8,50}$)[a-zA-Z0-9_.]+$/.test(username)
 
 const validateEmail = email => {
   const regex = /^(?=.{8,50}$)(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -9,7 +9,10 @@ const validatePassword = password => /^(?=.*\d*[a-zA-Z]*).{8,50}$/.test(password
 
 const validateConfirmPassword = (password, confirmPassword) => password === confirmPassword
 
-const validateSignupForm = () => {
+
+// USER SIGNUP
+
+const validateUserSignupForm = () => {
   const username = document.getElementById("signup-username").value
   const email = document.getElementById("signup-email").value
   const password = document.getElementById("signup-password").value

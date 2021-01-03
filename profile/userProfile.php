@@ -44,111 +44,74 @@
                 </div>
               </td>
               <td>
-                <form action="submitUserRegistry.php" method="POST">
+                <form action="submitUserRegistry.php" method="POST" onsubmit="return validateUserProfileForm()">
                   <table class="form">
                     <tr>
                       <td><label>Name</label></td>
                       <td>
-                        <input name="name" value="Name from DB" type="text" />
+                        <input id="profile-name" name="name" value="Name from DB" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Email</label></td>
                       <td>
-                        <input
-                          name="email"
-                          value="Email from DB"
-                          type="email"
-                        />
+                        <input id="profile-email" name="email" value="Email from DB" type="email" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Phone Number</label></td>
                       <td>
-                        <input
-                          name="phone"
-                          value="XXXXXXXXXX from DB"
-                          type="text"
-                        />
+                        <input id="profile-phone" name="phone" value="XXXXXXXXXX from DB" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Address</label></td>
                       <td>
-                        <input
-                          name="address"
-                          value="Adress from DB"
-                          type="text"
-                        />
+                        <input id="profile-address" name="address" value="Adress from DB" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Local</label></td>
                       <td>
-                        <input
-                          name="local"
-                          value="Local from DB"
-                          type="text"
-                        />
+                        <input id="profile-local" name="local" value="Local from DB" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>District</label></td>
                       <td>
-                        <input
-                          name="district"
-                          value="District from DB"
-                          type="text"
-                        />
+                        <input id="profile-district" name="district" value="District from DB" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Birthdate</label></td>
-                      <td><input name="birthdate" type="date" /></td>
+                      <td><input id="profile-birthdate" name="birthdate" type="date" required/></td>
                     </tr>
                     <tr>
                       <td><label>Gender</label></td>
                       <td>
                         <div class="gender">
-                          <label
-                            >Male<input
-                              name="gender"
-                              type="radio"
-                              value="male"
-                          /></label>
-                          <label
-                            >Female<input
-                              name="gender"
-                              type="radio"
-                              value="female"
-                          /></label>
-                          <label
-                            >Other<input
-                              name="gender"
-                              type="radio"
-                              value="other"
-                          /></label>
+                          <label>Male
+                            <input name="gender" type="radio" value="male" required/>
+                          </label>
+                          <label>Female
+                            <input name="gender" type="radio" value="female" required/>
+                          </label>
+                          <label>Other
+                            <input name="gender" type="radio" value="other" required/>
+                          </label>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Fiscal Number</label></td>
                       <td>
-                        <input
-                          name="fiscal"
-                          value="XXXXXXXX from DB"
-                          type="text"
-                        />
+                        <input id="profile-fiscal" name="fiscal" value="XXXXXXXX from DB" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Healthcare Number</label></td>
                       <td>
-                        <input
-                          name="healthcare"
-                          value="XXXXXXXX from DB"
-                          type="text"
-                        />
+                        <input id="profile-healthcare" name="healthcare" value="XXXXXXXX from DB" type="text" required/>
                       </td>
                     </tr>
                   </table>
@@ -162,5 +125,7 @@
     </div>
 
     <?php include('../commons/footer.php'); ?>
+
+    <script src="../js/profile.js"></script>
   </body>
 </html>
