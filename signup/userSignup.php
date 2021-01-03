@@ -56,9 +56,7 @@
                         By submiting, you are accepting our <a href="#">Terms of Service</a>.
                     </div>
 
-                    <div class="field">
-                        <input type="submit" value="Next Step">
-                    </div>
+                    <input type="submit" value="Next Step">
                 </form>
             </div>
         </div>

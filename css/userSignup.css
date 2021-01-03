@@ -117,23 +117,27 @@ form .field input:valid ~ label {
   border-radius: 15px;
 }
 
-form .field input[type="submit"] {
-  color: white;
+form input[type="submit"] {
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
   font-size: 1.5rem;
   font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  outline: none;
+  padding: 1.5vh 0;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
-form .field input[type="submit"]:active {
+form input[type="submit"]:active {
   transform: scale(0.95);
 }
 
 .terms-of-service {
   color: var(--textColor);
-  padding: 1vh 0;
+  margin: 3vh 0;
   font-weight: bold;
   text-align: center;
 }
