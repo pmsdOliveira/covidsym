@@ -57,13 +57,13 @@ body {
 
 .modal-header h1 {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   align-self: center;
 }
 
 .goBackBtn {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   transition: all 0.3s ease;
 }
 
@@ -95,7 +95,7 @@ body {
   border-radius: 25px;
   color: white;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bold;
   outline: none;
   padding: 1vh 0;
@@ -109,7 +109,7 @@ body {
 }
 
 .profileIcon {
-  font-size: 7rem;
+  font-size: 12vmin;
 }
 
 .table {
@@ -139,7 +139,7 @@ body {
   background: var(--backgroundColor);
   border: 0px;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 2vmin;
   outline: none;
   padding-left: 0.5vw;
   transition: all 0.3s ease;
@@ -148,7 +148,7 @@ body {
 
 .gender {
   display: flex;
-  font-size: 0.8rem;
+  font-size: 1.5vmin;
   justify-content: space-around;
 }
 
@@ -158,7 +158,7 @@ input[type="submit"] {
   border-radius: 25px;
   color: white;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bold;
   padding: 1vh 0;
   transition: all 0.3s ease;
