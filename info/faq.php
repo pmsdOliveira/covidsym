@@ -38,7 +38,7 @@
               not hesitate to contact us via email.
             </p>
 
-            <div class="acc-kontainer">
+            <div class="acc-container">
               <div>
                 <button class="accordion">Who are we?</button>
 
@@ -80,21 +80,6 @@
     </div>
 
     <?php include('../commons/footer.php');?>
-    <script>
-      var acc = document.getElementsByClassName("accordion");
-      var i;
-
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-          } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-          }
-        });
-      }
-    </script>
+    <script src="../js/faq.js"></script>
   </body>
 </html>
