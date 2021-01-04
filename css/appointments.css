@@ -55,12 +55,12 @@ body {
 
 .modal-header h1 {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
 }
 
 .goBackBtn {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   transition: 0.3s;
 }
 
@@ -83,14 +83,14 @@ body {
 
 .appointments-header p {
   color: var(--darkerColor);
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bolder;
 }
 
 .pages a {
   color: var(--darkerColor);
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 2vmin;
+  font-weight: bolder;
   padding: 0 0.2vw;
 }
 
@@ -110,10 +110,11 @@ body {
   color: var(--textColor);
   display: flex;
   flex-flow: row nowrap;
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bolder;
   justify-content: space-between;
   padding: 2vh 1vw;
+  transition: all 0.2s ease;
 }
 
 .appointment:nth-child(odd) {
@@ -124,8 +125,14 @@ body {
   background-color: white;
 }
 
+.appointment:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
 .appointment i {
-  font-size: 2rem;
+  font-size: 4vmin;
   padding: 0 0.5vw;
 }
 
@@ -166,7 +173,7 @@ body {
 
 .appointment-button a {
   color: white;
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bolder;
   text-decoration: none;
 }
