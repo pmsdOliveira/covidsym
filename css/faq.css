@@ -58,7 +58,7 @@ body {
 
 .modal-header h1 {
   color: white;
-  font-size: 1.8rem;
+  font-size: 4vmin;
 }
 
 .modal-content {
@@ -74,7 +74,7 @@ body {
 
 .goBackBtn {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   transition: 0.3s;
 }
 
@@ -123,7 +123,7 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  font-size: 1.15rem;
+  font-size: 2vmin;
   outline: none;
 }
 
@@ -138,7 +138,7 @@ body {
   color: var(--textColor);
   font-weight: bold;
   float: right;
-  font-size: 1rem;
+  font-size: 2vmin;
   margin-left: 2vw;
   outline: none;
 }
@@ -159,7 +159,7 @@ body {
   padding: 0.5vh 2vw;
   margin-bottom: 2vh;
   text-decoration-color: rgba(0, 0, 0, 0);
-  font-size: 0.9rem;
+  font-size: 2vmin;
   line-height: 1.5;
   box-sizing: border-box;
   border-radius: 0 0 20px 20px;
