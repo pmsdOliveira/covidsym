@@ -179,3 +179,14 @@ body {
 .dropdown {
   padding-left: 8vw;
 }
+.TopSide {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+
+  justify-content: space-between;
+}
+.TopSide select {
+  margin: 1.5vh 0vw;
+  font-size: 1rem;
+}

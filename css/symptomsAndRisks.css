@@ -92,6 +92,9 @@ body {
   display: block;
   margin: 0.8vh 0;
 }
+.form table {
+  width: 100%;
+}
 .temperature {
   background: var(--backgroundColor);
   border: 0px;
@@ -125,4 +128,9 @@ input[type="submit"]:active {
 input[type="checkbox"] {
   background-color: #3d3d3d;
   margin-left: 2vw;
+}
+.buttonSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

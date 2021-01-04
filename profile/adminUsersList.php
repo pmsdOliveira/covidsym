@@ -25,26 +25,20 @@
                         </i>
                         <h1>Users</h1>
                     </div>
-                    <div class=" user-list">
-                        <table>
-                            <tr>
-                                <td>
-                                    <p class="p">Select a user to see his profile:</p>
-                                </td>
-                                <td>
-                                    <div class="pages">
-                                        <a class="currentPage">1</a>
-                                        <a href="#">2</a>
-                                        <a href="#">3</a>
-                                        <a href="#">4</a>
-                                        <a href="#">5</a>
-                                        <a href="#">></a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                        
-                        <?php
+                    <div >
+                        <div class="topSide">
+                            <div class="p">Select a user to see his profile:</div>      
+                            <div class="pages">
+                                <a class="currentPage">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">></a>
+                            </div>
+                        </div>
+                        <div class=" user-list">
+                            <?php
                             for ($i = 0; $i < 5; $i++) {
                                 echo '<div class=" user">
                                         <i class="fas fa-user-circle"></i>
@@ -53,10 +47,12 @@
                                         <button>Select</button>
                                     </div>';
                             }
-                        ?>
-                        <div class="buttonSide">
-                                <button>Create new User</button>
+                            ?>
+                            <div class="buttonSide">
+                                    <button>Create new User</button>
+                            </div>
                         </div>
+                        
                     </div>
                     
                 </div>

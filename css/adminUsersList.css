@@ -90,6 +90,7 @@ body {
   font-weight: bolder;
   padding: 2vh 0;
   text-align: left;
+  width: 50%;
 }
 
 .user {
@@ -135,11 +136,7 @@ body {
 }
 
 .pages {
-  display: flex;
-  justify-content: end;
-  margin: 2vh auto;
-  margin-left: 12vw;
-  width: calc(100% - 4vw);
+  margin: 2vh;
 }
 
 .pages a {
@@ -176,4 +173,12 @@ body {
 .buttonSide button:active {
   transform: scale(0.95);
   transition: all 0.3s ease;
+}
+
+.TopSide {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: calc(100% - 5vw);
+  justify-content: space-between;
 }

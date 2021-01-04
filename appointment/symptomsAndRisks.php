@@ -97,7 +97,9 @@
                 <td><label>Change in Appetite</label></td>
                 <td><input name="Appetite" type="checkbox" /></td>
                 <td rowspan="2" colspan="2">
-                  <input type="submit" value="Next" />
+                  <div class="buttonSide">
+                    <input type="submit" value="Next" />
+                  </div>
                 </td>
               </tr>
               <tr>

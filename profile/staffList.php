@@ -26,23 +26,14 @@
                         <h1>Staff</h1>
                     </div>
                     <div class=" staff-list">
-                        <table>
-                            <tr>
-                                <td>
-                                    <p class="p">Select a Staff Member to see his profile:</p>
-                                </td>
-                                <td>
-                                   
-                                        <select name="staff" id="staff">
-                                            <option value="Medic">Medic</option>
-                                            <option value="Investigator">Investigator</option>
-                                            <option value="Admin">Admin</option>
-                                        </select>
-                                    
-                                </td>
-                            </tr>
-                        </table>
-                        
+                        <div class="topSide">
+                            <p class="p">Select a Staff Member to see his profile:</p>     
+                            <select name="staff" id="staff">
+                                <option value="Medic">Medic</option>
+                                <option value="Investigator">Investigator</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
                         <?php
                             for ($i = 0; $i < 5; $i++) {
                                 echo '<div class=" staff">
