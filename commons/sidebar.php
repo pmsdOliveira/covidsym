@@ -15,15 +15,15 @@
 
     <body>
         <div class="sidebar">
-            <a class="sidebar-button" href="#">
+            <a class="sidebar-button" href="../main/userHomePage">
                 <i class="fas fa-home icon"></i>
                 Main Menu
             </a>
-            <a class="sidebar-button" href="#">
+            <a class="sidebar-button" href="../profile/userProfile">
                 <i class="far fa-id-card icon"></i>    
                 Profile
             </a>
-            <a class="sidebar-button" href="#">
+            <a class="sidebar-button" href="../appointment/appointments">
                 <i class="far fa-calendar-check icon"></i>    
                 Appointments
             </a>
@@ -31,7 +31,7 @@
                 <i class="fas fa-stethoscope icon"></i>     
                 Diagnosis
             </a>
-            <a class="sidebar-button" href="#">
+            <a class="sidebar-button" href="../info/faq">
                 <i class="far fa-question-circle icon"></i> 
                 FAQ
             </a>
