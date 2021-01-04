@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>COVIDSYM - symptoms and Risks</title>
+    <title>COVIDSYM - Symptoms and Risks</title>
 
     <link rel="icon" href="../img/icon.ico" type="image/icon type" />
 
