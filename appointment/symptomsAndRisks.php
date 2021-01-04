@@ -64,8 +64,9 @@
               <tr>
                 <td><label>Sore Throat</label></td>
                 <td><input name="throat" type="checkbox" /></td>
-                <td><label>Diabetes</label></td>
-                <td><input name="diabetes" type="checkbox" /></td>
+                <td><label>Heart Disease</label></td>
+                <td><input name="heart" type="checkbox" /></td>
+                
               </tr>
               <tr>
                 <td><label>Weakness</label></td>
@@ -90,21 +91,23 @@
               <tr>
                 <td><label>Chest Pain</label></td>
                 <td><input name="pain" type="checkbox" /></td>
-                <td><label>Symptoms Progressed</label></td>
-                <td><input name="progressed" type="checkbox" /></td>
+                <td><label>Diabetes</label></td>
+                <td><input name="diabetes" type="checkbox" /></td>
               </tr>
               <tr>
                 <td><label>Change in Appetite</label></td>
                 <td><input name="appetite" type="checkbox" /></td>
+                <td><label>Symptoms Progressed</label></td>
+                <td><input name="progressed" type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td><label>Loss of Smell</label></td>
+                <td><input name="smell" type="checkbox" /></td>
                 <td rowspan="2" colspan="2">
                   <div class="buttonSide">
                     <input type="submit" value="Next" />
                   </div>
                 </td>
-              </tr>
-              <tr>
-                <td><label>Loss of Smell</label></td>
-                <td><input name="smell" type="checkbox" /></td>
               </tr>
             </table>
           </form>
