@@ -50,11 +50,11 @@
                     required
                   />
                 </td>
-                <td><Label>Kidney Disease</Label></td>
+                <td><label>Kidney Disease</label></td>
                 <td><input name="Kidney" type="checkbox" /></td>
               </tr>
               <tr>
-                <td><Label>Dry Cough</Label></td>
+                <td><label>Dry Cough</label></td>
                 <td>
                   <input name="Cough" type="checkbox" />
                 </td>

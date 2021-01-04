@@ -57,13 +57,13 @@ body {
 
 .modal-header h1 {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   align-self: center;
 }
 
 .goBackBtn {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   transition: all 0.3s ease;
 }
 
@@ -77,29 +77,35 @@ body {
 }
 
 .symptoms {
-  padding-top: 1vh;
+  margin: 1vh 0;
   display: flex;
   justify-content: center;
 }
 
 .symptoms h4 {
   color: var(--darkerColor);
+  font-size: 2vmin;
 }
+
 .form {
-  padding: 2vh 2vw;
+  padding: 0 2vw 2vh;
 }
+
 .form label {
   display: block;
+  font-size: 2vmin;
   margin: 0.8vh 0;
 }
+
 .form table {
   width: 100%;
 }
+
 .temperature {
   background: var(--backgroundColor);
   border: 0px;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 2vmin;
   outline: none;
   padding-left: 1vw;
   transition: all 0.3s ease;
@@ -112,7 +118,7 @@ input[type="submit"] {
   border-radius: 25px;
   color: white;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bold;
   padding: 1vh 0;
   transition: all 0.3s ease;
@@ -129,6 +135,7 @@ input[type="checkbox"] {
   background-color: #3d3d3d;
   margin-left: 2vw;
 }
+
 .buttonSide {
   display: flex;
   justify-content: center;

@@ -60,12 +60,12 @@ body {
 
 .modal-header h1 {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
 }
 
 .goBackBtn {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   transition: 0.3s;
 }
 
@@ -86,7 +86,7 @@ body {
 
 .p {
   color: var(--darkerColor);
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bolder;
   padding: 2vh 0;
   text-align: left;
@@ -97,7 +97,7 @@ body {
   border-bottom: 1px solid var(--contrastColor);
   display: flex;
   flex-flow: row nowrap;
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bolder;
   justify-content: space-between;
   margin: auto;
@@ -110,7 +110,7 @@ body {
   border-radius: 25px;
   color: white;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bold;
   outline: none;
   padding: 0.5vh 1vw;
@@ -131,7 +131,7 @@ body {
 }
 
 .staff i {
-  font-size: 2rem;
+  font-size: 4vmin;
 }
 
 .pages {
@@ -143,7 +143,7 @@ body {
 
 .pages a {
   color: var(--darkerColor);
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bold;
   padding: 0 0.4vw;
 }
@@ -153,18 +153,20 @@ body {
   color: black;
   text-decoration: none;
 }
+
 .buttonSide {
   margin: 3vh 0;
   display: flex;
   justify-content: center;
 }
+
 .buttonSide button {
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border: none;
   border-radius: 25px;
   color: white;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 2vmin;
   font-weight: bold;
   outline: none;
   padding: 1vh 1vw;
@@ -176,9 +178,11 @@ body {
   transform: scale(0.95);
   transition: all 0.3s ease;
 }
+
 .dropdown {
   padding-left: 8vw;
 }
+
 .TopSide {
   display: flex;
   flex-direction: row;
@@ -186,7 +190,8 @@ body {
 
   justify-content: space-between;
 }
+
 .TopSide select {
   margin: 1.5vh 0vw;
-  font-size: 1rem;
+  font-size: 2vmin;
 }
