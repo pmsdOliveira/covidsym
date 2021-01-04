@@ -96,7 +96,7 @@ body {
   width: 100%;
 }
 
-.modal-body a {
+.modal-body .buttons a {
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border: none;
   border-radius: 25px;
@@ -113,7 +113,7 @@ body {
   width: 80%;
 }
 
-.modal-body a:active {
+.modal-body .buttons a:active {
   transform: scale(0.95);
   transition: all 0.3s ease;
 }

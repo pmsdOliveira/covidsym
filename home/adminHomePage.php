@@ -32,8 +32,10 @@
           </div>
 
           <div class="modal-body">
-            <button>Create New User</button>
-            <button>Create New Staff Member</button>
+            <div class="buttons">
+              <a href="../appointment/appointments">Create New User</a>
+              <a href="../profile/usersList">Create New Staff Member</a>
+            </div>
           </div>
         </div>
       </div>
