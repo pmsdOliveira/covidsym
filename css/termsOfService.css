@@ -44,7 +44,7 @@ body {
 
 .modal-header h1 {
   color: white;
-  font-size: 32px;
+  font-size: 4vmin;
 }
 .modal-body {
   display: flex;
@@ -54,7 +54,7 @@ body {
 }
 .goBackBtn {
   color: white;
-  font-size: 32px;
+  font-size: 4vmin;
   padding: 0.5% 0;
   transition: 0.3s;
 }
@@ -75,14 +75,14 @@ body {
 
 .info h1 {
   color: var(--mainColor);
-  font-size: 20px;
+  font-size: 2.5vmin;
   font-weight: bold;
   text-align: center;
   margin: 2vh 0vw;
 }
 .info p {
   text-align: justify;
-  font-size: 15px;
+  font-size: 2vmin;
   font-weight: bold;
   padding-left: 5%;
   padding-right: 5%;
