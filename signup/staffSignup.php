@@ -6,7 +6,7 @@
 
     <link rel="icon" href="../img/icon.ico" type="image/icon type" />
 
-    <link rel="stylesheet" href="../css/staffRegistry.css" />
+    <link rel="stylesheet" href="../css/staffSignup.css" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com/" />
     <link
