@@ -27,10 +27,6 @@
                 <i class="far fa-calendar-check icon"></i>    
                 Appointments
             </a>
-            <a class="sidebar-button" href="#">
-                <i class="fas fa-stethoscope icon"></i>     
-                Diagnosis
-            </a>
             <a class="sidebar-button" href="../info/faq">
                 <i class="far fa-question-circle icon"></i> 
                 FAQ
