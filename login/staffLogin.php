@@ -19,7 +19,7 @@
         
         <div class="container">
             <div class="image-wrapper">
-                <img src="../img/logo.png" alt="Logo" height="50px" style="margin: auto;">
+                <img src="../img/logo.png" alt="Logo">
             </div>
 
             <div class="login-wrapper">
@@ -49,9 +49,7 @@
                         </div>
                     </div>
 
-                    <div class="field">
-                        <input type="submit" value="Login">
-                    </div>
+                    <input type="submit" value="Login">
                 </form>
             </div>
         </div>
