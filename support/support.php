@@ -24,8 +24,6 @@ function supportResult() {
     $symptomsProgressed = $_POST["progressed"];
 
     // Decision Tree - exported from CART
-    // ...
-
-    return $result;
+    // ... 
 }
 ?>

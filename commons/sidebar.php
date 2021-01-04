@@ -15,7 +15,7 @@
 
     <body>
         <div class="sidebar">
-            <a class="sidebar-button" href="../main/userHomePage">
+            <a class="sidebar-button" href="../home/userHomePage">
                 <i class="fas fa-home icon"></i>
                 Main Menu
             </a>
@@ -32,5 +32,7 @@
                 FAQ
             </a>
         </div>
+
+        <script src="../js/sidebar.js"></script>
     </body>
 </html>

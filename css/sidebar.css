@@ -47,7 +47,7 @@ body{
     background: var(--lighterColor);
 }
 
-.sidebar-button:hover .icon {
+.icon, .sidebar-button:hover .icon {
     color: white;
     transition: all 0.3s ease-out;
 }
