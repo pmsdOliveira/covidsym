@@ -23,7 +23,7 @@
 
       <div class="content-wrapper">
         <div class="image-wrapper">
-          <img src="../img/logo.png" height="50px" style="margin: auto" />
+          <img src="../img/logo.png" alt="logo"/>
         </div>
 
         <div class="modal">
@@ -32,14 +32,11 @@
           </div>
 
           <div class="modal-body">
-            <table>
-              <tr>
-                <td><h1>Users waiting for appointment:</h1></td>
-                <td>420</td>
-              </tr>
-            </table>
-            <button>See Appointments</button>
-            <button>New Appointment</button>
+            <p><span>Users waiting for appointment: </span>420</p>
+            <div class="buttons">
+              <a href="../appointment/appointments">See Appointments</a>
+              <a href="../profile/usersList">New Appointment</a>
+            </div>
           </div>
         </div>
       </div>
