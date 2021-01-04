@@ -55,12 +55,12 @@ body {
 
 .modal-header h1 {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
 }
 
 .goBackBtn {
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   transition: 0.3s;
 }
 
@@ -75,12 +75,16 @@ body {
 }
 
 .appointment-header {
+  color: var(--textColor);
   line-height: 1.5;
   margin: 2vh 2vw;
+  font-size: 2vmin;
 }
 
 .bold {
+  color: var(--textColor);
   font-weight: bolder;
+  font-size: 2.1vmin;
 }
 
 .grid {
@@ -106,7 +110,8 @@ body {
   background-color: var(--backgroundColor);
   border: none;
   border-radius: 15px;
-  font-size: 1rem;
+  color: var(--textColor);
+  font-size: 2vmin;
   outline: none;
   padding: 0.5vh 0.5vw;
   resize: none;
