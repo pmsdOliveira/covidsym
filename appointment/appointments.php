@@ -57,9 +57,9 @@
                             <i class="fas fa-calendar-day"></i>
                               <p>dd/mm/aaaa</p>
                             </div>
-                            <p>Diagnosis: NA</p>' .
-                            //<i class="fas fa-arrow-right"><a href="#"></a></i>
-                        '</div>';
+                            <p>Diagnosis: NA</p>
+                            <i class="fas fa-arrow-right"><a href="#"></a></i>
+                        </div>';
                 }
             ?>
           </div>
