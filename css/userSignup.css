@@ -50,7 +50,7 @@ body {
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border-radius: 15px 15px 0 0;
   color: white;
-  font-size: 2rem;
+  font-size: 4vmin;
   font-weight: bold;
   padding: 1.5vh 0;
   text-align: center;
@@ -72,7 +72,7 @@ body {
   height: 100%;
   width: 100%;
   outline: none;
-  font-size: 1rem;
+  font-size: 2vmin;
   padding-left: 1vw;
   background: var(--backgroundColor);
   border: 0px;
@@ -86,7 +86,7 @@ body {
   left: 1vw;
   color: lightgrey;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 2vmin;
   pointer-events: none;
   transform: translateY(-50%);
   transition: all 0.3s ease;
@@ -110,7 +110,7 @@ body {
 form .field input:focus ~ label,
 form .field input:valid ~ label {
   top: 0%;
-  font-size: 0.9rem;
+  font-size: 1.5vmin;
   color: var(--mainColor);
   transform: translateY(-50%);
   padding: 0px 0.5vw;
@@ -123,7 +123,7 @@ form input[type="submit"] {
   border-radius: 30px;
   color: white;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 3vmin;
   font-weight: bold;
   outline: none;
   padding: 1.5vh 0;
@@ -139,6 +139,7 @@ form input[type="submit"]:active {
   color: var(--textColor);
   margin: 3vh 0;
   font-weight: bold;
+  font-size: 2vmin;
   text-align: center;
 }
 
