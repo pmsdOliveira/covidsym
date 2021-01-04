@@ -51,51 +51,51 @@
                   />
                 </td>
                 <td><label>Kidney Disease</label></td>
-                <td><input name="Kidney" type="checkbox" /></td>
+                <td><input name="kidney" type="checkbox" /></td>
               </tr>
               <tr>
                 <td><label>Dry Cough</label></td>
                 <td>
-                  <input name="Cough" type="checkbox" />
+                  <input name="cough" type="checkbox" />
                 </td>
                 <td><label>Lung Disease</label></td>
-                <td><input name="Lung" type="checkbox" /></td>
+                <td><input name="lung" type="checkbox" /></td>
               </tr>
               <tr>
                 <td><label>Sore Throat</label></td>
-                <td><input name="Throat" type="checkbox" /></td>
+                <td><input name="throat" type="checkbox" /></td>
                 <td><label>Diabetes</label></td>
-                <td><input name="Diabetes" type="checkbox" /></td>
+                <td><input name="diabetes" type="checkbox" /></td>
               </tr>
               <tr>
                 <td><label>Weakness</label></td>
                 <td>
-                  <input name="Weakness" type="checkbox" />
+                  <input name="weakness" type="checkbox" />
                 </td>
                 <td><label>Recently Travelled</label></td>
-                <td><input name="Travelled" type="checkbox" /></td>
+                <td><input name="travelled" type="checkbox" /></td>
               </tr>
               <tr>
                 <td><label>Breathing Dificulties</label></td>
-                <td><input name="Breathing" type="checkbox" /></td>
+                <td><input name="breathing" type="checkbox" /></td>
                 <td><label>High Blood Pressure</label></td>
-                <td><input name="Blood" type="checkbox" /></td>
+                <td><input name="blood" type="checkbox" /></td>
               </tr>
               <tr>
-                <td><label>Drownsiness</label></td>
-                <td><input name="Drownsiness" type="checkbox" /></td>
+                <td><label>Drowsiness</label></td>
+                <td><input name="drowsiness" type="checkbox" /></td>
                 <td><label>Stroke or Reduced Imunity</label></td>
-                <td><input name="Stroke" type="checkbox" /></td>
+                <td><input name="stroke" type="checkbox" /></td>
               </tr>
               <tr>
                 <td><label>Chest Pain</label></td>
-                <td><input name="Pain" type="checkbox" /></td>
+                <td><input name="pain" type="checkbox" /></td>
                 <td><label>Symptoms Progressed</label></td>
-                <td><input name="Symptoms" type="checkbox" /></td>
+                <td><input name="progressed" type="checkbox" /></td>
               </tr>
               <tr>
                 <td><label>Change in Appetite</label></td>
-                <td><input name="Appetite" type="checkbox" /></td>
+                <td><input name="appetite" type="checkbox" /></td>
                 <td rowspan="2" colspan="2">
                   <div class="buttonSide">
                     <input type="submit" value="Next" />
@@ -104,7 +104,7 @@
               </tr>
               <tr>
                 <td><label>Loss of Smell</label></td>
-                <td><input name="Smell" type="checkbox" /></td>
+                <td><input name="smell" type="checkbox" /></td>
               </tr>
             </table>
           </form>
