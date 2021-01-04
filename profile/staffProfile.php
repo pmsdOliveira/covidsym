@@ -46,7 +46,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="names"><label>Staff Type:</label></td>
+                    <td class="names"><label>Staff Type</label></td>
                     <td><label>Medic/Investigator/Admin</label></td>
                   </tr>
                 </td>
@@ -54,7 +54,7 @@
               <tr>
                 <td class="names"><label>Name</label></td>
                 <td colspan="2">
-                  <input name="name" placeholder="Name from DB" type="text" />
+                  <input name="name" value="Name from DB" type="text" />
                 </td>
               </tr>
               <tr>
@@ -62,7 +62,7 @@
                 <td colspan="2">
                   <input
                     name="email"
-                    placeholder="Email from DB"
+                    value="Email from DB"
                     type="email"
                   />
                 </td>
@@ -72,8 +72,8 @@
                 <td colspan="2">
                   <input
                     name="number"
-                    placeholder="Phone number from DB"
-                    type="number"
+                    value="123456789"
+                    type="text"
                   />
                 </td>
               </tr>
@@ -82,7 +82,7 @@
                 <td colspan="2">
                   <input
                     name="address"
-                    placeholder="Address from DB"
+                    value="Address from DB"
                     type="text"
                   />
                 </td>
