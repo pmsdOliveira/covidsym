@@ -1,15 +1,10 @@
 const validateName = name => /^(?=.{5,100}$)[A-zÀ-ú]+(?: [A-zÀ-ú]+)*$/.test(name)
 
-const validateEmail = email => {
-  const regex = /^(?=.{8,50}$)(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  return regex.test(email)
-}
-
 const validatePhone = phone => /^(?=.{8,20}$)[+]{1}[-\s0-9]*$/.test(phone)
 
-const validateAddress = address => /^(?=.{10,100}$)[\s\dA-zÀ-ú,.ºª'"-]+$/.test(address)
+const validateAddress = address => /^(?=.{5,100}$)[\s\dA-zÀ-ú,.ºª'"@#-]+$/.test(address)
 
-const validateLocalOrDistrict = localOrDistrict => /^(?=.{10,100}$)[\sA-zÀ-ú,.ºª'"-]+$/.test(localOrDistrict)
+const validateLocalOrDistrict = localOrDistrict => /^(?=.{5,50}$)[\s\dA-zÀ-ú,.ºª'"@#-]+$/.test(localOrDistrict)
 
 const validateBirthdate = birthdate => {{
   const currentDate = new Date();
@@ -30,14 +25,13 @@ const validateBirthdate = birthdate => {{
   }
 }
 
-const validateFiscalOrHealthcare = fiscalOrHealthcare => /^(?=.{7,11}$)[\d]*$/.test(fiscalOrHealthcare)
+const validateFiscalOrHealthcare = fiscalOrHealthcare => /^(?=.{5,20}$)[\d]*$/.test(fiscalOrHealthcare)
 
 
 // USER PROFILE
 
 const validateUserProfileForm = () => {
   const name = document.getElementById("profile-name").value
-  const email = document.getElementById("profile-email").value
   const phone = document.getElementById("profile-phone").value
   const address = document.getElementById("profile-address").value
   const local = document.getElementById("profile-local").value
@@ -51,28 +45,23 @@ const validateUserProfileForm = () => {
     return false
   }
 
-  if (!validateEmail(email)) {
-    alert("Please insert a valid email (8 to 50 alphanumeric, _, . or @ characters).")
-    return false
-  }
-
   if (!validatePhone(phone)) {
     alert("Please insert a valid phone number (8 to 20 digits starting with '+' and your country code).")
     return false
   }
 
   if (!validateAddress(address)) {
-    alert("Please insert a valid address (10 to 100 alphanumeric characters, ', \", ., º, ª, etc.).")
+    alert("Please insert a valid address (5 to 100 alphanumeric characters, º, #, etc.).")
     return false
   }
 
   if (!validateLocalOrDistrict(local)) {
-    alert("Please insert a valid local (10 to 100 alphabetic characters, ', \", ., º, ª, etc.).")
+    alert("Please insert a valid local (5 to 50 alphabetic characters, ', \", ., º, ª, etc.).")
     return false
   }
 
   if (!validateLocalOrDistrict(district)) {
-    alert("Please insert a valid district (10 to 100 alphabetic characters, ', \", ., º, ª, etc.).")
+    alert("Please insert a valid district (5 to 50 alphabetic characters, ', \", ., º, ª, etc.).")
     return false
   }
 
@@ -82,12 +71,12 @@ const validateUserProfileForm = () => {
   }
 
   if (!validateFiscalOrHealthcare(fiscal)) {
-    alert("Please insert a valid fiscal number (7 to 11 digits).")
+    alert("Please insert a valid fiscal number (5 to 20 digits).")
     return false
   }
 
   if (!validateFiscalOrHealthcare(healthcare)) {
-    alert("Please insert a valid healthcare number (7 to 11 digits).")
+    alert("Please insert a valid healthcare number (5 to 20 digits).")
     return false
   }
 

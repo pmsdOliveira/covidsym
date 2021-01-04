@@ -53,12 +53,6 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><label>Email</label></td>
-                      <td>
-                        <input id="profile-email" name="email" value="Email from DB" type="email" required/>
-                      </td>
-                    </tr>
-                    <tr>
                       <td><label>Phone Number</label></td>
                       <td>
                         <input id="profile-phone" name="phone" value="XXXXXXXXXX from DB" type="text" required/>

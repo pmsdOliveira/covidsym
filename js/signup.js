@@ -1,11 +1,11 @@
-const validateUsername = username => /^(?=.{8,50}$)[a-zA-Z0-9_.]+$/.test(username)
+const validateUsername = username => /^(?=.{8,50}$)[a-zA-Z0-9_. ]+$/.test(username)
 
 const validateEmail = email => {
-  const regex = /^(?=.{8,50}$)(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  const regex = /^(?=.{8,100}$)(([a-zA-Z0-9_.-]+(\.[a-zA-Z0-9_.-]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return regex.test(email)
 }
 
-const validatePassword = password => /^(?=.*\d*[a-zA-Z]*).{8,50}$/.test(password)
+const validatePassword = password => /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,50}$/.test(password)
 
 const validateConfirmPassword = (password, confirmPassword) => password === confirmPassword
 
@@ -19,12 +19,12 @@ const validateUserSignupForm = () => {
   const confirmPassword = document.getElementById("signup-confirm-password").value
 
   if (!validateUsername(username)) {
-    alert("Please insert a valid username (8 to 50 alphanumeric or _ characters).")
+    alert("Please insert a valid username (8 to 50 alphanumeric, space, . or _ characters).")
     return false
   }
 
   if (!validateEmail(email)) {
-    alert("Please insert a valid email (8 to 50 alphanumeric, _, . or @ characters).")
+    alert("Please insert a valid email (8 to 100 alphanumeric, _, ., - or @ characters).")
     return false
   }
 
