@@ -1,5 +1,4 @@
 const setTableCookie = () => {
   const table = document.getElementById("staff").value
-  document.cookie = "table=" + table
-  document.location.href = "staffList?page=1"
+  document.location.href = "staffList?page=1&type=" + table
 }
