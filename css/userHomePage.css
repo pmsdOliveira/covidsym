@@ -100,7 +100,7 @@ body {
   color: var(--textColor);
 }
 
-.modal-body button {
+.modal-body a {
   width: 90%;
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border: none;
@@ -111,10 +111,12 @@ body {
   font-weight: bold;
   outline: none;
   padding: 1.2vh 0;
+  text-align: center;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.modal-body button:active {
+.modal-body a:active {
   transform: scale(0.95);
   transition: all 0.3s ease;
 }

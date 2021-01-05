@@ -15,7 +15,10 @@
     <body>
         <?php 
             include("../commons/config.php");
-            $pageNumber = $_GET["page"];
+            if (isset($_GET["page"]))
+                $pageNumber = $_GET["page"];
+            else
+                $pageNumber = 1;
             $firstResult = ($pageNumber - 1) * 5;
 
             $query = "SELECT * FROM patient";
@@ -59,7 +62,7 @@
                         <?php
                             for ($i = 1; $i <= $nPages; $i++) {
                                 if ($i == $pageNumber)
-                                    echo '<p class="bold">' . $i . '</p>';
+                                    echo '<p>' . $i . '</p>';
                                 else
                                     echo '<a href="usersList?page=' . $i . '">' . $i . '</a>';
                             }

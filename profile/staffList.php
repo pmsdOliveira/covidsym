@@ -79,8 +79,7 @@
               $query = "SELECT * FROM " . $table . " WHERE id > " . $firstResult;
               $result = mysqli_query($connect, $query)
                   or die(mysqli_error($connect));
-            ?>
-            <?php
+              
               for ($i = 0; $i < 5; $i++) {
                 echo '<div class="staff">';
                 if ($staff = mysqli_fetch_array($result)) {
@@ -95,7 +94,7 @@
             <?php
               for ($i = 1; $i <= $nPages; $i++) {
                 if ($i == $pageNumber)
-                  echo '<p class="bold">' . $i . '</p>';
+                  echo '<p>' . $i . '</p>';
                 else
                   echo '<a href="staffList?page=' . $i . '">' . $i . '</a>';
                 }
