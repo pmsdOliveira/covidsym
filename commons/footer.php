@@ -14,7 +14,7 @@
 
     <body>
         <div class="footer">
-            <a href="#"><img src="../img/logo-white.png" alt="Logo"></a>
+            <a href="../home/userHomePage.php"><img src="../img/logo-white.png" alt="Logo"></a>
             <p>Project developed for Medical Information Systems Course @ FCT-NOVA</p>
             <p>Copyright &copy; 2020</p>
         </div>

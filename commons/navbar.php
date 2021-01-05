@@ -14,7 +14,7 @@
 
     <body>
         <div class="navbar">
-            <a href="#"><img src="../img/logo-white.png" alt="Logo"></a>
+            <a href="../home/userHomePage.php"><img src="../img/logo-white.png" alt="Logo"></a>
             <div class="nav-links">
                 <a href="#">Logout</a>
             </div>
