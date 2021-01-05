@@ -99,6 +99,7 @@ body {
   flex-flow: row nowrap;
   font-size: 2vmin;
   font-weight: bolder;
+  height: 8vh;
   justify-content: space-between;
   margin: auto;
   padding: 2vh 1vw;
@@ -130,8 +131,11 @@ body {
   background-color: white;
 }
 
-.user i {
-  font-size: 4vmin;
+.user .profile-pic {
+  border: 2px var(--lighterColor) solid;
+  border-radius: 50%;
+  height: 7vmin;
+  width: 7vmin;
 }
 
 .pages {
@@ -141,7 +145,8 @@ body {
   width: calc(100% - 4vw);
 }
 
-.pages a {
+.pages a,
+.pages p {
   color: var(--darkerColor);
   font-size: 2vmin;
   font-weight: bold;

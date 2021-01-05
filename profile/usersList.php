@@ -13,6 +13,23 @@
     </head>
 
     <body>
+        <?php 
+            $pageNumber = $_GET["page"];
+            $firstResult = ($pageNumber - 1) * 5;
+
+            $connect = mysqli_connect("localhost", "root", "", "covidsym")
+                or die("Error connecting to COVIDSYM database.");
+
+            $query = "SELECT * FROM patient";
+            $result = mysqli_query($connect, $query)
+                or die(mysqli_error($connect));
+            $nPages = intval(mysqli_num_rows($result) / 5 + 1);
+            
+            $query = "SELECT * FROM patient WHERE id > " . $firstResult;
+            $result = mysqli_query($connect, $query)
+                or die(mysqli_error($connect));
+        ?>
+
         <?php include "../commons/navbar.php"; ?>
 
         <div class="wrapper">
@@ -30,22 +47,28 @@
                         <p>Select a user to see his profile:</p>
                         <?php
                             for ($i = 0; $i < 5; $i++) {
-                                echo '<div class=" user">
-                                        <i class="fas fa-user-circle"></i>
-                                        <p>Albertino da Conceição</p>
-                                        
-                                        <button>Select</button>
-                                    </div>';
+                                echo '<div class="user">';
+                                if ($patient = mysqli_fetch_array($result)) {
+                                    echo '<img class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($patient["profile_pic"]) . '"/>';
+                                    echo '<p>'. $patient["name"] . '</p>
+                                        <button>Select</button>';
+                                } else {
+                                    break;
+                                }
+                                echo '</div>';
                             }
                         ?>
                     </div>
                     <div class="pages">
-                        <a class="currentPage">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#">></a>
+                        <?php
+                            for ($i = 1; $i <= $nPages; $i++) {
+                                if ($i == $pageNumber)
+                                    echo '<p class="bold">' . $i . '</p>';
+                                else
+                                    echo '<a href="usersList?page=' . $i . '">' . $i . '</a>';
+                            }
+                        ?>
+                        <a href=""
                     </div>
                 </div>
             </div>
