@@ -93,14 +93,14 @@ body {
 }
 
 .medic {
-  align-items: center;
   border-bottom: 1px solid var(--contrastColor);
-  display: flex;
-  flex-flow: row nowrap;
+  display: grid;
   font-size: 2vmin;
   font-weight: bolder;
-  justify-content: space-around;
-  margin: auto;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  height: 8vmin;
+  justify-items: center;
   padding: 2vh 1vw;
 }
 
@@ -141,11 +141,12 @@ body {
   width: calc(100% - 4vw);
 }
 
-.pages a {
+.pages a,
+.pages p {
   color: var(--darkerColor);
   font-size: 2vmin;
   font-weight: bold;
-  padding: 0 0.2vw;
+  padding: 0 0.4vw;
 }
 
 .currentPage {
