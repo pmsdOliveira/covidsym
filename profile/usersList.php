@@ -14,11 +14,9 @@
 
     <body>
         <?php 
+            include("../commons/config.php");
             $pageNumber = $_GET["page"];
             $firstResult = ($pageNumber - 1) * 5;
-
-            $connect = mysqli_connect("localhost", "root", "", "covidsym")
-                or die("Error connecting to COVIDSYM database.");
 
             $query = "SELECT * FROM patient";
             $result = mysqli_query($connect, $query)

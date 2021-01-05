@@ -1,5 +1,28 @@
 <!DOCTYPE html>
 
+<?php 
+    // include("../commons/config.php");
+    // session_start();
+
+    // if($_SERVER["REQUEST_METHOD" == "POST"]) {
+    //     $email = mysqli_real_escape_string($connect, $_POST["email"]);
+    //     $password = md5(mysqli_real_escape_string($connect, $_POST["password"]));
+
+    //     $query = "SELECT * FROM user WHERE email = '$email' and password = '$password'";
+    //     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+
+    //     $count = mysqli_num_rows($result);
+
+    //     if($count == 1) {
+    //         $user = mysqli_fetch_array($result);            
+    //         $query = "SELECT * FROM patient WHERE user_id = '$user["id"]'";
+    //         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+            
+    //         $count = mysqli_num_rows($result);
+    //     }
+    // }
+?>
+
 <html>
     <head>
         <title>COVIDSYM - User Login</title>
@@ -28,12 +51,12 @@
 
                     <form action="../login/checkLogin.php" method="POST">
                         <div class="field">
-                            <input type="text" name="Email" required>
+                            <input type="text" name="email" required>
                             <label>Email</label>
                         </div>
 
                         <div class="field">
-                            <input type="password" required>
+                            <input type="password" name="password" required>
                             <label>Password</label>
                         </div>
 
