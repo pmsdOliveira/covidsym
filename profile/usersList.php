@@ -49,7 +49,7 @@
                                 if ($patient = mysqli_fetch_array($result)) {
                                     echo '<img class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($patient["profile_pic"]) . '"/>';
                                     echo '<p>'. $patient["name"] . '</p>
-                                        <button>Select</button>';
+                                        <button class="patient-button" id="' . $patient["id"] . '">Select</button>';
                                 } else {
                                     break;
                                 }
@@ -72,6 +72,8 @@
             </div>
         </div>
         <?php include('../commons/footer.php'); ?>
+
+        <script src="../js/userList.js"></script>
     </body>
 
 </html>

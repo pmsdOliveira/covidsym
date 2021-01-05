@@ -114,8 +114,9 @@
                             />
                           </label>
                           <label>Other
-                            <input name="gender" type="radio" value="other" required/>
+                            <input name="gender" type="radio" value="other" required
                                 <?php echo ($user["gender"] == "O") ? "checked" : null ?>
+                            />
                           </label>
                         </div>
                       </td>
