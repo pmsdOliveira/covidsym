@@ -66,7 +66,6 @@
                                     echo '<a href="usersList?page=' . $i . '">' . $i . '</a>';
                             }
                         ?>
-                        <a href=""
                     </div>
                 </div>
             </div>

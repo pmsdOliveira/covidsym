@@ -93,11 +93,12 @@ body {
   font-weight: bolder;
 }
 
-.pages a {
+.pages a,
+.pages p {
   color: var(--darkerColor);
   font-size: 2vmin;
-  font-weight: bolder;
-  padding: 0 0.2vw;
+  font-weight: bold;
+  padding: 0 0.4vw;
 }
 
 .currentPage {
@@ -113,14 +114,14 @@ body {
 .staff {
   align-items: center;
   border-bottom: 1px solid var(--contrastColor);
-  color: var(--textColor);
   display: flex;
   flex-flow: row nowrap;
   font-size: 2vmin;
   font-weight: bolder;
+  height: 8vh;
   justify-content: space-between;
+  margin: auto;
   padding: 2vh 1vw;
-  transition: all 0.2s ease;
 }
 
 .staff:nth-child(odd) {
@@ -129,11 +130,6 @@ body {
 
 .staff:nth-child(even) {
   background-color: white;
-}
-
-.staff i {
-  font-size: 4vmin;
-  padding: 0 0.5vw;
 }
 
 .staff-id,

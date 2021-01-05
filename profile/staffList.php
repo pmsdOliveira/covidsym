@@ -34,33 +34,72 @@
           </div>
 
           <div class="staffs-header">
-            <p>Select a Staff Member to see his profile:</p>     
-            <select name="staff" id="staff">
-                <option value="Medic">Medic</option>
-                <option value="Investigator">Investigator</option>
-                <option value="Admin">Admin</option>
-            </select>
+            <p>Select a Staff Member to see his profile:</p>   
+            <form action="" method="POST">  
+              <select name="staff" id="staff" onchange="setTableCookie();">
+                <?php
+                  include("../commons/config.php");
+                  if(isset($_COOKIE["table"])) {
+                    $table = $_COOKIE["table"];
+                    if ($table == "medic")
+                      echo '<option value="medic" selected>Medic</option>
+                            <option value="investigator">Investigator</option>
+                            <option value="admin">Admin</option>';
+                    else if ($table == "investigator")
+                      echo '<option value="medic">Medic</option>
+                            <option value="investigator" selected>Investigator</option>
+                            <option value="admin">Admin</option>';
+                    else if ($table == "admin")
+                      echo '<option value="medic">Medic</option>
+                            <option value="investigator">Investigator</option>
+                            <option value="admin" selected>Admin</option>';
+                  } else {
+                    $table = "medic";
+                    echo '<option value="medic" selected>Medic</option>
+                          <option value="investigator">Investigator</option>
+                          <option value="admin">Admin</option>';
+                  }
+                ?>
+              </select>
+            </form>
           </div>
           <div class="staffs-list">
+          <?php
+              $pageNumber = $_GET["page"];
+              $firstResult = ($pageNumber - 1) * 5;
+
+              $query = "SELECT * FROM " . $table;
+              $result = mysqli_query($connect, $query)
+                  or die(mysqli_error($connect));
+              $nPages = intval(mysqli_num_rows($result) / 5 + 1);
+              
+              $query = "SELECT * FROM " . $table . " WHERE id > " . $firstResult;
+              $result = mysqli_query($connect, $query)
+                  or die(mysqli_error($connect));
+            ?>
             <?php
-                for ($i = 0; $i < 5; $i++) {
-                    echo '<div class=" staff">
-                            <i class="fas fa-user-circle"></i>
-                            <p>Albertino da Conceição</p>
-                                        
-                            <button class="button">Select</button>
-                        </div>';
-                }
-                ?>
+              for ($i = 0; $i < 5; $i++) {
+                echo '<div class=" staff">';
+                if ($staff = mysqli_fetch_array($result)) {
+                  echo '<p>' . $staff["name"] . '</p>
+                        <button class="button">Select</button>';
+                } else {
+                  break;
+                }        
+                echo '</div>';
+              }
+            ?>
           </div>
           <div class="pages">
-                <a class="currentPage">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">></a>
-            </div>
+            <?php
+              for ($i = 1; $i <= $nPages; $i++) {
+                if ($i == $pageNumber)
+                  echo '<p class="bold">' . $i . '</p>';
+                else
+                  echo '<a href="staffList?page=' . $i . '">' . $i . '</a>';
+                }
+            ?>
+          </div>
           <div class="staff-button">
             <a href="#">Create New Staff Member</a>
           </div>
@@ -69,5 +108,6 @@
     </div>
 
     <?php include('../commons/footer.php'); ?>
+    <script src="../js/staffList.js">setTableCookie()</script>
   </body>
 </html>
