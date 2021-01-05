@@ -20,6 +20,21 @@
   </head>
 
   <body>
+    <?php 
+        include("../commons/config.php");
+
+        $staffType = $_GET["staff"];
+        $staffID = $_GET["id"];
+
+        $query = "SELECT * FROM $staffType JOIN user ON $staffType.user_id = user.id WHERE $staffType.id = $staffID";
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+        $count = mysqli_num_rows($result);
+
+        if ($count == 1) {
+            $staff = mysqli_fetch_array($result);
+        }
+    ?>
+
     <?php include "../commons/navbar.php"; ?>
 
     <div class="wrapper">
@@ -40,21 +55,21 @@
                 <td>
                   <tr>
                     <td class="names"><label>Staff ID</label></td>
-                    <td><label>nº12345678</label></td>
+                    <td><label><?php echo $staffID?></label></td>
                     <td class="buttonSide">
                       <input type="submit" value="Update Profile" />
                     </td>
                   </tr>
                   <tr>
                     <td class="names"><label>Staff Type</label></td>
-                    <td><label>Medic/Investigator/Admin</label></td>
+                    <td><label><?php echo $staffType?></label></td>
                   </tr>
                 </td>
               </tr>
               <tr>
                 <td class="names"><label>Name</label></td>
                 <td colspan="2">
-                  <input name="name" value="Name from DB" type="text" />
+                  <input name="name" value="<?php echo $staff["name"]?>" type="text" />
                 </td>
               </tr>
               <tr>
@@ -62,7 +77,7 @@
                 <td colspan="2">
                   <input
                     name="email"
-                    value="Email from DB"
+                    value="<?php echo $staff["email"]?>"
                     type="email"
                   />
                 </td>
@@ -72,7 +87,7 @@
                 <td colspan="2">
                   <input
                     name="number"
-                    value="123456789"
+                    value="<?php echo $staff["phone"]?>"
                     type="text"
                   />
                 </td>
@@ -82,7 +97,7 @@
                 <td colspan="2">
                   <input
                     name="address"
-                    value="Address from DB"
+                    value="<?php echo $staff["address"]?>"
                     type="text"
                   />
                 </td>

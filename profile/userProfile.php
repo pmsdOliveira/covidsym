@@ -20,6 +20,19 @@
   </head>
 
   <body>
+    <?php 
+        include("../commons/config.php");
+        $patientID = $_GET["patientID"];
+
+        $query = "SELECT * FROM patient JOIN user ON patient.user_id = user.id WHERE patient.id = $patientID";
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+        $count = mysqli_num_rows($result);
+
+        if ($count == 1) {
+            $user = mysqli_fetch_array($result);
+        }
+    ?>
+
     <?php include "../commons/navbar.php"; ?>
 
     <div class="wrapper">
@@ -38,8 +51,8 @@
             <tr>
               <td class="table_left">
                 <div class="profile">
-                  <h2>[Username]</h2>
-                  <i class="fas fa-user-circle profileIcon"></i>
+                  <h2><?php echo $user["username"]?></h2>
+                  <?php echo '<img class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($user["profile_pic"]) . '"/>';?>
                   <button>Update Picture</button>
                 </div>
               </td>
@@ -49,49 +62,60 @@
                     <tr>
                       <td><label>Name</label></td>
                       <td>
-                        <input id="profile-name" name="name" value="Name from DB" type="text" required/>
+                        <input id="profile-name" name="name" value="<?php echo $user["name"]?>" type="text" required/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Email</label></td>
+                      <td>
+                        <input id="profile-email" name="email" value="<?php echo $user["email"]?>" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Phone Number</label></td>
                       <td>
-                        <input id="profile-phone" name="phone" value="XXXXXXXXXX from DB" type="text" required/>
+                        <input id="profile-phone" name="phone" value="<?php echo $user["phone"]?>" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Address</label></td>
                       <td>
-                        <input id="profile-address" name="address" value="Adress from DB" type="text" required/>
+                        <input id="profile-address" name="address" value="<?php echo $user["address"]?>" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Local</label></td>
                       <td>
-                        <input id="profile-local" name="local" value="Local from DB" type="text" required/>
+                        <input id="profile-local" name="local" value="<?php echo $user["local"]?>" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>District</label></td>
                       <td>
-                        <input id="profile-district" name="district" value="District from DB" type="text" required/>
+                        <input id="profile-district" name="district" value="<?php echo $user["district"]?>" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Birthdate</label></td>
-                      <td><input id="profile-birthdate" name="birthdate" type="date" required/></td>
+                      <td><input id="profile-birthdate" name="birthdate" type="date" value=<?php echo $user["birthdate"]?> required/></td>
                     </tr>
                     <tr>
                       <td><label>Gender</label></td>
                       <td>
                         <div class="gender">
                           <label>Male
-                            <input name="gender" type="radio" value="male" required/>
+                            <input name="gender" type="radio" value="male" required
+                                <?php echo ($user["gender"] == "M") ? "checked" : null ?>
+                            />
                           </label>
                           <label>Female
-                            <input name="gender" type="radio" value="female" required/>
+                            <input name="gender" type="radio" value="female" required
+                                <?php echo ($user["gender"] == "F") ? "checked" : null ?>
+                            />
                           </label>
                           <label>Other
                             <input name="gender" type="radio" value="other" required/>
+                                <?php echo ($user["gender"] == "O") ? "checked" : null ?>
                           </label>
                         </div>
                       </td>
@@ -99,13 +123,13 @@
                     <tr>
                       <td><label>Fiscal Number</label></td>
                       <td>
-                        <input id="profile-fiscal" name="fiscal" value="XXXXXXXX from DB" type="text" required/>
+                        <input id="profile-fiscal" name="fiscal" value="<?php echo $user["fiscal_number"]?>" type="text" required/>
                       </td>
                     </tr>
                     <tr>
                       <td><label>Healthcare Number</label></td>
                       <td>
-                        <input id="profile-healthcare" name="healthcare" value="XXXXXXXX from DB" type="text" required/>
+                        <input id="profile-healthcare" name="healthcare" value="<?php echo $user["healthcare_number"]?>" type="text" required/>
                       </td>
                     </tr>
                   </table>
