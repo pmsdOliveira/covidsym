@@ -27,7 +27,6 @@ body {
 .content-wrapper {
   align-items: center;
   display: flex;
-  flex-flow: column nowrap;
   height: 90vh;
   justify-content: center;
   margin-left: 200px;
@@ -40,22 +39,18 @@ body {
   -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  margin: 5vh 0;
   width: 50%;
 }
 
 .modal-header {
+  align-items: center;
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border-radius: 25px 25px 0 0;
-  padding: 1vh 4vw;
-  width: 100%;
-}
-
-.modal-header {
-  align-items: center;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  padding: 1vh 4vw;
+  width: 100%;
 }
 
 .modal-header h1 {
@@ -73,67 +68,6 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-
-.goBackBtn:active {
-  transform: scale(0.9);
-  transition: 0.3s;
-}
-
-.staff-list {
-  margin: 0 auto;
-  width: calc(100% - 5vw);
-}
-
-.p {
-  color: var(--darkerColor);
-  font-size: 2vmin;
-  font-weight: bolder;
-  padding: 2vh 0;
-  text-align: left;
-}
-
-.staff {
-  align-items: center;
-  border-bottom: 1px solid var(--contrastColor);
-  display: flex;
-  flex-flow: row nowrap;
-  font-size: 2vmin;
-  font-weight: bolder;
-  justify-content: space-between;
-  margin: auto;
-  padding: 2vh 1vw;
-}
-
-.staff button {
-  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
-  border: none;
-  border-radius: 25px;
-  color: white;
-  cursor: pointer;
-  font-size: 2vmin;
-  font-weight: bold;
-  outline: none;
-  padding: 0.5vh 1vw;
-  transition: all 0.3s ease;
-}
-
-.staff button:active {
-  transform: scale(0.95);
-  transition: all 0.3s ease;
-}
-
-.staff:nth-child(even) {
-  background-color: var(--backgroundColor);
-}
-
-.staff:nth-child(odd) {
-  background-color: white;
-}
-
-.staff i {
-  font-size: 4vmin;
-}
-
 .pages {
   display: flex;
   justify-content: center;
@@ -141,11 +75,29 @@ body {
   width: calc(100% - 4vw);
 }
 
+.goBackBtn:active {
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+.staffs-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 2vh 2vw;
+}
+
+.staffs-header p {
+  color: var(--darkerColor);
+  font-size: 2vmin;
+  font-weight: bolder;
+}
+
 .pages a {
   color: var(--darkerColor);
   font-size: 2vmin;
-  font-weight: bold;
-  padding: 0 0.4vw;
+  font-weight: bolder;
+  padding: 0 0.2vw;
 }
 
 .currentPage {
@@ -154,44 +106,92 @@ body {
   text-decoration: none;
 }
 
-.buttonSide {
-  margin: 3vh 0;
-  display: flex;
-  justify-content: center;
+.staffs-list {
+  margin: 0 2vw;
 }
 
-.buttonSide button {
+.staff {
+  align-items: center;
+  border-bottom: 1px solid var(--contrastColor);
+  color: var(--textColor);
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 2vmin;
+  font-weight: bolder;
+  justify-content: space-between;
+  padding: 2vh 1vw;
+  transition: all 0.2s ease;
+}
+
+.staff:nth-child(odd) {
+  background-color: var(--backgroundColor);
+}
+
+.staff:nth-child(even) {
+  background-color: white;
+}
+
+.staff i {
+  font-size: 4vmin;
+  padding: 0 0.5vw;
+}
+
+.staff-id,
+.staff-date {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.fa-arrow-right {
+  color: var(--darkerColor);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fa-arrow-right:active {
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.staff-button {
+  cursor: pointer;
+  display: flex;
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  border-radius: 25px;
+  justify-content: center;
+  margin: 2vh auto;
+  padding: 2vh 0;
+  transition: all 0.3s ease;
+  width: calc(100% - 4vw);
+}
+
+.staff-button:active {
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.staff-button a {
+  color: white;
+  font-size: 2vmin;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.button {
   background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
   border: none;
   border-radius: 25px;
   color: white;
   cursor: pointer;
-  font-size: 2vmin;
+  font-size: 1rem;
   font-weight: bold;
   outline: none;
-  padding: 1vh 1vw;
+  padding: 0.5vh 1vw;
   transition: all 0.3s ease;
-  width: 90%;
 }
 
-.buttonSide button:active {
+.button:active {
   transform: scale(0.95);
   transition: all 0.3s ease;
-}
-
-.dropdown {
-  padding-left: 8vw;
-}
-
-.TopSide {
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-
-  justify-content: space-between;
-}
-
-.TopSide select {
-  margin: 1.5vh 0vw;
-  font-size: 2vmin;
 }

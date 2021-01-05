@@ -16,8 +16,6 @@
 
 body {
   background-color: var(--backgroundColor);
-  display: flex;
-  flex-direction: column;
 }
 
 .modal {
@@ -29,7 +27,7 @@ body {
   display: block;
   margin: 5% auto;
   width: 60%;
-  height: 70%;
+  height: 70vh;
 }
 
 .modal-header {
@@ -71,6 +69,11 @@ body {
 
 .info {
   padding-top: 5%;
+  background: linear-gradient(0deg, #f4f4f4, var(--contrastColor));
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  height: 85%; /* maximum height of the box, feel free to change this! */
+  width: 85%;
+  overflow-y: scroll;
 }
 
 .info h1 {
@@ -87,13 +90,4 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   color: var(--textColor);
-}
-
-.scroll-box {
-  background: linear-gradient(0deg, #f4f4f4, var(--contrastColor));
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  height: 85%; /* maximum height of the box, feel free to change this! */
-  width: 85%;
-
-  overflow-y: scroll;
 }
