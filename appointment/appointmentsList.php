@@ -59,7 +59,7 @@
                   if ($i == $pageNumber)
                     echo '<p>' . $i . '</p>';
                   else
-                    echo '<a href="appointments?page=' . $i . '">' . $i . '</a>';
+                    echo '<a href="appointmentsList?page=' . $i . '">' . $i . '</a>';
                 }
               ?>
             </div>
