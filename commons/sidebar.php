@@ -23,7 +23,7 @@
                 <i class="far fa-id-card icon"></i>    
                 Profile
             </a>
-            <a class="sidebar-button" href="../appointment/appointments">
+            <a class="sidebar-button" href="../appointment/appointmentsList">
                 <i class="far fa-calendar-check icon"></i>    
                 Appointments
             </a>

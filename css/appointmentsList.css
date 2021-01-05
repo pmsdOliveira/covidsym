@@ -75,6 +75,7 @@ body {
 }
 
 .appointments-header {
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -87,11 +88,17 @@ body {
   font-weight: bolder;
 }
 
-.pages a {
+.pages {
+  display: flex;
+  justify-content: center;
+}
+
+.pages a,
+.pages p {
   color: var(--darkerColor);
   font-size: 2vmin;
-  font-weight: bolder;
-  padding: 0 0.2vw;
+  font-weight: bold;
+  padding: 0 0.4vw;
 }
 
 .currentPage {
@@ -105,16 +112,16 @@ body {
 }
 
 .appointment {
-  align-items: center;
   border-bottom: 1px solid var(--contrastColor);
   color: var(--textColor);
-  display: flex;
-  flex-flow: row nowrap;
+  display: grid;
   font-size: 2vmin;
   font-weight: bolder;
-  justify-content: space-between;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  height: 8vmin;
+  justify-items: center;
   padding: 2vh 1vw;
-  transition: all 0.2s ease;
 }
 
 .appointment:nth-child(odd) {
@@ -165,7 +172,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.appointment-button a {
+.appointment-button {
   color: white;
   font-size: 2vmin;
   font-weight: bolder;
