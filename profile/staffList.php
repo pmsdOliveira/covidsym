@@ -79,13 +79,11 @@
             ?>
             <?php
               for ($i = 0; $i < 5; $i++) {
-                echo '<div class=" staff">';
+                echo '<div class="staff">';
                 if ($staff = mysqli_fetch_array($result)) {
                   echo '<p>' . $staff["name"] . '</p>
                         <button class="button">Select</button>';
-                } else {
-                  break;
-                }        
+                }       
                 echo '</div>';
               }
             ?>

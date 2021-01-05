@@ -50,8 +50,6 @@
                                     echo '<img class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($patient["profile_pic"]) . '"/>';
                                     echo '<p>'. $patient["name"] . '</p>
                                         <button class="patient-button" id="' . $patient["id"] . '">Select</button>';
-                                } else {
-                                    break;
                                 }
                                 echo '</div>';
                             }
