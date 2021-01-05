@@ -78,6 +78,7 @@ body {
   color: var(--textColor);
   line-height: 1.5;
   margin: 2vh 2vw;
+  padding-bottom: 1vh;
   font-size: 2vmin;
 }
 
@@ -96,14 +97,11 @@ body {
   place-items: center center;
 }
 
+.sypmtoms-risks,
 .diagnosis,
 .prescription,
 .notes {
   width: 100%;
-}
-
-.notes {
-  grid-column: 1 / span 2;
 }
 
 .grid textarea {
@@ -116,4 +114,5 @@ body {
   padding: 0.5vh 0.5vw;
   resize: none;
   width: 100%;
+  padding: 1vh 1vw;
 }

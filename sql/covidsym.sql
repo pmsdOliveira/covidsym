@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 05-Jan-2021 às 02:17
+-- Tempo de geração: 05-Jan-2021 às 22:28
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `appointment` (
 INSERT INTO `appointment` (`id`, `date`, `result`, `prescription`, `notes`, `patient_id`, `medic_id`) VALUES
 (1, '2021-01-10', NULL, NULL, NULL, 3, 6),
 (2, '2021-01-11', NULL, NULL, NULL, 1, 7),
-(3, '2021-01-11', NULL, NULL, NULL, 2, 5),
+(3, '2021-01-11', 'Medium Risk', 1, 'Adio Adieu Aufiederzien Goodbye!', 2, 5),
 (4, '2021-01-10', NULL, NULL, NULL, 4, 2),
 (5, '2021-01-10', NULL, NULL, NULL, 5, 4),
 (6, '2021-01-12', NULL, NULL, NULL, 6, 1),
@@ -329,13 +329,13 @@ CREATE TABLE IF NOT EXISTS `riskfactor` (
 --
 
 INSERT INTO `riskfactor` (`id`, `name`) VALUES
-(1, 'kidney_disease'),
-(2, 'lung_disease'),
-(3, 'heart_disease'),
-(4, 'diabetes'),
-(5, 'recently_traveled'),
-(6, 'stroke'),
-(7, 'high_blood_pressure');
+(1, 'Kidney Disease'),
+(2, 'Lung Disease'),
+(3, 'Heart Disease'),
+(4, 'Diabetes'),
+(5, 'Recently Traveled'),
+(6, 'Stroke or Reduced Imunity'),
+(7, 'High Blood Pressure');
 
 -- --------------------------------------------------------
 
@@ -355,16 +355,16 @@ CREATE TABLE IF NOT EXISTS `symptom` (
 --
 
 INSERT INTO `symptom` (`id`, `name`) VALUES
-(1, 'temperature'),
-(2, 'dry_cough'),
-(3, 'sore_throat'),
-(4, 'weakness'),
-(5, 'breathing_dificulties'),
-(6, 'drowsiness'),
-(7, 'chest_pain'),
-(8, 'appetite_change'),
-(9, 'smell_loss'),
-(10, 'symptoms_progressed');
+(1, 'Temperature'),
+(2, 'Dry Cough'),
+(3, 'Sore Throat'),
+(4, 'Weakness'),
+(5, 'Breathing Dificulties'),
+(6, 'Drowsiness'),
+(7, 'Chest Pain'),
+(8, 'Appetite Change'),
+(9, 'Smell Loss'),
+(10, 'Symptoms Progressed');
 
 -- --------------------------------------------------------
 
