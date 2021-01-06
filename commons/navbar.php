@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php session_start() ?>
+
 <html>
     <head>
         <title>Navbar</title>
@@ -15,9 +17,19 @@
     <body>
         <div class="navbar">
             <a href="../home/userHomePage.php"><img src="../img/logo-white.png" alt="Logo"></a>
-            <div class="nav-links">
-                <a href="#">Logout</a>
-            </div>
+            <?php 
+                $_SESSION["userType"] = 1;
+
+                if ($_SESSION["userType"] != 0) {
+                    echo '<div class="nav-links">
+                            <a href="#">Logout</a>
+                         </div>';
+                } else {
+                    echo '<div class="nav-links">
+                            <a href="../login/userLogin.php">Login</a>
+                         </div>';
+                }
+            ?>
         </div>
     </body>
 </html>
