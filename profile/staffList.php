@@ -84,7 +84,8 @@
                 echo '<div class="staff">';
                 if ($staff = mysqli_fetch_array($result)) {
                   echo '<p>' . $staff["name"] . '</p>
-                        <button class="button">Select</button>';
+                        <a class="button" href="../profile/staffProfile.php?staff=' . 
+                        $table . '&id=' . $staff["id"] . '">Select</a>';
                 }       
                 echo '</div>';
               }
