@@ -29,7 +29,7 @@
                     <div class="modal-text">
                         <br>
                         <p>It’s seems like you tried to access a page that you lack the authorization to.</p>
-                        <p>Your computer will explode in <span class="counter">10</span> seconds.</p>
+                        <p>Your computer will explode in <span id="counter">30</span> seconds.</p>
                         <p>Consider returning to the Home Page, while you still can...</p>
                     </div>
 

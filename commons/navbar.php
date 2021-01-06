@@ -18,7 +18,7 @@
         <div class="navbar">
             <a href="../home/userHomePage.php"><img src="../img/logo-white.png" alt="Logo"></a>
             <?php 
-                $_SESSION["userType"] = 1;
+                $_SESSION["userType"] = 1; //placeholder
 
                 if ($_SESSION["userType"] != 0) {
                     echo '<div class="nav-links">

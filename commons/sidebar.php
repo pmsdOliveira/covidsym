@@ -17,20 +17,50 @@
         <div class="sidebar">
             <a class="sidebar-button" href="../home/userHomePage">
                 <i class="fas fa-home icon"></i>
-                Main Menu
+                Home Page
             </a>
             <a class="sidebar-button" href="../profile/userProfile">
                 <i class="far fa-id-card icon"></i>    
                 Profile
             </a>
-            <a class="sidebar-button" href="../appointment/appointmentsList">
-                <i class="far fa-calendar-check icon"></i>    
-                Appointments
-            </a>
-            <a class="sidebar-button" href="../info/faq">
-                <i class="far fa-question-circle icon"></i> 
-                FAQ
-            </a>
+            
+            <?php 
+                $_SESSION["userType"] = 1; //placeholder
+
+                if($_SESSION["userType"] == 1) {
+                    echo '<a class="sidebar-button" href="../appointment/appointmentsList">
+                              <i class="far fa-calendar-check icon"></i>    
+                              Appointments
+                          </a>
+                         <a class="sidebar-button" href="../info/faq">
+                              <i class="far fa-question-circle icon"></i> 
+                              FAQ
+                         </a>';
+                } else if($_SESSION["userType"] == 2) {
+                    echo '<a class="sidebar-button" href="../profile/usersList">
+                              <i class="fas fa-users icon"></i>  
+                              Users
+                          </a>
+                          <a class="sidebar-button" href="../appointment/appointmentsList">
+                              <i class="far fa-calendar-check icon"></i>    
+                              Appointments
+                          </a>';
+                } else if($_SESSION["userType"] == 3) {
+                    echo '<a class="sidebar-button" href="../statistics/graphs">
+                              <i class="fas fa-chart-line icon"></i>    
+                              Statistics
+                          </a>';
+                } else if($_SESSION["userType"] == 4) {
+                    echo '<a class="sidebar-button" href="../profile/usersList">
+                              <i class="fas fa-users icon"></i>    
+                              Users
+                          </a>
+                          <a class="sidebar-button" href="../profile/staffList">
+                              <i class="fas fa-users-cog icon"></i>
+                              Staff
+                          </a>';
+                }
+            ?>
         </div>
     </body>
 </html>
