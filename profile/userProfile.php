@@ -22,7 +22,7 @@
   <body>
     <?php 
         include("../commons/config.php");
-        $patientID = $_GET["patientID"];
+        $patientID = $_GET["id"];
 
         $query = "SELECT * FROM patient JOIN user ON patient.user_id = user.id WHERE patient.id = $patientID";
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
