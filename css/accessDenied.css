@@ -1,0 +1,103 @@
+:root {
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --textColor: #3d3d3d;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  html,
+  body {
+    background: var(--backgroundColor);
+    overflow: hidden;
+  }
+  
+  .container {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 90vh;
+    justify-content: center;
+  }
+  
+  .image-wrapper {
+    margin-bottom: 5vh;
+    width: 30%;
+  }
+  
+  .image-wrapper img {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .modal {
+    width: 50%;
+    background: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-header {
+    background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+    border-radius: 15px 15px 0 0;
+    color: white;
+    font-size: 4vmin;
+    font-weight: bold;
+    padding: 1.5vh 0;
+    text-align: center;
+    user-select: none;
+  }
+
+  .modal-body {
+    padding-bottom: 3vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modal-text {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    margin-bottom: 1vh;
+  }
+
+  .modal-text p{
+      text-align: center;
+      font-size: 2vmin;
+      font-weight: bold;
+      padding: 0 2.5vw 2.5vh;
+      color: var(--textColor);
+  }
+
+  .modal-body a {
+    width: 90%;
+    background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 3vmin;
+    font-weight: bold;
+    outline: none;
+    padding: 1.2vh 0;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .modal-body a:active {
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+  }
+  
