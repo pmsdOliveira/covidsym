@@ -25,28 +25,28 @@
                     Sign Up
                 </div>
 
-                <form action="../login/checkLogin.php" method="POST" onsubmit="return validateUserSignupForm()">
+                <form action="../profile/userProfile.php" method="POST" onsubmit="return validateUserSignupForm()">
                     <div class="form-wrapper">
                         <div class="left-form">
                             <div class="field">
-                                <input id="signup-username" type="text" name="Username" required>
+                                <input id="signup-username" type="text" name="username" required>
                                 <label>Username</label>
                             </div>
 
                             <div class="field">
-                                <input id="signup-email" type="email" name="Email" required>
+                                <input id="signup-email" type="email" name="email" required>
                                 <label>Email</label>
                             </div>
                         </div>
 
                         <div class="right-form">
                             <div class="field">
-                                <input id="signup-password" type="password" required>
+                                <input id="signup-password" type="password" name="password" required>
                                 <label>Password</label>
                             </div>
 
                             <div class="field">
-                                <input id="signup-confirm-password" type="password" required>
+                                <input id="signup-confirm-password" type="password" name="confirm-password" required>
                                 <label>Confirm Password</label>
                             </div>
                         </div>

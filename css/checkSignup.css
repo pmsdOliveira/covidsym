@@ -1,0 +1,90 @@
+:root {
+  --backgroundColor: #f7f7f7;
+  --lighterColor: #00addf;
+  --mainColor: #0e6ab2;
+  --darkerColor: #1f61ac;
+  --textColor: #3d3d3d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  background: var(--backgroundColor);
+  overflow: hidden;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 90vh;
+  justify-content: center;
+}
+
+.image-wrapper {
+  margin-bottom: 5vh;
+  width: 30%;
+}
+
+.image-wrapper img {
+  height: auto;
+  max-width: 100%;
+}
+
+.sign-up-wrapper {
+  width: 50%;
+  background: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-wrapper .header {
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  border-radius: 15px 15px 0 0;
+  color: white;
+  font-size: 4vmin;
+  font-weight: bold;
+  padding: 1.5vh 0;
+  text-align: center;
+  user-select: none;
+}
+
+.modal-content {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 4vh auto;
+  width: 90%;
+}
+
+.central-text {
+  color: var(--textColor);
+  font-size: 2vmin;
+  font-weight: bolder;
+}
+
+.login-button {
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 3vmin;
+  font-weight: bold;
+  margin-top: 3vh;
+  outline: none;
+  padding: 1.5vh 0;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 50%;
+}

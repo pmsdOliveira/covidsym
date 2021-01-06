@@ -5,7 +5,7 @@ const validateEmail = email => {
   return regex.test(email)
 }
 
-const validatePassword = password => /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,50}$/.test(password)
+const validatePassword = password => /^(?=.*[a-zA-Z0-9]).{8,}$/.test(password)
 
 const validateConfirmPassword = (password, confirmPassword) => password === confirmPassword
 
