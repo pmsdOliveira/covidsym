@@ -22,7 +22,7 @@
   <body>
     <?php 
         include("../commons/config.php");
-        $appointmentID = $_GET["appointmentID"];
+        $appointmentID = $_GET["id"];
 
         $query = "SELECT appointment.id AS id, appointment.date AS date, medic.name AS medicName,
                   patient.name AS patientName, appointment.result AS supportResult,
