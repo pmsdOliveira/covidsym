@@ -33,7 +33,7 @@
                         <p>Consider returning to the Home Page, while you still can...</p>
                     </div>
 
-                    <a>Return to Home Page</a>
+                    <a href="../home/userHomePage.php">Return to Home Page</a>
                 </div>
             </div>
         </div>
