@@ -33,7 +33,7 @@
         or die(mysqli_error($connect));
       $nPages = intval(mysqli_num_rows($result) / 5 + 1);
       
-      $query = "SELECT id, date FROM appointment WHERE appointment.id > " . $firstResult;
+      $query = "SELECT id, prescription, date FROM appointment WHERE appointment.id > " . $firstResult;
       $result = mysqli_query($connect, $query)
         or die(mysqli_error($connect));
     ?>
@@ -69,6 +69,8 @@
                 for ($i = 0; $i < 5; $i++) {
                   echo '<div class="appointment">';
                   if ($appointment = mysqli_fetch_array($result)) {
+                    ($appointment["prescription"] == null) ? $closed = "No" : $closed = "Yes";
+
                     echo '<div class="appointment-id">
                             <i class="fas fa-clipboard-list"></i>
                             <p>Nº ' . $appointment["id"] . '</p>
@@ -77,8 +79,8 @@
                             <i class="fas fa-calendar-day"></i>
                             <p>' . $appointment["date"] . '</p>
                           </div>
-                          <p>Diagnosis: NA</p>
-                          <i class="fas fa-arrow-right"><a href="#"></a></i>';
+                          <p>Closed: ' . $closed . '</p>
+                          <a href="appointment?appointmentID=' . $appointment["id"] . '"><i class="fas fa-arrow-right"></i></a>';
                   }
                   echo '</div>';
                 }
