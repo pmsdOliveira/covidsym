@@ -16,9 +16,13 @@
         <div class="navbar">
             <a href="../home/userHomePage.php"><img src="../img/logo-white.png" alt="Logo"></a>
             <?php 
-                //$_SESSION["userType"] = 1; //placeholder
-
-                if (isset($_SESSION["userType"]) && $_SESSION["userType"] != 0) {
+                session_start();
+                
+                if (!isset($_SESSION["userType"]) || $_SESSION["userType"] == 0) {
+                    echo '<div style="display:none;">
+                        <a href="#">Logout</a>
+                    </div>';
+                } else if (isset($_SESSION["userType"]) && $_SESSION["userType"] != 0) {
                     echo '<div class="nav-links">
                             <a href="#">Logout</a>
                          </div>';
