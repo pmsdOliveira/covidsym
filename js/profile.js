@@ -10,18 +10,13 @@ const validateBirthdate = birthdate => {{
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
 
-  const parts = birthdate.split("/");
-  const day = parseInt(parts[0]);
-  const month = parseInt(parts[1]);
-  const year = parseInt(parts[2]);
+  const parts = birthdate.split("-");
+  const year = parseInt(parts[0]);
 
   if(year < currentYear - 150 || year > currentYear)
       return false;
 
-  let dateFormat = year.toString() + "/" + month.toString() + "/" + day.toString();
-  document.getElementById("profile-birthdate").value = dateFormat;
-
-    return true;
+  return true;
   }
 }
 
@@ -39,6 +34,12 @@ const validateUserProfileForm = () => {
   const birthdate = document.getElementById("profile-birthdate").value
   const fiscal = document.getElementById("profile-fiscal").value
   const healthcare = document.getElementById("profile-healthcare").value
+
+  console.log(birthdate)
+
+  setInterval(() => {
+    console.log(birthdate)
+  }, 30000);
 
   if (!validateName(name)) {
     alert("Please insert a valid name (5 to 100 alphabetic characters and whitespaces).")

@@ -25,7 +25,7 @@
                     Sign Up
                 </div>
 
-                <form action="../profile/userProfile.php" method="POST" onsubmit="return validateUserSignupForm()">
+                <form action="../signup/checkUserSignup.php" method="POST" onsubmit="return validateUserSignupForm()">
                     <div class="form-wrapper">
                         <div class="left-form">
                             <div class="field">

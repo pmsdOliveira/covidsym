@@ -25,26 +25,26 @@
             </a>
             
             <?php 
-                $_SESSION["userType"] = 1; //placeholder
+                //$_SESSION["userType"] = 1; //placeholder
 
                 if($_SESSION["userType"] == 1) {
                     echo '<a class="sidebar-button" href="../appointment/appointmentsList">
-                              <i class="far fa-calendar-check icon"></i>    
-                              Appointments
-                          </a>
-                         <a class="sidebar-button" href="../info/faq">
-                              <i class="far fa-question-circle icon"></i> 
-                              FAQ
-                         </a>';
+                            <i class="far fa-calendar-check icon"></i>    
+                            Appointments
+                        </a>
+                        <a class="sidebar-button" href="../info/faq">
+                            <i class="far fa-question-circle icon"></i> 
+                            FAQ
+                        </a>';
                 } else if($_SESSION["userType"] == 2) {
                     echo '<a class="sidebar-button" href="../profile/usersList">
-                              <i class="fas fa-users icon"></i>  
-                              Users
-                          </a>
-                          <a class="sidebar-button" href="../appointment/appointmentsList">
-                              <i class="far fa-calendar-check icon"></i>    
-                              Appointments
-                          </a>';
+                            <i class="fas fa-users icon"></i>  
+                            Users
+                        </a>
+                        <a class="sidebar-button" href="../appointment/appointmentsList">
+                            <i class="far fa-calendar-check icon"></i>    
+                            Appointments
+                        </a>';
                 } else if($_SESSION["userType"] == 3) {
                     echo '<a class="sidebar-button" href="../statistics/graphs">
                               <i class="fas fa-chart-line icon"></i>    

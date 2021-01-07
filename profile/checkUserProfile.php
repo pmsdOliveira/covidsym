@@ -8,8 +8,6 @@
     } else {
         include("../commons/config.php");
 
-        echo 'birthdate=' . $_POST["birthdate"];
-
         $query = 'INSERT INTO user (username, password, email) VALUES ("'
             . $_POST["username"] . '", MD5("' . $_POST["password"] . '"), "' . $_POST["email"] . '")';
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
@@ -18,9 +16,9 @@
         $query = 'INSERT INTO patient (name, gender, birthdate, phone, address, local, district, 
             fiscal_number, healthcare_number, user_id) VALUES ("'
             . $_POST["name"] . '", "' . $_POST["gender"] . '", "' . $_POST["birthdate"] . '", "'
-            . $_POST["phone"] . '", "' . ($_POST["birthdate"] != '' ? $_POST["address"] : 'NULL') . '", "' 
-            . $_POST["local"] . '", "' . $_POST["district"] . '", "' . $_POST["fiscal"] . '", "' 
-            . $_POST["healthcare"] . '", ' . ($id - 1) . ')';
+            . $_POST["phone"] . '", "' . $_POST["address"] . '", "' . $_POST["local"] . '", "'
+            . $_POST["district"] . '", "' . $_POST["fiscal"] . '", "' . $_POST["healthcare"] . '", ' 
+            . $id . ')';
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
     }
 ?>
@@ -34,7 +32,7 @@
         
         <link rel="icon" href="../img/icon.ico" type="image/icon type">
     
-        <link rel="stylesheet" type="text/css" href="../css/checkSignup.css">
+        <link rel="stylesheet" type="text/css" href="../css/checkUserSignup.css">
     </head>
 
     <body>
@@ -54,6 +52,8 @@
                     <?php
                         echo '<p class="central-text">User ' . $_POST["username"] . '\'s successfully registered.
                         Please proceed to login.</p>';
+
+                        session_unset();
                     ?>
                     <a class="login-button" href="../login/userLogin.php">Login</a>
                 </div>

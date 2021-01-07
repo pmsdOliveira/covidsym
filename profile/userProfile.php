@@ -3,13 +3,20 @@
 <?php
   session_start();
 
-  if (isset($_POST["username"]) && isset($_POST["email"]) && 
-  isset($_POST["password"]) && isset($_POST["confirm-password"])) {
-    $_SESSION["userType"] = 0; // user creating account
-  } else if (!isset($_GET["id"])) {
-    header('Location: http://localhost/covidsym/commons/accessDenied.php');
+  include("../commons/config.php");
+  if (isset($_SESSION["userType"])) {
+    if (isset($_GET["id"])) {
+      $patientID = $_GET["id"];
+  
+      $query = "SELECT * FROM patient JOIN user ON patient.user_id = user.id WHERE patient.id = $patientID";
+      $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+  
+      $user = mysqli_fetch_array($result);
+    } else if ($_SESSION["userType"] != 0) {
+      header('Location: ../commons/accessDenied.php');
+    } 
   } else {
-    $_SESSION["userType"] = 1;
+    header('Location: ../commons/accessDenied.php');
   }
 ?>
 
@@ -33,25 +40,17 @@
   </head>
 
   <body>
-    <?php 
-        include("../commons/config.php");
-        if (isset($_GET["id"])) {
-          $patientID = $_GET["id"];
-
-          $query = "SELECT * FROM patient JOIN user ON patient.user_id = user.id WHERE patient.id = $patientID";
-          $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-          $count = mysqli_num_rows($result);
-
-          if ($count == 1) {
-            $user = mysqli_fetch_array($result);
-          }
-        }
-    ?>
-
     <?php include "../commons/navbar.php"; ?>
 
     <div class="wrapper">
-      <?php include "../commons/sidebar.php"; ?>
+      <?php 
+        if ($_SESSION["userType"] != 0) {
+          include "../commons/sidebar.php";
+          echo '<div class="content-wrapper" style="margin-left: 200px;">';
+        } else {
+          echo '<div class="content-wrapper">';
+        }
+      ?>
 
       <div class="content-wrapper">
         <div class="modal">
@@ -68,10 +67,11 @@
                 <div class="profile">
                   <h2>
                     <?php
-                      if ($_SESSION["userType"] == 0)
-                        echo $_POST["username"];
-                      else
+                      if ($_SESSION["userType"] == 0) {
+                        echo $_SESSION["username"];
+                      } else {
                         echo $user["username"];
+                      }
                     ?>
                   </h2>
                   <?php
@@ -84,8 +84,7 @@
                 </div>
               </td>
               <td>
-                <form method="POST" onsubmit="return validateUserProfileForm()"
-                action="<?php echo $_SESSION["userType"] == 0 ? '../signup/checkSignup.php' : '../profile/checkUserProfile.php';?>">
+                <form method="POST" action="../profile/checkUserProfile.php" onsubmit="return validateUserProfileForm()">
                   <table class="form">
                     <tr>
                       <td><label>Name</label></td>
@@ -174,12 +173,12 @@
                       </td>
                     </tr>
                   </table>
-                  <input type="submit" value="Update Profile" />
+                  <input type="submit" value="<?php echo $_SESSION["userType"] == 0 ? 'Create Profile' : 'Update Profile'?>" />
                   <?php
                     if ($_SESSION["userType"] == 0) {
-                      echo '<input type="hidden" name="username" value="' . $_POST["username"] . '">
-                            <input type="hidden" name="email" value="' . $_POST["email"] . '">
-                            <input type="hidden" name="password" value="' . $_POST["password"] . '">';
+                      echo '<input type="hidden" name="username" value="' . $_SESSION["username"] . '">
+                            <input type="hidden" name="email" value="' . $_SESSION["email"] . '">
+                            <input type="hidden" name="password" value="' . $_SESSION["password"] . '">';
                     }
                   ?>
                 </form>
