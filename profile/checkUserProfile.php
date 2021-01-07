@@ -53,7 +53,7 @@
                         echo '<p class="central-text">User ' . $_POST["username"] . '\'s successfully registered.
                         Please proceed to login.</p>';
 
-                        session_unset();
+                        unset($_SESSION["userType"]);
                     ?>
                     <a class="login-button" href="../login/userLogin.php">Login</a>
                 </div>
