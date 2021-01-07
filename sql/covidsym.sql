@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 05-Jan-2021 às 22:28
+-- Tempo de geração: 07-Jan-2021 às 01:58
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -280,12 +280,12 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `district` varchar(50) NOT NULL,
   `fiscal_number` varchar(20) NOT NULL,
   `healthcare_number` varchar(20) NOT NULL,
-  `profile_pic` blob NOT NULL,
+  `profile_pic` blob,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `name` (`name`),
   KEY `patient_user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `patient`
