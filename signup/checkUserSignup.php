@@ -65,13 +65,11 @@
                             header('Location: ../profile/userProfile.php');
                         }
                     ?>
-                    <a class="login-button" href="../login/userLogin.php">Login</a>
+                    <a class="login-button" href="../signup/userSignup.php">Login</a>
                 </div>
             </div>
         </div>
 
         <?php include "../commons/footer.php"; ?>
-
-        <script src="../js/signup.js"></script>
     </body>
 </html>
