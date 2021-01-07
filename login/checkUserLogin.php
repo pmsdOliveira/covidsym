@@ -41,12 +41,14 @@
                 <div class="modal-content">
                     <?php
                         if (isset($wrongCredentials) && $wrongCredentials == true) {
-                          echo '<p class="central-text">Wrong credentials. Try to log in again.</p>';
+                            echo '<p class="central-text">Wrong credentials. Try to log in again.</p>';
                         } else {
-                          echo '<p class="central-text">Logged in successfully.</p>';
-                          echo '<a class="login-button" href="../home/userHomePage.php">Go to Home Page</a>';
+                            echo '<p class="central-text">Logged in successfully.</p>';
+                            echo '<a class="login-button" href="../home/userHomePage.php">Go to Home Page</a>';
                           
-                          $_SESSION["userType"] = 1; // sets user type as patient
+                            $_SESSION["userType"] = 1; // sets user type as patient
+                            $user = mysqli_fetch_array($result);
+                            $_SESSION["id"] = $user["id"];
                         }
                     ?>
                     

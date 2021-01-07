@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 
+<?php
+    session_start();
+
+    if (!isset($_SESSION["userType"]) || $_SESSION["userType"] != 1) {
+        header('Location: ../commons/accessDenied.php');
+    } else {
+        include "../commons/config.php";
+
+        $query = 'SELECT * FROM user WHERE id = ' . $_SESSION["id"];
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+        $user = mysqli_fetch_array($result);
+    }
+?>
+
 <html>
     <head>
         <title>COVIDSYM - Home Page</title>
@@ -26,7 +40,7 @@
         
                 <div class="modal">
                     <div class="modal-header">
-                        <h1>Welcome, {USERNAME}</h1>
+                        <?php echo '<h1>Welcome, ' . $_SESSION["username"] . '</h1>'; ?>
                     </div>
         
                     <div class="modal-body">
