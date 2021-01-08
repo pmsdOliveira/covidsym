@@ -52,7 +52,7 @@
                                 if ($patient = mysqli_fetch_array($result)) {
                                     echo '<img class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($patient["profile_pic"]) . '"/>';
                                     echo '<p>'. $patient["name"] . '</p>
-                                        <a class="patient-button" href="userProfile?patientID=' . $patient["id"] . '">Select</a>';
+                                        <a class="patient-button" href="userProfile?id=' . $patient["id"] . '">Select</a>';
                                 }
                                 echo '</div>';
                             }
