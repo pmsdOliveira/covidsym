@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 
+<?php
+  session_start();
+
+  if (!isset($_SESSION["userType"]))
+    header('Location: ../commons/accessDenied.php');
+?>
+
 <html>
   <head>
     <title>COVIDSYM - Appointment</title>
@@ -22,7 +29,14 @@
   <body>
     <?php 
         include("../commons/config.php");
-        $appointmentID = $_GET["appointmentID"];
+        $query = 'SELECT MAX(id) AS maxID FROM appointment';
+        $result = mysqli_query($connect, $query);
+        $appointment = mysqli_fetch_array($result);
+
+        if (isset($_GET["id"]) && $_GET["id"] <= $appointment["maxID"])
+          $appointmentID = $_GET["id"];
+        else
+          header('Location: ../commons/pageNotFound.php');
 
         $query = "SELECT appointment.id AS id, appointment.date AS date, medic.name AS medicName,
                   patient.name AS patientName, appointment.result AS supportResult,

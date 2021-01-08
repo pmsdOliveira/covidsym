@@ -93,6 +93,7 @@ body {
 }
 
 .medic {
+  align-items: center;
   border-bottom: 1px solid var(--contrastColor);
   display: grid;
   font-size: 2vmin;
@@ -114,6 +115,7 @@ body {
   font-weight: bold;
   outline: none;
   padding: 0.5vh 1vw;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 

@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<?php
+    session_start();
+
+    if (!isset($_SESSION["userType"]) || $_SESSION["userType"] != 1) {
+        header('Location: ../commons/accessDenied.php');
+    }
+?>
+
 <html>
 
     <head>
@@ -46,23 +55,27 @@
                     
                     <div class="medic-list">
                         <p>Select which doctor should do the consultation:</p>
-                        <?php
-                            for ($i = 0; $i < 5; $i++) {
-                                echo '<div class="medic">';
-                                if ($medic = mysqli_fetch_array($result)) {
-                                    $countQuery = 'SELECT count(appointment.medic_id) AS waiting_list 
-                                        FROM medic INNER JOIN appointment ON medic.id = appointment.medic_id 
-                                        WHERE medic.id =' . (($pageNumber - 1) * 5 + ($i + 1));
-                                    $countResult = mysqli_query($connect, $countQuery)
-                                        or die(mysqli_error($connect));
-                                    $waitingList = mysqli_fetch_array($countResult);
-                                    echo '<p>' . $medic["name"] . '</p>
-                                        <p>Users waiting: ' .$waitingList["waiting_list"] . '</p>
-                                        <button>Select</button>';
+                        <form action="../appointment/checkNewAppointment.php" method="POST">
+                            <?php
+                                for ($i = 0; $i < 5; $i++) {
+                                    echo '<div class="medic">';
+                                    if ($medic = mysqli_fetch_array($result)) {
+                                        $countQuery = 'SELECT count(appointment.medic_id) AS waiting_list 
+                                            FROM medic INNER JOIN appointment ON medic.id = appointment.medic_id 
+                                            WHERE medic.id = ' . (($pageNumber - 1) * 5 + ($i + 1)) 
+                                            . ' AND appointment.prescription IS NULL';
+                                        $countResult = mysqli_query($connect, $countQuery)
+                                            or die(mysqli_error($connect));
+                                        $waitingList = mysqli_fetch_array($countResult);
+                                        echo '<p>' . $medic["name"] . '</p>
+                                            <p>Users waiting: ' . $waitingList["waiting_list"] . '</p>
+                                            <button type="submit" name="medic-id" value=' . $medic["id"] . '>Select</button>';
+                                    }
+
+                                    echo '</div>';
                                 }
-                            echo '</div>';
-                            }
-                        ?>
+                            ?>
+                        </form>
                     </div>
                     
                     <div class="pages">
