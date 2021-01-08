@@ -46,7 +46,7 @@
                             Appointments
                         </a>';
                 } else if($_SESSION["userType"] == 3) {
-                    echo '<a class="sidebar-button" href="../statistics/graphs">
+                    echo '<a class="sidebar-button" href="../statistics/charts">
                               <i class="fas fa-chart-line icon"></i>    
                               Statistics
                           </a>';
