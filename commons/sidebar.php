@@ -15,7 +15,7 @@
 
     <body>
         <div class="sidebar">
-            <a class="sidebar-button" href="../home/userHomePage">
+            <a class="sidebar-button" href="../home/homePage">
                 <i class="fas fa-home icon"></i>
                 Home Page
             </a>
