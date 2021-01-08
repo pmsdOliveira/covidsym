@@ -104,6 +104,14 @@ body {
     color: var(--textColor);
 }
 
+.modal-body p {
+    text-align: justify;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding-top: 2vh;
+    color: var(--textColor);
+}
+
 .modal-body a {
     width: 90%;
     background: linear-gradient(
