@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (!isset($_SESSION["userType"]) || $_SESSION["userType"] != 1) {
+    if (!isset($_SESSION["userType"]) || ($_SESSION["userType"] != 1 && $_SESSION["userType"] != 2)) {
         header('Location: ../commons/accessDenied.php');
     }
 

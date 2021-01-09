@@ -66,50 +66,35 @@
                         <form action="../appointment/checkNewAppointment.php" method="POST">
                             <?php
                                 if ($_SESSION["userType"] == 1) {
-                                    $query = 'SELECT medic.id, medic.name, count(appointment.medic_id) AS waiting_list 
+                                    $query = 'SELECT medic.id, medic.name, count(appointment.medic_id) AS nrAppointments 
                                         FROM medic LEFT JOIN appointment ON medic.id = appointment.medic_id 
                                         WHERE appointment.prescription IS NULL GROUP BY medic.id 
                                         ORDER BY waiting_list';
-                                    $result = mysqli_query($connect, $query)
-                                        or die(mysqli_error($connect));
-
-                                    for ($i = 0; $i < $firstResult; $i++) {
-                                        $medic = mysqli_fetch_array($result);
-                                    }
-
-                                    for ($i = 0; $i < 5; $i++) {
-                                        echo '<div class="medic">';
-                                        if ($medic = mysqli_fetch_array($result)) {
-                                            echo '<p>' . $medic["name"] . '</p>
-                                                <p>Users waiting: ' . $medic["waiting_list"] . '</p>
-                                                <button type="submit" name="medic-id" value=' . $medic["id"] . '>Select</button>';
-                                        }
-
-                                        echo '</div>';
-                                    }
+                                    $appointmentsAuxString = 'Users waiting: ';
                                 } else if ($_SESSION["userType"] == 2) {
                                     $query = 'SELECT patient.id, patient.name, count(appointment.patient_id) AS nrAppointments 
                                         FROM patient LEFT JOIN appointment ON patient.id = appointment.patient_id 
                                         GROUP BY patient.id ORDER BY nrAppointments';
-                                    $result = mysqli_query($connect, $query)
-                                        or die(mysqli_error($connect));
-
-                                    for ($i = 0; $i < $firstResult; $i++) {
-                                        $medic = mysqli_fetch_array($result);
-                                    }
-
-                                    for ($i = 0; $i < 5; $i++) {
-                                        echo '<div class="medic">';
-                                        if ($medic = mysqli_fetch_array($result)) {
-                                            echo '<p>' . $medic["name"] . '</p>
-                                                <p>Appointments: ' . $medic["nrAppointments"] . '</p>
-                                                <button type="submit" name="medic-id" value=' . $medic["id"] . '>Select</button>';
-                                        }
-
-                                        echo '</div>';
-                                    }
+                                    $appointmentsAuxString = 'Appointments: ';
                                 }
-                                
+
+                                $result = mysqli_query($connect, $query)
+                                    or die(mysqli_error($connect));
+
+                                for ($i = 0; $i < $firstResult; $i++) {
+                                    $user = mysqli_fetch_array($result);
+                                }
+
+                                for ($i = 0; $i < 5; $i++) {
+                                    echo '<div class="medic">';
+                                    if ($user = mysqli_fetch_array($result)) {
+                                        echo '<p>' . $user["name"] . '</p>
+                                            <p>' . $appointmentsAuxString . $user["nrAppointments"] . '</p>
+                                            <button type="submit" name="userID" value=' . $user["id"] . '>Select</button>';
+                                    }
+
+                                    echo '</div>';
+                                }
                             ?>
                         </form>
                     </div>
