@@ -95,7 +95,7 @@
                             <p>' . $appointment["name"] . '</p>
                           </div>
                           <p>Closed: ' . $closed . '</p>
-                          <a href="appointment?appointmentID=' . $appointment["id"] . '">Select</i></a>';
+                          <a href="appointment?id=' . $appointment["id"] . '">Select</i></a>';
                   }
                   echo '</div>';
                 }
