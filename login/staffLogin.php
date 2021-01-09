@@ -29,8 +29,8 @@
 
                 <form action="../login/checkLogin.php" method="POST">
                     <div class="field">
-                        <input type="text" name="Email" required>
-                        <label>Email</label>
+                        <input type="text" name="username" required>
+                        <label>Username</label>
                     </div>
 
                     <div class="field">
@@ -39,14 +39,14 @@
                     </div>
 
                     <div class="content">
-                        <div class="checkbox">
+                        <!-- <div class="checkbox">
                             <input type="checkbox" id="remember-me">
                             <label for="remember-me">Remember me</label>
                         </div>
 
                         <div class="pass-link">
                             <a href="#">Forgot your password?</a>
-                        </div>
+                        </div> -->
                     </div>
 
                     <input type="submit" value="Login">

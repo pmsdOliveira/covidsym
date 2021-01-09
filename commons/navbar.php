@@ -18,7 +18,7 @@
             <?php 
                 if (isset($_SESSION["userType"]) && $_SESSION["userType"] != 0) {
                     echo '<div class="nav-links">
-                            <a href="#">Logout</a>
+                            <a href="../login/logout.php">Logout</a>
                          </div>';
                 } else {
                     echo '<div class="nav-links">
