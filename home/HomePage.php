@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
     session_start();
+    
     if (!isset($_SESSION["userType"])) {
         header('Location: ../commons/accessDenied.php');
     } else {
