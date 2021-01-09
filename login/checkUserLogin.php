@@ -5,11 +5,11 @@
 
     include("../commons/config.php");
 
-    $query = 'SELECT * FROM user JOIN patient ON user.id = patient.user_id WHERE
-      user.username = "' . $_POST["username"] . '" AND user.password = MD5("' . $_POST["password"] . '")';
+    $query = 'SELECT user.id FROM user JOIN patient ON user.id = patient.user_id WHERE
+        user.username = "' . $_POST["username"] . '" AND user.password = MD5("' . $_POST["password"] . '")';
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
     if(mysqli_num_rows($result) != 1) {
-      $wrongCredentials = true;
+        $wrongCredentials = true;
     }
 ?>
 
@@ -45,7 +45,7 @@
                         } else {
                             echo '<p class="central-text">Logged in successfully.</p>';
                             echo '<a class="login-button" href="../home/homePage.php">Go to Home Page</a>';
-                          
+                            
                             $_SESSION["userType"] = 1; // sets user type as patient
                             $user = mysqli_fetch_array($result);
                             $_SESSION["id"] = $user["id"];

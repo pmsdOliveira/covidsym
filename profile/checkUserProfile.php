@@ -3,24 +3,23 @@
 <?php
     session_start();
 
-    if ($_SESSION["userType"] != 0) {
+    if (!isset($_SESSION["userType"]) || $_SESSION["userType"] != 0)
         header('Location: http://localhost/covidsym/commons/accessDenied.php');
-    } else {
-        include("../commons/config.php");
+        
+    include("../commons/config.php");
 
-        $query = 'INSERT INTO user (username, password, email) VALUES ("'
-            . $_POST["username"] . '", MD5("' . $_POST["password"] . '"), "' . $_POST["email"] . '")';
-        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-        $id = mysqli_insert_id($connect);
+    $query = 'INSERT INTO user (username, password, email) VALUES ("'
+        . $_POST["username"] . '", MD5("' . $_POST["password"] . '"), "' . $_POST["email"] . '")';
+    $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+    $id = mysqli_insert_id($connect);
 
-        $query = 'INSERT INTO patient (name, gender, birthdate, phone, address, local, district, 
-            fiscal_number, healthcare_number, user_id) VALUES ("'
-            . $_POST["name"] . '", "' . $_POST["gender"] . '", "' . $_POST["birthdate"] . '", "'
-            . $_POST["phone"] . '", "' . $_POST["address"] . '", "' . $_POST["local"] . '", "'
-            . $_POST["district"] . '", "' . $_POST["fiscal"] . '", "' . $_POST["healthcare"] . '", ' 
-            . $id . ')';
-        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-    }
+    $query = 'INSERT INTO patient (name, gender, birthdate, phone, address, local, district, 
+        fiscal_number, healthcare_number, user_id) VALUES ("'
+        . $_POST["name"] . '", "' . $_POST["gender"] . '", "' . $_POST["birthdate"] . '", "'
+        . $_POST["phone"] . '", "' . $_POST["address"] . '", "' . $_POST["local"] . '", "'
+        . $_POST["district"] . '", "' . $_POST["fiscal"] . '", "' . $_POST["healthcare"] . '", ' 
+        . $id . ')';
+    $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 ?>
 
 <html>
