@@ -125,14 +125,19 @@
             </p>
             <p>
               <span class="bold">Patient: </span>
-              <?php if ($_SESSION["userType"] == 1) 
-                      echo $appointment["patientName"];
-                    else if ($_SESSION["userType"] == 2)
-                      echo '<a class="patient-name" href="../profile/userProfile.php?id=' . $appointment["patientID"] . '">'
-                        . $appointment["patientName"] . '</a>';
+              <?php 
+                if ($_SESSION["userType"] == 1) 
+                  echo $appointment["patientName"];
+                else if ($_SESSION["userType"] == 2)
+                  echo '<a class="patient-name" href="../profile/userProfile.php?id=' . $appointment["patientID"] . '">'
+                    . $appointment["patientName"] . '</a>';
               ?>
             </p>
           </div>
+          <?php
+
+          ?>
+          <form>
           <div class="grid">
             <div class="sypmtoms-risks">
               <p><span class="bold">Symptoms and Risks:</span></p>
@@ -147,7 +152,10 @@
             ?>
             <div class="prescription">
               <p><span class="bold">Prescription:</span></p>
-              <textarea rows="8" readonly><?php echo $appointment["prescription"]?></textarea>
+              <?php
+                echo '<textarea rows="8" ' . ($_SESSION["userType"] == 2 ? '' : 'readonly') . '>'
+                  . $appointment["prescription"] . '</textarea>';
+              ?>
             </div>
             <?php
               if ($_SESSION["userType"] == 1)
@@ -158,11 +166,12 @@
               else if ($_SESSION["userType"] == 2) {
                 echo '<div class="notes">
                         <p><span class="bold">Decision Notes:</span></p>
-                        <textarea rows="8" readonly>' . $appointment["notes"] . '</textarea>
+                        <textarea rows="8">' . $appointment["notes"] . '</textarea>
                       </div>';
               }
             ?>
           </div>
+          </form>
         </div>
       </div>
     </div>

@@ -5,6 +5,9 @@
 
     include("../commons/config.php");
 
+    echo $_POST["username"];
+    echo $_POST["password"];
+
     $query = 'SELECT user.id FROM user JOIN medic ON user.id = medic.user_id WHERE
       user.username = "' . $_POST["username"] . '" AND user.password = MD5("' . $_POST["password"] . '")';
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));

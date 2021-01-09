@@ -125,11 +125,11 @@ body {
 }
 
 .medic:nth-child(even) {
-  background-color: var(--backgroundColor);
+  background-color: white;
 }
 
 .medic:nth-child(odd) {
-  background-color: white;
+  background-color: var(--backgroundColor);
 }
 
 .medic i {
