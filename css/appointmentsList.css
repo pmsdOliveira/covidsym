@@ -118,7 +118,7 @@ body {
   display: grid;
   font-size: 2vmin;
   font-weight: bolder;
-  grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
   grid-template-rows: 1fr;
   height: 8vmin;
   justify-items: center;

@@ -106,10 +106,7 @@
                             <p>' . $appointment["date"] . '</p>
                           </div>
                           <div class="appointment-id">
-                            <p>' . $appointment["patient"] . '</p>
-                          </div>
-                          <div class="appointment-id">
-                            <p>' . $appointment["name"] . '</p>
+                            <p>Dr. ' . $appointment["name"] . '</p>
                           </div>
                           <p>Closed: ' . $closed . '</p>
                           <a href="appointment?id=' . $appointment["id"] . '">Select</i></a>';
