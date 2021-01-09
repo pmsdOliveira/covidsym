@@ -3,7 +3,7 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION["userType"]) || $_SESSION["userType"] != 1) {
+  if (!isset($_SESSION["userType"]) || ($_SESSION["userType"] != 1 && $_SESSION["userType"] != 2)) {
     header('Location: ../commons/accessDenied.php');
   }
 ?>
@@ -36,18 +36,32 @@
         $pageNumber = 1;
       $firstResult = ($pageNumber - 1) * 5;
 
-      $query = 'SELECT id FROM patient WHERE patient.user_id = ' . $_SESSION["id"];
-      $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-      $patient = mysqli_fetch_array($result);
+      if ($_SESSION["userType"] == 1) {
+        $query = 'SELECT id FROM patient WHERE patient.user_id = ' . $_SESSION["id"];
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+        $patient = mysqli_fetch_array($result);
 
-      $query = 'SELECT appointment.id, appointment.date, medic.name, appointment.date, appointment.prescription 
-        FROM appointment 
-        INNER JOIN patient ON appointment.patient_id = patient.id 
-        INNER JOIN medic ON appointment.medic_id = medic.id
-        WHERE patient.id = ' . $patient["id"];
+        $query = 'SELECT appointment.id, appointment.date, patient.name AS patient, medic.name, appointment.date, appointment.prescription 
+          FROM appointment 
+          INNER JOIN patient ON appointment.patient_id = patient.id 
+          INNER JOIN medic ON appointment.medic_id = medic.id
+          WHERE patient.id = ' . $patient["id"];      
+      } else if ($_SESSION["userType"] == 2) {
+        $query = 'SELECT id FROM medic WHERE medic.user_id = ' . $_SESSION["id"];
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+        $medic = mysqli_fetch_array($result);
+
+        $query = 'SELECT appointment.id, appointment.date, patient.name AS patient, medic.name, appointment.date, appointment.prescription 
+          FROM appointment 
+          INNER JOIN patient ON appointment.patient_id = patient.id 
+          INNER JOIN medic ON appointment.medic_id = medic.id
+          WHERE medic.id = ' . $medic["id"];  
+      }
+
       $result = mysqli_query($connect, $query)
         or die(mysqli_error($connect));
-      $nPages = intval(mysqli_num_rows($result) / 5 + 1);  
+      $nPages = intval(mysqli_num_rows($result) / 5 + 1);
+      
     ?>
     <?php include "../commons/navbar.php"; ?>
 
@@ -90,6 +104,9 @@
                     echo '<div class="appointment-date">
                             <i class="fas fa-calendar-day"></i>
                             <p>' . $appointment["date"] . '</p>
+                          </div>
+                          <div class="appointment-id">
+                            <p>' . $appointment["patient"] . '</p>
                           </div>
                           <div class="appointment-id">
                             <p>' . $appointment["name"] . '</p>
