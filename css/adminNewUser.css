@@ -1,0 +1,404 @@
+:root {
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --contrastColor: #e6e6e6;
+    --textColor: #3d3d3d;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--backgroundColor);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+    height: max-content;
+}
+
+.content-wrapper {
+    align-items: center;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    width: 50%;
+}
+
+.modal-header {
+    align-items: center;
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1.5vh 4vw;
+    width: 100%;
+}
+
+.modal-header h1 {
+    color: white;
+    font-size: 4vmin;
+    align-self: center;
+}
+
+.goBackBtn {
+    color: white;
+    font-size: 4vmin;
+    transition: all 0.3s ease;
+}
+
+.goBackBtn:hover {
+    cursor: pointer;
+}
+
+.goBackBtn:active {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vh;
+}
+
+.profile h2 {
+    margin-bottom: 1vh;
+}
+
+.profile button {
+    width: 10vw;
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 2vmin;
+    font-weight: bold;
+    outline: none;
+    padding: 1vh 0;
+    transition: all 0.3s ease;
+    margin: 2vh 0;
+}
+
+.profile button:active {
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+.fa-user-circle {
+    font-size: 12vmin;
+}
+.profile-pic {
+    border: 2px var(--lighterColor) solid;
+    border-radius: 50%;
+    height: 17vmin;
+    width: 17vmin;
+}
+
+.table {
+    width: 100%;
+    border: 0px;
+}
+
+.table_left {
+    vertical-align: top;
+    width: 30%;
+}
+
+.form {
+    font-weight: bold;
+    color: var(--textColor);
+    padding: 2vh 1vw 2vh 0;
+    width: 100%;
+}
+
+.form label {
+    display: block;
+    margin: 0.8vh 0;
+    text-align: center;
+}
+
+.form input {
+    background: var(--backgroundColor);
+    border: 0px;
+    border-radius: 5px;
+    font-size: 2vmin;
+    outline: none;
+    padding-left: 0.5vw;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.gender {
+    display: flex;
+    font-size: 1.5vmin;
+    justify-content: space-around;
+}
+
+input[type="submit"] {
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding: 1vh 0;
+    transition: all 0.3s ease;
+    width: 10vw;
+    margin: 0 1vw 1vh;
+    float: right;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.95);
+}
+:root {
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --contrastColor: #e6e6e6;
+    --textColor: #3d3d3d;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--backgroundColor);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+    height: max-content;
+}
+
+.content-wrapper {
+    align-items: center;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    width: 50%;
+}
+
+.modal-header {
+    align-items: center;
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1.5vh 4vw;
+    width: 100%;
+}
+
+.modal-header h1 {
+    color: white;
+    font-size: 4vmin;
+    align-self: center;
+}
+
+.goBackBtn {
+    color: white;
+    font-size: 4vmin;
+    transition: all 0.3s ease;
+}
+
+.goBackBtn:hover {
+    cursor: pointer;
+}
+
+.goBackBtn:active {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vh;
+}
+
+.profile h2 {
+    margin-bottom: 1vh;
+}
+
+.profile button {
+    width: 10vw;
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 2vmin;
+    font-weight: bold;
+    outline: none;
+    padding: 1vh 0;
+    transition: all 0.3s ease;
+    margin: 2vh 0;
+}
+
+.profile button:active {
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+.fa-user-circle {
+    font-size: 16vmin;
+}
+
+.profile-pic {
+    border: 2px var(--lighterColor) solid;
+    border-radius: 50%;
+    height: 17vmin;
+    width: 17vmin;
+}
+
+.table {
+    width: 100%;
+    border: 0px;
+}
+
+.table_left {
+    vertical-align: top;
+    width: 30%;
+}
+
+.form {
+    font-weight: bold;
+    color: var(--textColor);
+    padding: 2vh 1vw 2vh 0;
+    width: 100%;
+}
+
+.form label {
+    display: block;
+    margin: 0.8vh 0;
+    text-align: center;
+}
+
+.form input {
+    background: var(--backgroundColor);
+    border: 0px;
+    border-radius: 5px;
+    font-size: 2vmin;
+    outline: none;
+    padding-left: 0.5vw;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.gender {
+    display: flex;
+    font-size: 1.5vmin;
+    justify-content: space-around;
+}
+
+input[type="submit"] {
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding: 1vh 0;
+    transition: all 0.3s ease;
+    width: 10vw;
+    margin: 0 1vw 1vh;
+    float: right;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+.credentials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.credentials label {
+    display: block;
+    margin: 0.8vh 0;
+    text-align: center;
+}
+
+.credentials input {
+    background: var(--backgroundColor);
+    border: 0px;
+    border-radius: 5px;
+    font-size: 2vmin;
+    outline: none;
+    padding-left: 0.5vw;
+    transition: all 0.3s ease;
+    width: 80%;
+    align-self: center;
+}

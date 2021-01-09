@@ -50,7 +50,7 @@
         
                 <div class="modal">
                     <div class="modal-header">
-                        <?php echo '<h1>Welcome, ' . $user["username"] . '</h1>'; ?>
+                        <?php echo '<h1>Welcome, ' . $user["name"] . '</h1>'; ?>
                     </div>
                     <?php 
                         if ($_SESSION["userType"] == 2) {
@@ -60,8 +60,10 @@
                             $result = mysqli_query($connect, $query)
                                 or die(mysqli_error($connect));
                             $medic = mysqli_fetch_array($result);
+                            $count = mysqli_num_rows($result) == 0 ? 0 : $medic["waiting_list"];
+                            
                             echo '<div class="modal-body">
-                                    <p><span>Users waiting for appointment: </span>' . $medic["waiting_list"] . '</p>
+                                    <p><span>Users waiting for appointment: </span>' . $count . '</p>
                                     <div class="buttons">
                                         <a href="../appointment/appointmentsList">See Appointments</a>
                                         <a href="../profile/usersList">New Appointment</a>

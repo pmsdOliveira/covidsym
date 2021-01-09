@@ -60,7 +60,9 @@
 
       $result = mysqli_query($connect, $query)
         or die(mysqli_error($connect));
-      $nPages = intval(mysqli_num_rows($result) / 5 + 1);
+      $nResults = mysqli_num_rows($result);
+      $nPages = intval($nResults / 5);
+      $nPages += ($nResults % 5 == 0 ? 0 : 1);
       
     ?>
     <?php include "../commons/navbar.php"; ?>
