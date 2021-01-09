@@ -2,5 +2,8 @@
     session_start();
     session_destroy();
 
-    header("../index");
+    ob_start();
+    header("Location: ../index");
+    ob_end_flush();
+    die();
 ?>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
     session_start();
-    
 ?>
 
 <html>
@@ -35,7 +34,7 @@
                             echo '<a href="login/logout.php">Logout</a>';
                         } else {
                             echo '
-                                <a href="login/userLogin.php">Login</a>
+                                <a href="login/userLogin.php">User Login</a>
                                 <a href="login/staffLogin.php"> Staff Login</a>
                                 ';
                         }

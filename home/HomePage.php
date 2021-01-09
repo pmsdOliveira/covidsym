@@ -10,13 +10,13 @@
         $id = $_SESSION["id"];
         
         if($_SESSION["userType"] ==1){
-            $query = "SELECT * FROM patient JOIN user ON patient.user_id = user.id WHERE patient.id = $id ";
+            $query = "SELECT * FROM patient JOIN user ON patient.user_id = user.id WHERE patient.user_id = $id";
         }else if($_SESSION["userType"] ==2){
-            $query = "SELECT * FROM medic JOIN user ON medic.user_id = user.id WHERE medic.id = $id";
+            $query = "SELECT * FROM medic JOIN user ON medic.user_id = user.id WHERE medic.user_id = $id";
         }else if($_SESSION["userType"] ==3){
-            $query = "SELECT * FROM investigator JOIN user ON investigator.user_id = user.id WHERE investigator.id = $id";
+            $query = "SELECT * FROM investigator JOIN user ON investigator.user_id = user.id WHERE investigator.user_id = $id";
         }else if($_SESSION["userType"] ==4){
-            $query = "SELECT * FROM admin JOIN user ON admin.user_id = user.id WHERE admin.id = $id";
+            $query = "SELECT * FROM admin JOIN user ON admin.user_id = user.id WHERE admin.user_id = $id";
         }
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
         $user = mysqli_fetch_array($result);

@@ -2,17 +2,7 @@
 
 <?php
     session_start();
-
     include("../commons/config.php");
-    if (isset($_SESSION["userType"])) {
-        if ($_SESSION["userType"] != 0) {
-            header('Location: ../commons/accessDenied.php');
-        } else if($_SESSION["userType"] == 1){
-            
-        }
-    } else {
-        header('Location: ../commons/accessDenied.php');
-    }
 ?>
 
 <html>
