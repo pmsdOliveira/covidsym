@@ -22,7 +22,7 @@
 
         <div class="container">
             <div class="image-wrapper">
-                <img src="../img/logo.png" alt="Logo">
+                <a href="../index"><img src="../img/logo.png" alt="Logo"></a>
             </div>
 
             <div class="main">
