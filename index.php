@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
     session_start();
+    
 ?>
 
 <html>
@@ -62,8 +63,13 @@
                             </p>
                         </div>
                         <?php 
-                            if (isset($_SESSION["userType"]) && $_SESSION["userType"] != 0) {
-                                echo '<a href="appointment/newAppointment.php">Make an Appointment</a>';
+                            if (isset($_SESSION["userType"])) {
+                                if ($_SESSION["userType"] ==1){
+                                    echo '<a href="appointment/newAppointment.php">Make an Appointment</a>';
+                                }else{
+                                    echo '<a href="home/homePage">Go to Home Page</a>';
+                                }
+                                
                             } else {
                                 echo '<a href="login/userLogin.php">Login</a>';
                             }

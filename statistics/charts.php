@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  include("../commons/config.php");
+
+  if (!isset($_SESSION["userType"]) || $_SESSION["userType"]!=3) {
+    header('Location: ../commons/accessDenied.php');
+  }
+?>
 
 <html>
   <head>
@@ -17,7 +25,7 @@
     <?php 
         include("../commons/config.php");
         
-        $_SESSION["userType"] = 3;
+        
 
         $query = "SELECT (SELECT COUNT(patient.id) FROM patient) as patients,
                          (SELECT COUNT(medic.id) from medic) as medics,
