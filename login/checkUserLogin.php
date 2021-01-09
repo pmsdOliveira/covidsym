@@ -35,16 +35,17 @@
 
             <div class="sign-up-wrapper">
                 <div class="header">
-                    Sign Up
+                    User Login
                 </div>
                 
                 <div class="modal-content">
                     <?php
                         if (isset($wrongCredentials) && $wrongCredentials == true) {
                             echo '<p class="central-text">Wrong credentials. Try to log in again.</p>';
+                            echo '<a class="login-button" href="../login/userLogin">Go to Login</a>';
                         } else {
                             echo '<p class="central-text">Logged in successfully.</p>';
-                            echo '<a class="login-button" href="../home/homePage.php">Go to Home Page</a>';
+                            echo '<a class="login-button" href="../home/homePage">Go to Home Page</a>';
                             
                             $_SESSION["userType"] = 1; // sets user type as patient
                             $user = mysqli_fetch_array($result);

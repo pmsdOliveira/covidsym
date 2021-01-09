@@ -65,7 +65,7 @@
                             header('Location: ../profile/userProfile.php');
                         }
                     ?>
-                    <a class="login-button" href="../signup/userSignup.php">Login</a>
+                    <a class="login-button" href="../signup/userSignup.php">Go to Sign Up</a>
                 </div>
             </div>
         </div>
