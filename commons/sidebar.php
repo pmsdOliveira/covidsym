@@ -19,15 +19,17 @@
                 <i class="fas fa-home icon"></i>
                 Home Page
             </a>
-            <a class="sidebar-button" href="../profile/userProfile">
-                <i class="far fa-id-card icon"></i>    
-                Profile
-            </a>
             
-            <?php 
-                //$_SESSION["userType"] = 1; //placeholder
+            <?php
+                $query = 'SELECT id FROM patient WHERE patient.user_id = ' . $_SESSION["id"];
+                $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+                $patient = mysqli_fetch_array($result);
 
                 if($_SESSION["userType"] == 1) {
+                    echo '<a class="sidebar-button" href="../profile/userProfile.php?id=' . $patient["id"] . '">
+                              <i class="far fa-id-card icon"></i>    
+                              Profile
+                          </a>';
                     echo '<a class="sidebar-button" href="../appointment/appointmentsList">
                             <i class="far fa-calendar-check icon"></i>    
                             Appointments
