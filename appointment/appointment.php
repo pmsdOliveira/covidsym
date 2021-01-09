@@ -128,7 +128,7 @@ a<!DOCTYPE html>
               <?php if ($_SESSION["userType"] == 1) 
                       echo $appointment["patientName"];
                     else if ($_SESSION["userType"] == 2)
-                      echo '<a class="patient-name" href="../profile/userProfile.php?id="' . $appointment["patientID"] . '">'
+                      echo '<a class="patient-name" href="../profile/userProfile.php?id=' . $appointment["patientID"] . '">'
                         . $appointment["patientName"] . '</a>';
               ?>
             </p>
