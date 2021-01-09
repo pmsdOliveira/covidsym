@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>COVIDSYM - FAQ</title>

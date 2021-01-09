@@ -82,6 +82,11 @@ body {
   font-size: 2vmin;
 }
 
+.patient-name {
+  color: var(--textColor);
+  text-decoration: none;
+}
+
 .bold {
   color: var(--textColor);
   font-weight: bolder;

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+a<!DOCTYPE html>
 
 <?php
   session_start();
 
-  if (!isset($_SESSION["userType"]))
+  if (!isset($_SESSION["userType"]) || ($_SESSION["userType"] != 1 && $_SESSION["userType"] != 2))
     header('Location: ../commons/accessDenied.php');
 ?>
 
@@ -39,7 +39,7 @@
           header('Location: ../commons/pageNotFound.php');
 
         $query = "SELECT appointment.id AS id, appointment.date AS date, medic.name AS medicName,
-                  patient.name AS patientName, appointment.result AS supportResult,
+                  patient.id AS patientID, patient.name AS patientName, appointment.result AS supportResult,
                   appointment.prescription as prescription, appointment.notes as notes
                   FROM appointment
                   JOIN patient ON appointment.patient_id = patient.id
@@ -115,9 +115,19 @@
           </div>
 
           <div class="appointment-header">
-            <p><span class="bold">Date: </span><?php echo date("d-m-Y", strtotime($appointment["date"]))?></p>
-            <p><span class="bold">Medic: </span><?php echo $appointment["medicName"]?></p>
-            <p><span class="bold">Patient: </span><?php echo $appointment["patientName"]?></p>
+            <p>
+              <span class="bold">Date: </span>
+              <?php echo date("d-m-Y", strtotime($appointment["date"]))?>
+            </p>
+            <p>
+              <span class="bold">Medic: </span>
+              <?php echo $appointment["medicName"]?>
+            </p>
+            <p>
+              <span class="bold">Patient: </span>
+              <?php echo '<a class="patient-name" href="../profile/userProfile.php?id="' . $appointment["patientID"] . '">'
+                . $appointment["patientName"] . '</a>';?>
+            </p>
           </div>
           <div class="grid">
             <div class="sypmtoms-risks">
@@ -128,7 +138,7 @@
               if ($_SESSION["userType"] == 2)
                 echo '<div class="diagnosis">
                         <p><span class="bold">Support System Result:</span></p>
-                        <textarea rows="8" readonly><?php echo $appointment["supportResult"]?></textarea>
+                        <textarea rows="8" readonly>' . $appointment["supportResult"] . '</textarea>
                       </div>';
             ?>
             <div class="prescription">
@@ -141,6 +151,12 @@
                         <p><span class="bold">Decision Notes:</span></p>
                         <textarea rows="8" readonly>' . $appointment["notes"] . '</textarea>
                       </div>';
+              else if ($_SESSION["userType"] == 2) {
+                echo '<div class="notes">
+                        <p><span class="bold">Decision Notes:</span></p>
+                        <textarea rows="8" readonly>' . $appointment["notes"] . '</textarea>
+                      </div>';
+              }
             ?>
           </div>
         </div>

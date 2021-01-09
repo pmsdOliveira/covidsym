@@ -27,14 +27,14 @@
                     Staff Login
                 </div>
 
-                <form action="../login/checkLogin.php" method="POST">
+                <form action="../login/checkStaffLogin.php" method="POST">
                     <div class="field">
-                        <input type="text" name="Email" required>
-                        <label>Email</label>
+                        <input type="text" name="username" required>
+                        <label>Username</label>
                     </div>
 
                     <div class="field">
-                        <input type="password" required>
+                        <input type="password" name="password" required>
                         <label>Password</label>
                     </div>
 
