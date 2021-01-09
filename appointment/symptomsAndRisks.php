@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php
+  session_start();
+
+  if (!isset($_SESSION["userType"]) || $_SESSION["userType"] != 1) {
+    header('Location: ../commons/accessDenied.php');
+  }
+?>
+
 <html>
   <head>
     <title>COVIDSYM - Symptoms and Risks</title>
@@ -36,7 +44,7 @@
           <div class="symptoms">
             <h4>Fill in the following Symptoms and Risk Factors:</h4>
           </div>
-          <form class="form" action="....." method="POST">
+          <form class="form" action="../appointment/checkSymptomsAndRisks.php" method="POST">
             <table>
               <tr>
                 <td><Label> Body Temperature(ºC)</Label></td>
@@ -44,68 +52,68 @@
                   <input
                     class="temperature"
                     name="temperature"
-                    placeholder="00.0"
+                    value="36.0"
                     type="number"
-                    step=".1"
+                    step=".5"
                     required
                   />
                 </td>
                 <td><label>Kidney Disease</label></td>
-                <td><input name="kidney" type="checkbox" /></td>
+                <td><input name="kidney" type="checkbox" value="true"/></td>
               </tr>
               <tr>
                 <td><label>Dry Cough</label></td>
                 <td>
-                  <input name="cough" type="checkbox" />
+                  <input name="cough" type="checkbox" value="true"/>
                 </td>
                 <td><label>Lung Disease</label></td>
-                <td><input name="lung" type="checkbox" /></td>
+                <td><input name="lung" type="checkbox" value="true"/></td>
               </tr>
               <tr>
                 <td><label>Sore Throat</label></td>
-                <td><input name="throat" type="checkbox" /></td>
+                <td><input name="throat" type="checkbox" value="true"/></td>
                 <td><label>Heart Disease</label></td>
-                <td><input name="heart" type="checkbox" /></td>
+                <td><input name="heart" type="checkbox" value="true"/></td>
                 
               </tr>
               <tr>
                 <td><label>Weakness</label></td>
                 <td>
-                  <input name="weakness" type="checkbox" />
+                  <input name="weakness" type="checkbox" value="true"/>
                 </td>
                 <td><label>Recently Travelled</label></td>
-                <td><input name="travelled" type="checkbox" /></td>
+                <td><input name="travelled" type="checkbox" value="true"/></td>
               </tr>
               <tr>
                 <td><label>Breathing Dificulties</label></td>
-                <td><input name="breathing" type="checkbox" /></td>
+                <td><input name="breathing" type="checkbox" value="true"/></td>
                 <td><label>High Blood Pressure</label></td>
-                <td><input name="blood" type="checkbox" /></td>
+                <td><input name="blood" type="checkbox" value="true"/></td>
               </tr>
               <tr>
                 <td><label>Drowsiness</label></td>
-                <td><input name="drowsiness" type="checkbox" /></td>
+                <td><input name="drowsiness" type="checkbox" value="true"/></td>
                 <td><label>Stroke or Reduced Imunity</label></td>
-                <td><input name="stroke" type="checkbox" /></td>
+                <td><input name="stroke" type="checkbox" value="true"/></td>
               </tr>
               <tr>
                 <td><label>Chest Pain</label></td>
-                <td><input name="pain" type="checkbox" /></td>
+                <td><input name="pain" type="checkbox" value="true"/></td>
                 <td><label>Diabetes</label></td>
-                <td><input name="diabetes" type="checkbox" /></td>
+                <td><input name="diabetes" type="checkbox" value="true"/></td>
               </tr>
               <tr>
                 <td><label>Change in Appetite</label></td>
-                <td><input name="appetite" type="checkbox" /></td>
+                <td><input name="appetite" type="checkbox" value="true"/></td>
                 <td><label>Symptoms Progressed</label></td>
-                <td><input name="progressed" type="checkbox" /></td>
+                <td><input name="progressed" type="checkbox" value="true"/></td>
               </tr>
               <tr>
                 <td><label>Loss of Smell</label></td>
-                <td><input name="smell" type="checkbox" /></td>
+                <td><input name="smell" type="checkbox" value="true"/></td>
                 <td rowspan="2" colspan="2">
                   <div class="buttonSide">
-                    <input type="submit" value="Next" />
+                    <input type="submit" value="Submit" />
                   </div>
                 </td>
               </tr>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-    
     session_start();
     if (!isset($_SESSION["userType"])) {
         header('Location: ../commons/accessDenied.php');
@@ -53,8 +52,15 @@
                     </div>
                     <?php 
                         if ($_SESSION["userType"] == 2) {
+                            $query = 'SELECT medic.id, medic.name, count(appointment.medic_id) AS waiting_list 
+                                FROM medic INNER JOIN appointment ON medic.id = appointment.medic_id 
+                                WHERE appointment.prescription IS NULL GROUP BY medic.id 
+                                ORDER BY waiting_list';
+                            $result = mysqli_query($connect, $query)
+                                or die(mysqli_error($connect));
+                            $medic = mysqli_fetch_array($result);
                             echo '<div class="modal-body">
-                                    <p><span>Users waiting for appointment: </span>420</p>
+                                    <p><span>Users waiting for appointment: </span>' . $medic["waiting_list"] . '</p>
                                     <div class="buttons">
                                         <a href="../appointment/appointments">See Appointments</a>
                                         <a href="../profile/usersList">New Appointment</a>
