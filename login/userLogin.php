@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<?php
+    session_start();
+    $_SESSION["login"] = "User";
+?>
+
 <html>
     <head>
         <title>COVIDSYM - User Login</title>

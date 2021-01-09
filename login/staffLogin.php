@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<?php
+    session_start();
+    $_SESSION["login"] = "Staff";
+?>
+
 <html>
     <head>
         <title>COVIDSYM - Staff Login</title>
@@ -39,14 +44,14 @@
                     </div>
 
                     <div class="content">
-                        <div class="checkbox">
+                        <!-- <div class="checkbox">
                             <input type="checkbox" id="remember-me">
                             <label for="remember-me">Remember me</label>
                         </div>
 
                         <div class="pass-link">
                             <a href="#">Forgot your password?</a>
-                        </div>
+                        </div> -->
                     </div>
 
                     <input type="submit" value="Login">

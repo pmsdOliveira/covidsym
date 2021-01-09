@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
     session_start();
-    
 ?>
 
 <html>
@@ -32,17 +31,14 @@
                 <div class="nav-links">
                     <?php 
                         if (isset($_SESSION["userType"]) && $_SESSION["userType"] != 0) {
-                            echo '<a href="#">Logout</a>';
-                            
-
+                            echo '<a href="login/logout.php">Logout</a>';
                         } else {
                             echo '
-                                <a href="login/userLogin.php">Login</a>
+                                <a href="login/userLogin.php">User Login</a>
                                 <a href="login/staffLogin.php"> Staff Login</a>
                                 ';
                         }
                     ?>
-                    
                 </div>
             </div>
 

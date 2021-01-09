@@ -14,16 +14,22 @@
 
     <body>
         <div class="navbar">
-            <a href="../home/homePage.php"><img src="../img/logo-white.png" alt="Logo"></a>
+            <a href="../index"><img src="../img/logo-white.png" alt="Logo"></a>
             <?php 
                 if (isset($_SESSION["userType"]) && $_SESSION["userType"] != 0) {
                     echo '<div class="nav-links">
-                            <a href="#">Logout</a>
+                            <a href="../login/logout.php">Logout</a>
                          </div>';
                 } else {
-                    echo '<div class="nav-links">
-                            <a href="../login/userLogin.php">Login</a>
-                         </div>';
+                    if(isset($_SESSION["login"]) && $_SESSION["login"] == "Staff") {
+                        echo '<div class="nav-links">
+                                <a href="../login/userLogin.php">User Login</a>
+                            </div>';
+                    } else {
+                        echo '<div class="nav-links">
+                                <a href="../login/staffLogin.php">Staff Login</a>
+                            </div>';
+                    }
                 }
             ?>
         </div>

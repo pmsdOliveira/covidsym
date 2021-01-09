@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<?php
+    session_start();
+    include("../commons/config.php");
+?>
+
 <html>
   <head>
     <title>COVIDSYM - FAQ</title>

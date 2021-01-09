@@ -50,6 +50,7 @@
                             $_SESSION["userType"] = 1; // sets user type as patient
                             $user = mysqli_fetch_array($result);
                             $_SESSION["id"] = $user["id"];
+                            unset($_SESSION["login"]);
                         }
                     ?>
                     

@@ -42,15 +42,19 @@
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 
     $query = 'INSERT INTO appointment_riskfactors (appointment_id, riskfactor_id) VALUES ';
+    $queryValues = '';
     for ($i = 0; $i < count($riskFactors); $i++) {
         if ($riskFactors[$i] == 'true')
-            $query .= '(' . $appointmentID . ', ' . ($i + 1) . '), ';
+            $queryValues .= '(' . $appointmentID . ', ' . ($i + 1) . '), ';
     }
-    $query = substr($query, 0, -2);
-    echo '<p>' . $query . '</p>';
-    $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 
-    
+    if($queryValues != '') {
+        $query .= $queryValues;
+        $query = substr($query, 0, -2);
+        echo '<p>' . $query . '</p>';
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+    }
+
     unset($_SESSION["appointmentID"]);
 
     header('Location: ../appointment/appointment.php?id=' . $appointmentID);
