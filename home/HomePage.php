@@ -49,7 +49,7 @@
         
                 <div class="modal">
                     <div class="modal-header">
-                        <?php echo '<h1>Welcome, ' . $user["name"] . '</h1>'; ?>
+                        <?php echo '<h1>Welcome, ' . $user["username"] . '</h1>'; ?>
                     </div>
                     <?php 
                         if ($_SESSION["userType"] == 2) {
