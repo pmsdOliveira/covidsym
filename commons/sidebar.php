@@ -21,12 +21,12 @@
             </a>
             
             <?php
-                $query = 'SELECT id FROM patient WHERE patient.user_id = ' . $_SESSION["id"];
-                $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-                $patient = mysqli_fetch_array($result);
-
                 if($_SESSION["userType"] == 1) {
-                    echo '<a class="sidebar-button" href="../profile/userProfile.php?id=' . $patient["id"] . '">
+                    $sidebarQuery = 'SELECT id FROM patient WHERE patient.user_id = ' . $_SESSION["id"];
+                    $sidebarResult = mysqli_query($connect, $sidebarQuery) or die(mysqli_error($connect));
+                    $sidebarPatient = mysqli_fetch_array($sidebarResult);
+
+                    echo '<a class="sidebar-button" href="../profile/userProfile.php?id=' . $sidebarPatient["id"] . '">
                               <i class="far fa-id-card icon"></i>    
                               Profile
                           </a>';

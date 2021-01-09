@@ -65,7 +65,7 @@
                     <?php
                         if ($_SESSION["userType"] == 0) {
                             echo '<p class="central-text">User ' . $_POST["username"] . '\'s successfully registered.
-                            Please proceed to login.</p>';
+                                Please proceed to login.</p>';
                             echo '<a class="login-button" href="../login/userLogin.php">Login</a>';
 
                             unset($_SESSION["userType"]);

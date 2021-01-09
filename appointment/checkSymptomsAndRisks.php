@@ -5,6 +5,8 @@
         header('Location: ../commons/accessDenied.php');
     }
 
+    $appointmentID = $_SESSION["appointmentID"];
+
     $symptoms = array(
         $_POST["temperature"] = isset($_POST["temperature"]) ? $_POST["temperature"] : 'false',
         $_POST["cough"] = isset($_POST["cough"]) ? $_POST["cough"] : 'false',
@@ -30,10 +32,10 @@
     include('../commons/config.php');
 
     $query = 'INSERT INTO appointment_symptoms (value, appointment_id, symptom_id) 
-        VALUES (' . ($symptoms[0] * 1.8 + 32) . ', ' . $_SESSION["appointmentID"] . ', ' . '1), ';
+        VALUES (' . ($symptoms[0] * 1.8 + 32) . ', ' . $appointmentID . ', ' . '1), ';
     for ($i = 1; $i < count($symptoms); $i++) {
         if ($symptoms[$i] == 'true')
-            $query .= '(NULL, ' . $_SESSION["appointmentID"] . ', ' . ($i + 1) . '), ';
+            $query .= '(NULL, ' . $appointmentID . ', ' . ($i + 1) . '), ';
     }
     $query = substr($query, 0, -2);
     echo '<p>' . $query . '</p>';
@@ -42,13 +44,14 @@
     $query = 'INSERT INTO appointment_riskfactors (appointment_id, riskfactor_id) VALUES ';
     for ($i = 0; $i < count($riskFactors); $i++) {
         if ($riskFactors[$i] == 'true')
-            $query .= '(' . $_SESSION["appointmentID"] . ', ' . ($i + 1) . '), ';
+            $query .= '(' . $appointmentID . ', ' . ($i + 1) . '), ';
     }
     $query = substr($query, 0, -2);
     echo '<p>' . $query . '</p>';
     $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
 
+    
     unset($_SESSION["appointmentID"]);
 
-    header('Location: ../appointment/appointment.php?id=' . $_SESSION["appointmentID"]);
+    header('Location: ../appointment/appointment.php?id=' . $appointmentID);
 ?>

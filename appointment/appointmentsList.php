@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php
+  session_start();
+
+  if (!isset($_SESSION["userType"]) || $_SESSION["userType"] != 1) {
+    header('Location: ../commons/accessDenied.php');
+  }
+?>
+
 <html>
   <head>
     <title>COVIDSYM - Appointments</title>
@@ -33,9 +41,9 @@
         or die(mysqli_error($connect));
       $nPages = intval(mysqli_num_rows($result) / 5 + 1);
       
-      $query = "SELECT id, prescription, date FROM appointment WHERE appointment.id > " . $firstResult;
+      $query = 'SELECT id, prescription, date FROM appointment WHERE id > ' . $firstResult;
       $result = mysqli_query($connect, $query)
-        or die(mysqli_error($connect));
+        or die(mysqli_error($connect));      
     ?>
     <?php include "../commons/navbar.php"; ?>
 
@@ -69,7 +77,7 @@
                 for ($i = 0; $i < 5; $i++) {
                   echo '<div class="appointment">';
                   if ($appointment = mysqli_fetch_array($result)) {
-                    ($appointment["prescription"] == null) ? $closed = "No" : $closed = "Yes";
+                    $closed = $appointment["prescription"] == null ? "No" : "Yes";
 
                     echo '<div class="appointment-id">
                             <i class="fas fa-clipboard-list"></i>
