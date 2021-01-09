@@ -73,7 +73,7 @@
 
         while($symptom = mysqli_fetch_array($symptoms)) {
             if($symptom["name"] == "Temperature") {
-                $symptomsAndRisks = 'Temperature (' . $symptom["value"] . 'ºC)' . $symptomsAndRisks;
+                $symptomsAndRisks = 'Temperature (' . round((($symptom["value"] - 32) / 1.8), 1) . 'ºC)' . $symptomsAndRisks;
             } else {
                 $symptomsAndRisks = $symptomsAndRisks . $symptom["name"];
             }
@@ -124,18 +124,24 @@
               <p><span class="bold">Symptoms and Risks:</span></p>
               <textarea rows="8" readonly><?php echo $symptomsAndRisks?></textarea>
             </div>
-            <div class="diagnosis">
-              <p><span class="bold">Support System Result:</span></p>
-              <textarea rows="8" readonly><?php echo $appointment["supportResult"]?></textarea>
-            </div>
+            <?php
+              if ($_SESSION["userType"] == 2)
+                echo '<div class="diagnosis">
+                        <p><span class="bold">Support System Result:</span></p>
+                        <textarea rows="8" readonly><?php echo $appointment["supportResult"]?></textarea>
+                      </div>';
+            ?>
             <div class="prescription">
               <p><span class="bold">Prescription:</span></p>
               <textarea rows="8" readonly><?php echo $appointment["prescription"]?></textarea>
             </div>
-            <div class="notes">
-              <p><span class="bold">Decision Notes:</span></p>
-              <textarea rows="8" readonly><?php echo $appointment["notes"]?></textarea>
-            </div>
+            <?php
+              if ($_SESSION["userType"] == 1)
+                echo '<div class="notes" style="grid-column: 1 / span 2;">
+                        <p><span class="bold">Decision Notes:</span></p>
+                        <textarea rows="8" readonly>' . $appointment["notes"] . '</textarea>
+                      </div>';
+            ?>
           </div>
         </div>
       </div>
