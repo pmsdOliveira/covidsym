@@ -3,10 +3,30 @@
 <?php
     session_start();
 
+    // File upload path
+    $targetDir = "uploads/";
+    $file = $_FILES["picture"];
+    $filename = $file["name"];
+    $fileTmpName = $file["tmp_name"];
+    $targetFilePath = $targetDir . $filename;
+    $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+    
     if (!isset($_SESSION["userType"]) || ($_SESSION["userType"] != 0 && $_SESSION["userType"] != 1))
         header('Location: http://localhost/covidsym/commons/accessDenied.php');
         
     include("../commons/config.php");
+    
+    $image = null;
+    $aux = "";
+
+    if(!empty($file)) {
+        $allowTypes = array('jpg', 'png', 'jpeg');
+        if(in_array($fileType, $allowTypes)) {
+            $image = addslashes(file_get_contents($fileTmpName));
+        }
+
+        $aux = 'profile_pic = "' . $image . '"';
+    }
 
     if ($_SESSION["userType"] == 0) {
         $query = 'INSERT INTO user (username, password, email) VALUES ("'
@@ -15,11 +35,12 @@
         $id = mysqli_insert_id($connect);
 
         $query = 'INSERT INTO patient (name, gender, birthdate, phone, address, local, district, 
-            fiscal_number, healthcare_number, user_id) VALUES ("'
+            fiscal_number, healthcare_number, profile_pic, user_id) VALUES ("'
             . $_POST["name"] . '", "' . $_POST["gender"] . '", "' . $_POST["birthdate"] . '", "'
             . $_POST["phone"] . '", "' . $_POST["address"] . '", "' . $_POST["local"] . '", "'
-            . $_POST["district"] . '", "' . $_POST["fiscal"] . '", "' . $_POST["healthcare"] . '", ' 
-            . $id . ')';
+            . $_POST["district"] . '", "' . $_POST["fiscal"] . '", "' . $_POST["healthcare"] . '", "'
+            . $image . '", "' . $id . '")';
+
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
     } else if ($_SESSION["userType"] == 1) {
         $query = 'SELECT id FROM patient WHERE patient.user_id = ' . $_SESSION["id"];
@@ -30,8 +51,9 @@
         . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
         . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
         . '", local = "' . $_POST["local"] . '", district = "' . $_POST["district"]
-        . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"] . '"
-        WHERE id = ' . $patient["id"];
+        . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"]
+        . '", '. $aux .' WHERE id = ' . $patient["id"];
+
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
     }
 ?>

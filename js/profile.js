@@ -1,3 +1,16 @@
+// PROFILE PIC
+function fileChanged() {
+    var selectedFile = document.getElementById('file-upload').files[0];
+    var img = document.getElementById("profile-pic");
+
+    var reader = new FileReader();
+    reader.onload = function() {
+        img.src = this.result;
+    }
+
+    reader.readAsDataURL(selectedFile);
+}
+
 const validateName = name => /^(?=.{5,100}$)[A-zÀ-ú]+(?: [A-zÀ-ú]+)*$/.test(name)
 
 const validatePhone = phone => /^(?=.{8,20}$)[+]{1}[-\s0-9]*$/.test(phone)

@@ -64,6 +64,7 @@
           <table class="table">
             <tr>
               <td class="table_left">
+                <form method="POST" action="../profile/checkUserProfile.php" enctype="multipart/form-data" onsubmit="return validateUserProfileForm()">
                 <div class="profile">
                   <h2>
                     <?php
@@ -76,15 +77,22 @@
                   </h2>
                   <?php
                     if ($_SESSION["userType"] == 0)
-                      echo '<i class="fas fa-user-circle"></i>';
+                      echo '<img id="profile-pic" class="profile-pic" src="../img/profileDefault.jpg"/>';
                     else
-                      echo '<img class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($user["profile_pic"]) . '"/>';
+                      if($user["profile_pic"] == null) {
+                        echo '<img id="profile-pic" class="profile-pic" src="../img/profileDefault.jpg"/>';
+                      } else {
+                        echo '<img id="profile-pic" class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($user["profile_pic"]) . '"/>';
+                      }
                   ?>
-                  <button>Update Picture</button>
+
+                    <label for="file-upload" class="file-upload">
+                        <input name="picture" onchange=fileChanged() id="file-upload" type="file" accept="image/*"/>
+                        Upload Picture
+                    </label>
                 </div>
               </td>
               <td>
-                <form method="POST" action="../profile/checkUserProfile.php" onsubmit="return validateUserProfileForm()">
                   <table class="form">
                     <tr>
                       <td><label>Name</label></td>
