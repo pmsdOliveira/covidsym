@@ -36,14 +36,18 @@
         $pageNumber = 1;
       $firstResult = ($pageNumber - 1) * 5;
 
-      $query = "SELECT * FROM appointment";
+      $query = 'SELECT id FROM patient WHERE patient.user_id = ' . $_SESSION["id"];
+      $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+      $patient = mysqli_fetch_array($result);
+
+      $query = 'SELECT appointment.id, appointment.date, medic.name, appointment.date, appointment.prescription 
+        FROM appointment 
+        INNER JOIN patient ON appointment.patient_id = patient.id 
+        INNER JOIN medic ON appointment.medic_id = medic.id
+        WHERE patient.id = ' . $patient["id"];
       $result = mysqli_query($connect, $query)
         or die(mysqli_error($connect));
-      $nPages = intval(mysqli_num_rows($result) / 5 + 1);
-      
-      $query = 'SELECT id, prescription, date FROM appointment WHERE id > ' . $firstResult;
-      $result = mysqli_query($connect, $query)
-        or die(mysqli_error($connect));      
+      $nPages = intval(mysqli_num_rows($result) / 5 + 1);  
     ?>
     <?php include "../commons/navbar.php"; ?>
 
@@ -74,21 +78,24 @@
           </div>
           <div class="appointments-list">
             <?php
+                for ($i = 0; $i < $firstResult; $i++) {
+                  $appointment = mysqli_fetch_array($result);
+                }
+                
                 for ($i = 0; $i < 5; $i++) {
                   echo '<div class="appointment">';
                   if ($appointment = mysqli_fetch_array($result)) {
                     $closed = $appointment["prescription"] == null ? "No" : "Yes";
 
-                    echo '<div class="appointment-id">
-                            <i class="fas fa-clipboard-list"></i>
-                            <p>Nº ' . $appointment["id"] . '</p>
-                          </div>
-                          <div class="appointment-date">
+                    echo '<div class="appointment-date">
                             <i class="fas fa-calendar-day"></i>
                             <p>' . $appointment["date"] . '</p>
                           </div>
+                          <div class="appointment-id">
+                            <p>' . $appointment["name"] . '</p>
+                          </div>
                           <p>Closed: ' . $closed . '</p>
-                          <a href="appointment?appointmentID=' . $appointment["id"] . '"><i class="fas fa-arrow-right"></i></a>';
+                          <a href="appointment?appointmentID=' . $appointment["id"] . '">Select</i></a>';
                   }
                   echo '</div>';
                 }

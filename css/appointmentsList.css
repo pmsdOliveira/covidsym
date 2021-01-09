@@ -112,12 +112,13 @@ body {
 }
 
 .appointment {
+  align-items: center;
   border-bottom: 1px solid var(--contrastColor);
   color: var(--textColor);
   display: grid;
   font-size: 2vmin;
   font-weight: bolder;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
   grid-template-rows: 1fr;
   height: 8vmin;
   justify-items: center;
@@ -142,6 +143,25 @@ body {
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
+}
+
+.appointment a {
+  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 2vmin;
+  font-weight: bold;
+  outline: none;
+  padding: 0.5vh 1vw;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.appointment a:active {
+  transform: scale(0.95);
+  transition: all 0.3s ease;
 }
 
 .fa-arrow-right {
