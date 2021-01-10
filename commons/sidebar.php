@@ -39,6 +39,14 @@
                             FAQ
                         </a>';
                 } else if($_SESSION["userType"] == 2) {
+                    $sidebarQuery = 'SELECT id FROM medic WHERE medic.user_id = ' . $_SESSION["id"];
+                    $sidebarResult = mysqli_query($connect, $sidebarQuery) or die(mysqli_error($connect));
+                    $sidebarMedic = mysqli_fetch_array($sidebarResult);
+
+                    echo '<a class="sidebar-button" href="../profile/staffProfile.php?id=' . $sidebarMedic["id"] . '">
+                              <i class="far fa-id-card icon"></i>    
+                              Profile
+                          </a>';
                     echo '<a class="sidebar-button" href="../profile/usersList">
                             <i class="fas fa-users icon"></i>  
                             Users

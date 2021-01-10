@@ -14,6 +14,8 @@
 
     <body>
         <?php 
+            session_start();
+
             include("../commons/config.php");
             if (isset($_GET["page"]))
                 $pageNumber = $_GET["page"];

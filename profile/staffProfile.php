@@ -21,17 +21,30 @@
 
   <body>
     <?php 
+        session_start();
+
         include("../commons/config.php");
-
-        $staffType = $_GET["staff"];
-        $staffID = $_GET["id"];
-
-        $query = "SELECT * FROM $staffType JOIN user ON $staffType.user_id = user.id WHERE $staffType.id = $staffID";
-        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-        $count = mysqli_num_rows($result);
-
-        if ($count == 1) {
-            $staff = mysqli_fetch_array($result);
+        if(isset($_SESSION["userType"])) {
+            if(isset($_GET["id"]) && $_SESSION["userType"] > 1) {
+                $staffType = null;
+                $staffID = $_GET["id"];
+        
+                switch($_SESSION["userType"]) {
+                    case 2: $staffType = "Medic"; break;
+                    case 3: $staffType = "Investigator"; break;
+                    case 4: $staffType = "Admin"; break;
+                }
+        
+                $query = "SELECT * FROM $staffType JOIN user ON $staffType.user_id = user.id WHERE $staffType.id = $staffID";
+                $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+                $count = mysqli_num_rows($result);
+        
+                if ($count == 1) {
+                    $staff = mysqli_fetch_array($result);
+                }
+            }
+        } else {
+            header('Location: ../commons/accessDenied.php');
         }
     ?>
 

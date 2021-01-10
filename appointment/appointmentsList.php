@@ -94,6 +94,8 @@
           </div>
           <div class="appointments-list">
             <?php
+                include("../commons/stringManipulation.php");
+
                 for ($i = 0; $i < $firstResult; $i++) {
                   $appointment = mysqli_fetch_array($result);
                 }
@@ -106,11 +108,17 @@
                     echo '<div class="appointment-date">
                             <i class="fas fa-calendar-day"></i>
                             <p>' . $appointment["date"] . '</p>
-                          </div>
-                          <div class="appointment-id">
-                            <p>Dr. ' . $appointment["name"] . '</p>
-                          </div>
-                          <p>Closed: ' . $closed . '</p>
+                          </div>';
+                    if($_SESSION["userType"] == 1) {
+                        echo '<div class="appointment-id">
+                                <p>Dr. ' . getFirstAndLast($appointment["name"]) . '</p>
+                             </div>';
+                    } else {
+                        echo '<div class="appointment-id">
+                            <p>' . getFirstAndLast($appointment["patient"]) . '</p>
+                        </div>';
+                    } 
+                    echo '<p>Closed: ' . $closed . '</p>
                           <a href="appointment?id=' . $appointment["id"] . '">Select</i></a>';
                   }
                   echo '</div>';

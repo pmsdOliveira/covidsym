@@ -11,7 +11,7 @@
     $targetFilePath = $targetDir . $filename;
     $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
     
-    if (!isset($_SESSION["userType"]) || ($_SESSION["userType"] != 0 && $_SESSION["userType"] != 1))
+    if (!isset($_SESSION["userType"]) || $_SESSION["userType"] == 3)
         header('Location: http://localhost/covidsym/commons/accessDenied.php');
         
     include("../commons/config.php");
@@ -24,8 +24,6 @@
         if(in_array($fileType, $allowTypes)) {
             $image = addslashes(file_get_contents($fileTmpName));
         }
-
-        $aux = 'profile_pic = "' . $image . '"';
     }
 
     if ($_SESSION["userType"] == 0) {
@@ -42,10 +40,16 @@
             . $image . '", "' . $id . '")';
 
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-    } else if ($_SESSION["userType"] == 1) {
-        $query = 'SELECT id FROM patient WHERE patient.user_id = ' . $_SESSION["id"];
+    } else {
+        $query = 'SELECT id, profile_pic FROM patient WHERE patient.user_id = ' . $_POST["id"];
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
         $patient = mysqli_fetch_array($result);
+
+        if($image != null) {
+            $aux = 'profile_pic = "' . $image . '"';
+        } else {
+            $aux = "";
+        }
 
         $query = 'UPDATE patient SET name = "' . $_POST["name"]
         . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
@@ -91,7 +95,7 @@
                             echo '<a class="login-button" href="../login/userLogin.php">Login</a>';
 
                             unset($_SESSION["userType"]);
-                        } else if ($_SESSION["userType"] == 1) {
+                        } else {
                             echo '<p class="central-text">Profile successfully updated.</p>';
                             echo '<a class="login-button" href="../profile/userProfile.php?id=' . $patient["id"] . '">Go Back to Profile</a>';
                         }
