@@ -88,7 +88,7 @@
             restrictions or limitations on access.
           </p>
           <br />
-          <p>Last update: 29 December 2020</p>
+          <p>Last update: 10 January 2021</p>
           <br />
           <br />
           <a href="../signup/UserSignup.php">Accept the Terms of Service Covidsym</a>
