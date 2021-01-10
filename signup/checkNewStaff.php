@@ -21,7 +21,7 @@
 
 <html>
     <head>
-        <title>COVIDSYM - New User</title>
+        <title>COVIDSYM - New Staff Member</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com/ ">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
 
             <div class="sign-up-wrapper">
                 <div class="header">
-                    New U
+                    New Staff Member
                 </div>
                 
                 <div class="modal-content">
@@ -58,25 +58,21 @@
                             $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
                             $id = mysqli_insert_id($connect);
 
-                            $query = 'INSERT INTO patient (name, gender, birthdate, phone, address, local, district, 
-                                fiscal_number, healthcare_number, user_id) VALUES ("'
-                                . $_POST["name"] . '", "' . $_POST["gender"] . '", "' . $_POST["birthdate"] . '", "'
-                                . $_POST["phone"] . '", "' . $_POST["address"] . '", "' . $_POST["local"] . '", "'
-                                . $_POST["district"] . '", "' . $_POST["fiscal"] . '", "' . $_POST["healthcare"] . '", ' 
-                                . $id . ')';
+                            $query = 'INSERT INTO  medic (name, phone, address, user_id) VALUES ("'
+                                . $_POST["name"] . '", "' . $_POST["phone"] . '", "' . $_POST["address"]. '", ' . $id . ')';
                             $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
                             
                             header('Location: ../home/homePage.php');
                         }
                         
                     ?>
-                    <a class="login-button" href="../signup/adminNewUser.php">Try Again </a>
+                    <a class="login-button" href="../signup/adminNewStaff.php">Try Again </a>
                 </div>
             </div>
         </div>
 
         <?php include "../commons/footer.php"; ?>
 
-        
+       
     </body>
 </html>
