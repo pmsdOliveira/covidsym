@@ -5,7 +5,7 @@
 
   include("../commons/config.php");
   if (isset($_SESSION["userType"])) {
-    if (isset($_GET["id"]) && ($_SESSION["userType"] == 1 || $_SESSION["userType"] == 2)) {
+    if (isset($_GET["id"]) && ($_SESSION["userType"] == 1 || $_SESSION["userType"] == 2 || $_SESSION["userType"] == 4)) {
       $patientID = $_GET["id"];
   
       $query = "SELECT * FROM patient JOIN user ON patient.user_id = user.id WHERE patient.id = $patientID";

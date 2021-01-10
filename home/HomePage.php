@@ -75,7 +75,7 @@
                         }else if ($_SESSION["userType"] == 4) {
                             echo '<div class="modal-body">
                                     <div class="buttons">
-                                        <a href="../appointment/appointments">Create New User</a>
+                                        <a href="../signup/adminNewUser">Create New User</a>
                                         <a href="../profile/usersList">Create New Staff Member</a>
                                     </div>
                                 </div>';

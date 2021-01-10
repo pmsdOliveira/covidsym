@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 
-<?php/*
+<?php
     session_start();
 
-    include("../commons/config.php");
-    if (isset($_SESSION["userType"]) || $_SESSION["userType"]!=4) {
+    
+    if (!isset($_SESSION["userType"]) || $_SESSION["userType"]!=4) {
         header('Location: ../commons/accessDenied.php');
-    }*/
+    }
+    include("../commons/config.php");
 ?>
 
 <html>
@@ -64,7 +65,7 @@
                                             <label>Password</label>
                                             <input
                                                 id="profile-password"
-                                                name="pass"
+                                                name="password"
                                                 type="password"
                                                 required
                                             />

@@ -41,7 +41,7 @@
 
             <div class="sign-up-wrapper">
                 <div class="header">
-                    Sign Up
+                    New User
                 </div>
                 
                 <div class="modal-content">
@@ -65,6 +65,7 @@
                                 . $_POST["district"] . '", "' . $_POST["fiscal"] . '", "' . $_POST["healthcare"] . '", ' 
                                 . $id . ')';
                             $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+                            
                             header('Location: ../home/homePage.php');
                         }
                         
