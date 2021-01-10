@@ -20,8 +20,10 @@ var result = []
 var countRes = []
 
 secondData.forEach(element => {
-    result.push(element["result"]);
-    countRes.push(element["countRes"]);
+    if(element["result"] != null) {
+        result.push(element["result"]);
+        countRes.push(element["countRes"]);
+    }
 });
 
 // Third Data Auxiliary Variables

@@ -37,9 +37,6 @@
                   SELECT result, COUNT(result) as countRes FROM appointment where result = 'High Risk' UNION
                   SELECT result, COUNT(result) as countRes FROM appointment where result = 'Inconclusive'";
 
-        // $query = "SELECT (SELECT COUNT(*) FROM `appointment` WHERE appointment.prescription IS NULL) as waiting,
-        //                  (SELECT COUNT(*) FROM `appointment` WHERE appointment.prescription IS NOT NULL) as prescribed";
-
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
         $secondChartData = [];
 
