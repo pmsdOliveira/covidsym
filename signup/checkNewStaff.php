@@ -57,8 +57,8 @@
                                 . $_POST["username"] . '", MD5("' . $_POST["password"] . '"), "' . $_POST["email"] . '")';
                             $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
                             $id = mysqli_insert_id($connect);
-
-                            $query = 'INSERT INTO  medic (name, phone, address, user_id) VALUES ("'
+                            $type = $_POST["staff-type"];
+                            $query = 'INSERT INTO  ' . $type . ' (name, phone, address, user_id) VALUES ("'
                                 . $_POST["name"] . '", "' . $_POST["phone"] . '", "' . $_POST["address"]. '", ' . $id . ')';
                             $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
                             
