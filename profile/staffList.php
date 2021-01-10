@@ -36,9 +36,6 @@
       <div class="content-wrapper">
         <div class="modal">
           <div class="modal-header">
-            <i class="fas fa-arrow-alt-circle-left goBackBtn">
-              <a href="#"></a>
-            </i>
             <h1>Staff</h1>
           </div>
 

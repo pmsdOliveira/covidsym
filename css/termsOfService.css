@@ -1,93 +1,106 @@
 :root {
-  --backgroundColor: #f7f7f7;
-  --lighterColor: #00addf;
-  --mainColor: #0e6ab2;
-  --darkerColor: #1f61ac;
-  --contrastColor: #e6e6e6;
-  --textColor: #3d3d3d;
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --contrastColor: #e6e6e6;
+    --textColor: #3d3d3d;
 }
 
 * {
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-color: var(--backgroundColor);
+    background-color: var(--backgroundColor);
 }
 
 .modal {
-  background-color: var(--backgroundColor);
-  border-radius: 25px;
-  -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 5% auto;
-  width: 60%;
-  height: 70vh;
+    background-color: var(--backgroundColor);
+    border-radius: 25px;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 5% auto;
+    width: 60%;
+    height: 70vh;
 }
 
 .modal-header {
-  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
-  border-radius: 25px 25px 0 0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  padding: 2vh 4vw;
-  width: 100%;
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 2vh 4vw;
+    width: 100%;
 }
 
 .modal-header h1 {
-  color: white;
-  font-size: 4vmin;
+    color: white;
+    font-size: 4vmin;
 }
 .modal-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
 }
 .goBackBtn {
-  color: white;
-  font-size: 4vmin;
-  padding: 0.5% 0;
-  transition: 0.3s;
+    color: white;
+    font-size: 4vmin;
+    padding: 0.5% 0;
+    transition: 0.3s;
 }
 
 .goBackBtn:hover {
-  cursor: pointer;
-  transition: 0.3s;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .goBackBtn:active {
-  transform: scale(0.9);
-  transition: 0.3s;
+    transform: scale(0.9);
+    transition: 0.3s;
 }
 
 .info {
-  padding-top: 5%;
-  background: linear-gradient(0deg, #f4f4f4, var(--contrastColor));
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  height: 85%; /* maximum height of the box, feel free to change this! */
-  width: 85%;
-  overflow-y: scroll;
+    padding-top: 5%;
+    background: linear-gradient(0deg, #f4f4f4, var(--contrastColor));
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 85%; /* maximum height of the box, feel free to change this! */
+    width: 85%;
+    overflow-y: scroll;
 }
 
 .info h1 {
-  color: var(--mainColor);
-  font-size: 2.5vmin;
-  font-weight: bold;
-  text-align: center;
-  margin: 2vh 0vw;
+    color: var(--mainColor);
+    font-size: 2.5vmin;
+    font-weight: bold;
+    text-align: center;
+    margin: 2vh 0vw;
 }
 .info p {
-  text-align: justify;
-  font-size: 2vmin;
-  font-weight: bold;
-  padding-left: 5%;
-  padding-right: 5%;
-  color: var(--textColor);
+    text-align: justify;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: var(--textColor);
+}
+
+.info a {
+    align-self: flex-end;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: var(--textColor);
 }

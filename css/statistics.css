@@ -5,36 +5,36 @@
     --darkerColor: #1f61ac;
     --contrastColor: #e6e6e6;
     --textColor: #3d3d3d;
-  }
-  
-  * {
+}
+
+* {
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+}
+
+body {
     background-color: var(--backgroundColor);
-  }
-  
-  .wrapper {
+}
+
+.wrapper {
     display: flex;
     flex-direction: row nowrap;
     justify-content: space-between;
     height: max-content;
-  }
-  
-  .content-wrapper {
+}
+
+.content-wrapper {
     align-items: center;
     display: flex;
     height: 90vh;
     justify-content: center;
     margin-left: 200px;
     width: 100%;
-  }
-  
-  .modal {
+}
+
+.modal {
     background-color: white;
     border-radius: 25px;
     -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
@@ -42,57 +42,43 @@
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     display: block;
     width: 75%;
-  }
-  
-  .modal-header {
-    align-items: center;
-    background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+}
+
+.modal-header {
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
     border-radius: 25px 25px 0 0;
+    padding: 1vh 4vw;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    padding: 1.5vh 4vw;
-    width: 100%;
-  }
-  
-  .modal-header h1 {
-    color: white;
-    font-size: 4vmin;
-    align-self: center;
-  }
-  
-  .goBackBtn {
-    color: white;
-    font-size: 4vmin;
-    transition: all 0.3s ease;
-  }
-  
-  .goBackBtn:hover {
-    cursor: pointer;
-  }
-  
-  .goBackBtn:active {
-    transform: scale(0.9);
-    transition: all 0.3s ease;
-  }
+    justify-content: flex-end;
+}
 
-  .modal-body {
+.modal-header h1 {
+    color: white;
+}
+
+.modal-body {
     display: grid;
     gap: 8% 2%;
     grid-template-columns: 49% 49%;
     grid-template-rows: 46% 46%;
     margin: 2vw 4vh;
     place-items: center center;
-  }
+}
 
-  .modal-body canvas {
-      width: 10vw;
-      height: 10vh;
-  }
-  
-  .users-chart,
-  .prescribed-chart,
-  .appointments-chart,
-  .symptoms-risks-chart {
+.modal-body canvas {
+    width: 10vw;
+    height: 10vh;
+}
+
+.users-chart,
+.prescribed-chart,
+.appointments-chart,
+.symptoms-risks-chart {
     width: 100%;
-  }
+}

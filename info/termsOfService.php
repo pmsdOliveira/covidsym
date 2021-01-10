@@ -23,9 +23,7 @@
 
     <div class="modal">
       <div class="modal-header">
-        <i class="fas fa-arrow-alt-circle-left goBackBtn">
-          <a href="#"></a>
-        </i>
+        
         <h1>Terms Of Service</h1>
       </div>
       <div class="modal-body">
@@ -91,6 +89,11 @@
           </p>
           <br />
           <p>Last update: 29 December 2020</p>
+          <br />
+          <br />
+          <a href="../signup/UserSignup.php">Accept the Terms of Service Covidsym</a>
+          <br />
+          <br />
         </div>
       </div>
     </div>

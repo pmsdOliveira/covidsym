@@ -38,9 +38,7 @@
             <div class="content-wrapper">
                 <div class="modal">
                     <div class="modal-header">
-                        <i class="fas fa-arrow-alt-circle-left goBackBtn">
-                            <a href="../home/homePage.php"></a>
-                        </i>
+                        
                         <h1>New user Profile</h1>
                     </div>
                     <form

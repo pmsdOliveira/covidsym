@@ -1,167 +1,155 @@
 :root {
-  --backgroundColor: #f7f7f7;
-  --lighterColor: #00addf;
-  --mainColor: #0e6ab2;
-  --darkerColor: #1f61ac;
-  --contrastColor: #e6e6e6;
-  --textColor: #3d3d3d;
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --contrastColor: #e6e6e6;
+    --textColor: #3d3d3d;
 }
 
 * {
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-color: var(--backgroundColor);
+    background-color: var(--backgroundColor);
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: row nowrap;
-  justify-content: space-between;
-  height: 90vh;
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+    height: 90vh;
 }
 
 .content-wrapper {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  height: 90vh;
-  justify-content: center;
-  margin-left: 200px;
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 90vh;
+    justify-content: center;
+    margin-left: 200px;
 }
 
 .modal {
-  background-color: white;
-  border-radius: 25px;
-  -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 5vh 0;
-  width: 50%;
+    background-color: white;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 5vh 0;
+    width: 50%;
 }
 
 .modal-header {
-  align-items: center;
-  background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
-  border-radius: 25px 25px 0 0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  padding: 1.5vh 4vw;
-  width: 100%;
+    align-items: center;
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1.5vh 4vw;
+    width: 100%;
 }
 
 .modal-header h1 {
-  color: white;
-  font-size: 4vmin;
+    color: white;
+    font-size: 4vmin;
 }
 
 .modal-content {
-  margin: auto;
-  padding: 3vh 1vw;
-  width: 95%;
+    margin: auto;
+    padding: 3vh 1vw;
+    width: 95%;
 }
 
 .modal-content > p {
-  line-height: 1.5;
-  margin-bottom: 2vh;
+    line-height: 1.5;
+    margin-bottom: 2vh;
 }
-
-.goBackBtn {
-  color: white;
-  font-size: 4vmin;
-  transition: 0.3s;
-}
-
-.goBackBtn:hover {
-  cursor: pointer;
-}
-
-.goBackBtn:active {
-  transform: scale(0.9);
-  transition: 0.3s;
-}
-
 .info {
-  display: flex;
+    display: flex;
 
-  flex-direction: column;
+    flex-direction: column;
 
-  height: 100%;
-  border-radius: 0 0 0 25px;
-  text-align: justify;
+    height: 100%;
+    border-radius: 0 0 0 25px;
+    text-align: justify;
 }
 
 /*--------Accordion-------*/
 .faq {
-  width: 50%;
+    width: 50%;
 }
 
 .acc-container {
-  width: 100%;
-  margin: auto;
+    width: 100%;
+    margin: auto;
 }
 
 .accordion {
-  cursor: pointer;
-  transition: 0.4s;
-  width: 100%;
-  border: none;
-  padding: 1vh 1vw 1vh 2vw;
-  background-color: var(--backgroundColor);
-  border-radius: 20px 20px;
-  width: 100%;
-  color: var(--textColor);
-  font-weight: bold;
-  box-sizing: border-box;
-  z-index: 100;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  font-size: 2vmin;
-  outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+    width: 100%;
+    border: none;
+    padding: 1vh 1vw 1vh 2vw;
+    background-color: var(--backgroundColor);
+    border-radius: 20px 20px;
+    width: 100%;
+    color: var(--textColor);
+    font-weight: bold;
+    box-sizing: border-box;
+    z-index: 100;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: 2vmin;
+    outline: none;
 }
 
 .active,
 .accordion:hover {
-  background-color: var(--contrastColor);
-  outline: none;
+    background-color: var(--contrastColor);
+    outline: none;
 }
 
 .accordion:after {
-  content: "\002B";
-  color: var(--textColor);
-  font-weight: bold;
-  float: right;
-  font-size: 2vmin;
-  margin-left: 2vw;
-  outline: none;
+    content: "\002B";
+    color: var(--textColor);
+    font-weight: bold;
+    float: right;
+    font-size: 2vmin;
+    margin-left: 2vw;
+    outline: none;
 }
 
 .active:after {
-  content: "\2212";
-  outline: none;
+    content: "\2212";
+    outline: none;
 }
 
 .panel {
-  display: flex;
-  align-self: center;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  width: 100%;
-  padding: 0.5vh 2vw;
-  margin-bottom: 2vh;
-  text-decoration-color: rgba(0, 0, 0, 0);
-  font-size: 2vmin;
-  line-height: 1.5;
-  box-sizing: border-box;
-  border-radius: 0 0 20px 20px;
-  text-align: justify;
+    display: flex;
+    align-self: center;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    width: 100%;
+    padding: 0.5vh 2vw;
+    margin-bottom: 2vh;
+    text-decoration-color: rgba(0, 0, 0, 0);
+    font-size: 2vmin;
+    line-height: 1.5;
+    box-sizing: border-box;
+    border-radius: 0 0 20px 20px;
+    text-align: justify;
 }
