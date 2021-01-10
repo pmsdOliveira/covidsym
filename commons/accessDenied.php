@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-
+<?php
+    session_start();
+?>
 <html>
     <head>
         <title>COVIDSYM - Access Denied</title>
@@ -32,8 +34,14 @@
                         <p>Your computer will explode in <span id="counter">30</span> seconds.</p>
                         <p>Consider returning to the Home Page, while you still can...</p>
                     </div>
-
-                    <a href="../home/homePage.php">Return to Home Page</a>
+                    <?php
+                        if(!isset($_SESSION["userType"]) || $_SESSION["userType"] == 0 ){
+                            echo '<a href="../index">Return to Home Page</a>';
+                        }else{
+                            echo '<a href="../home/homePage.php">Return to Home Page</a>';
+                        }
+                    ?>
+                    
                 </div>
             </div>
         </div>
