@@ -25,7 +25,10 @@
 
         include("../commons/config.php");
         if(isset($_SESSION["userType"])) {
-            if(isset($_GET["id"]) && $_SESSION["userType"] > 1) {
+            $staffType = null;
+            $staffID = null;
+
+            if(isset($_GET["id"]) && !isset($_GET["staff"]) && $_SESSION["userType"] > 1) {
                 $staffType = null;
                 $staffID = $_GET["id"];
         
@@ -35,13 +38,17 @@
                     case 4: $staffType = "Admin"; break;
                 }
         
-                $query = "SELECT * FROM $staffType JOIN user ON $staffType.user_id = user.id WHERE $staffType.id = $staffID";
-                $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-                $count = mysqli_num_rows($result);
-        
-                if ($count == 1) {
-                    $staff = mysqli_fetch_array($result);
-                }
+            } else if (isset($_GET["id"]) && !isset($_GET["staff"]) && $_SESSION["userType"] > 1) {
+                $staffType = $_GET["staff"];
+                $staffID = $_GET["id"];
+            }
+
+            $query = "SELECT * FROM $staffType JOIN user ON $staffType.user_id = user.id WHERE $staffType.id = $staffID";
+            $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+            $count = mysqli_num_rows($result);
+    
+            if ($count == 1) {
+                $staff = mysqli_fetch_array($result);
             }
         } else {
             header('Location: ../commons/accessDenied.php');
@@ -62,7 +69,8 @@
             <h1>Staff Profile</h1>
           </div>
 
-          <form action="updateStaffProfile.php" method="POST">
+          <form action="checkStaffProfile.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $staffID?>"/>
             <table class="form">
               <tr>
                 <td>
@@ -86,20 +94,10 @@
                 </td>
               </tr>
               <tr>
-                <td class="names"><label>Email</label></td>
-                <td colspan="2">
-                  <input
-                    name="email"
-                    value="<?php echo $staff["email"]?>"
-                    type="email"
-                  />
-                </td>
-              </tr>
-              <tr>
                 <td class="names"><label>Phone Number</label></td>
                 <td colspan="2">
                   <input
-                    name="number"
+                    name="phone"
                     value="<?php echo $staff["phone"]?>"
                     type="text"
                   />

@@ -64,7 +64,7 @@
 
 <html>
     <head>
-        <title>COVIDSYM - User Signup</title>
+        <title>COVIDSYM - Profile Saved</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com/ ">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -84,7 +84,7 @@
 
             <div class="sign-up-wrapper">
                 <div class="header">
-                    Sign Up
+                    Profile Saved
                 </div>
                 
                 <div class="modal-content">

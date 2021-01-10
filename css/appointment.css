@@ -87,6 +87,10 @@ body {
   text-decoration: none;
 }
 
+.patient-name:hover {
+    text-decoration: underline;
+}
+
 .bold {
   color: var(--textColor);
   font-weight: bolder;
