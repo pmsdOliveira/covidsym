@@ -226,6 +226,6 @@
 
         <?php include('../commons/footer.php'); ?>
 
-        <script src="../js/adminSignup.js"></script>
+        <script src="../js/adminUserSignup.js"></script>
     </body>
 </html>

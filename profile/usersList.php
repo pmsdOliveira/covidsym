@@ -54,7 +54,12 @@
                             for ($i = 0; $i < 5; $i++) {
                                 echo '<div class="user">';
                                 if ($patient = mysqli_fetch_array($result)) {
-                                    echo '<img class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($patient["profile_pic"]) . '"/>';
+                                    if ($patient["profile_pic"] == null) {
+                                        echo '<img class="profile-pic" src="../img/profileDefault.jpg"/>';
+                                    } else {
+                                        echo '<img class="profile-pic" src="data:image/jpeg;base64,'. base64_encode($patient["profile_pic"]) . '"/>';
+                                    }
+                                    
                                     echo '<p>'. $patient["name"] . '</p>
                                         <a class="patient-button" href="userProfile?id=' . $patient["id"] . '">Select</a>';
                                 }

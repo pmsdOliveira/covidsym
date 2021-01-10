@@ -30,6 +30,7 @@ body {
     display: flex;
     height: 90vh;
     justify-content: center;
+    margin-left: 200px;
     width: 100%;
 }
 
@@ -79,74 +80,10 @@ body {
     transition: all 0.3s ease;
 }
 
-.profile {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2vh;
-}
-
-.profile h2 {
-    margin-bottom: 1vh;
-}
-
-.profile button {
-    width: 10vw;
-    background: linear-gradient(
-        270deg,
-        var(--darkerColor),
-        var(--lighterColor)
-    );
-    border: none;
-    border-radius: 25px;
-    color: white;
-    cursor: pointer;
-    font-size: 2vmin;
-    font-weight: bold;
-    outline: none;
-    padding: 1vh 0;
-    transition: all 0.3s ease;
-    margin: 2vh 0;
-}
-
-.profile button:active {
-    transform: scale(0.95);
-    transition: all 0.3s ease;
-}
-
-.fa-user-circle {
-    font-size: 16vmin;
-}
-
-.profile-pic {
-    border: 2px var(--lighterColor) solid;
-    border-radius: 50%;
-    height: 17vmin;
-    width: 17vmin;
-}
-
-.table {
-    width: 100%;
-    border: 0px;
-}
-
-.table_left {
-    vertical-align: top;
-    width: 30%;
-}
-
 .form {
-    font-weight: bold;
     color: var(--textColor);
-    padding: 2vh 1vw 2vh 0;
+    padding: 2vh 2vw;
     width: 100%;
-}
-
-.form label {
-    display: block;
-    margin: 0.8vh 0;
-    text-align: center;
 }
 
 .form input {
@@ -154,16 +91,24 @@ body {
     border: 0px;
     border-radius: 5px;
     font-size: 2vmin;
+    margin-left: -0.5vw;
     outline: none;
     padding-left: 0.5vw;
     transition: all 0.3s ease;
     width: 100%;
 }
 
-.gender {
+.buttonSide {
     display: flex;
-    font-size: 1.5vmin;
-    justify-content: space-around;
+    justify-content: flex-end;
+}
+
+.names {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    margin: 1vh 0;
+    font-size: 2vmin;
 }
 
 input[type="submit"] {
@@ -187,28 +132,4 @@ input[type="submit"] {
 
 input[type="submit"]:active {
     transform: scale(0.95);
-}
-
-input[type="file"] {
-    display: none;
-}
-
-.file-upload {
-    text-align: center;
-    background: linear-gradient(
-        270deg,
-        var(--darkerColor),
-        var(--lighterColor)
-    );
-    border: none;
-    border-radius: 25px;
-    color: white;
-    cursor: pointer;
-    font-size: 2vmin;
-    font-weight: bold;
-    padding: 1vh 0;
-    transition: all 0.3s ease;
-    width: 10vw;
-    margin: 1vw 1vh;
-    float: right;
 }
