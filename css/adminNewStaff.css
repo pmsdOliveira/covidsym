@@ -1,0 +1,135 @@
+:root {
+    --backgroundColor: #f7f7f7;
+    --lighterColor: #00addf;
+    --mainColor: #0e6ab2;
+    --darkerColor: #1f61ac;
+    --contrastColor: #e6e6e6;
+    --textColor: #3d3d3d;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--backgroundColor);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+    height: max-content;
+}
+
+.content-wrapper {
+    align-items: center;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    margin-left: 200px;
+    width: 100%;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    width: 50%;
+}
+
+.modal-header {
+    align-items: center;
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1.5vh 4vw;
+    width: 100%;
+}
+
+.modal-header h1 {
+    color: white;
+    font-size: 4vmin;
+    align-self: center;
+}
+
+.goBackBtn {
+    color: white;
+    font-size: 4vmin;
+    transition: all 0.3s ease;
+}
+
+.goBackBtn:hover {
+    cursor: pointer;
+}
+
+.goBackBtn:active {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.form {
+    color: var(--textColor);
+    padding: 2vh 2vw;
+    width: 100%;
+}
+
+.form input {
+    background: var(--backgroundColor);
+    border: 0px;
+    border-radius: 5px;
+    font-size: 2vmin;
+    margin-left: -0.5vw;
+    outline: none;
+    padding-left: 0.5vw;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.buttonSide {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.names {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    margin: 1vh 0;
+    font-size: 2vmin;
+}
+
+input[type="submit"] {
+    background: linear-gradient(
+        270deg,
+        var(--darkerColor),
+        var(--lighterColor)
+    );
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding: 1vh 0;
+    transition: all 0.3s ease;
+    width: 10vw;
+    margin: 0 1vw 1vh;
+    float: right;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.95);
+}
