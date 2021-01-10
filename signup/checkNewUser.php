@@ -41,7 +41,7 @@
 
             <div class="sign-up-wrapper">
                 <div class="header">
-                    New User
+                    New U
                 </div>
                 
                 <div class="modal-content">
@@ -77,6 +77,6 @@
 
         <?php include "../commons/footer.php"; ?>
 
-        <script src="../js/signup.js"></script>
+        
     </body>
 </html>

@@ -66,10 +66,6 @@ const validateAdminUserSingup = () => {
         return false;
     }
 
-    if (!validateConfirmPassword(password, confirmPassword)) {
-        alert("Please insert a matching password in Confirm Password.");
-        return false;
-    }
     if (!validateName(name)) {
         alert(
             "Please insert a valid name (5 to 100 alphabetic characters and whitespaces)."

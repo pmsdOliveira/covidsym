@@ -77,7 +77,7 @@
                             echo '<div class="modal-body">
                                     <div class="buttons">
                                         <a href="../signup/adminNewUser">Create New User</a>
-                                        <a href="../profile/usersList">Create New Staff Member</a>
+                                        <a href="../signup/adminNewStaff">Create New Staff Member</a>
                                     </div>
                                 </div>';
                         }else {
