@@ -77,6 +77,9 @@
                             }
                         ?>
                     </div>
+                    <div class="staff-button">
+                        <a href="../signup/adminNewUser">Create New User</a>
+                    </div>
                 </div>
             </div>
         </div>

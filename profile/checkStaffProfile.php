@@ -8,12 +8,14 @@
 
     include("../commons/config.php");
 
-    $staffType = null;  
+    $staffType = ($_POST["staffType"] == null) ? null : $_POST["staffType"];  
 
-    switch($_SESSION["userType"]) {
-        case 2: $staffType = "Medic"; break;
-        case 3: $staffType = "Investigator"; break;
-        case 4: $staffType = "Admin"; break;
+    if($staffType == null) {
+        switch($_SESSION["userType"]) {
+            case 2: $staffType = "Medic"; break;
+            case 3: $staffType = "Investigator"; break;
+            case 4: $staffType = "Admin"; break;
+        }
     }
 
     $staffID = $_POST["id"];
@@ -56,7 +58,11 @@
                 <div class="modal-content">
                     <?php
                         echo '<p class="central-text">Profile successfully updated.</p>';
-                        echo '<a class="login-button" href="../profile/staffProfile.php?id=' . $staffID . '">Go Back to Profile</a>';
+                        if($_POST["staffType"] == null) {
+                            echo '<a class="login-button" href="../profile/staffProfile.php?id=' . $staffID . '">Go Back to Profile</a>';
+                        } else {
+                            echo '<a class="login-button" href="../profile/staffProfile.php?staff=' . $staffType . '&id=' . $staffID . '">Go Back to Profile</a>';
+                        }
                     ?>
                 </div>
             </div>

@@ -17,7 +17,6 @@
     include("../commons/config.php");
     
     $image = null;
-    $aux = "";
 
     if(!empty($file)) {
         $allowTypes = array('jpg', 'png', 'jpeg');
@@ -46,17 +45,20 @@
         $patient = mysqli_fetch_array($result);
 
         if($image != null) {
-            $aux = 'profile_pic = "' . $image . '"';
+            $query = 'UPDATE patient SET name = "' . $_POST["name"]
+            . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
+            . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
+            . '", local = "' . $_POST["local"] . '", district = "' . $_POST["district"]
+            . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"]
+            . '", profile_pic = "' . $image . '" WHERE id = ' . $patient["id"];
         } else {
-            $aux = "";
+            $query = 'UPDATE patient SET name = "' . $_POST["name"]
+            . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
+            . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
+            . '", local = "' . $_POST["local"] . '", district = "' . $_POST["district"]
+            . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"]
+            . '" WHERE id = ' . $patient["id"];
         }
-
-        $query = 'UPDATE patient SET name = "' . $_POST["name"]
-        . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
-        . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
-        . '", local = "' . $_POST["local"] . '", district = "' . $_POST["district"]
-        . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"]
-        . '", '. $aux .' WHERE id = ' . $patient["id"];
 
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
     }

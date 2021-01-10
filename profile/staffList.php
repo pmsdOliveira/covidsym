@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+
+<?php
+    session_start();
+
+    include("../commons/config.php");
+?>
+
 <html>
   <head>
     <title>COVIDSYM - Staff List</title>
@@ -16,6 +23,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   </head>
 
   <body>
@@ -41,23 +50,23 @@
                   include("../commons/config.php");
                   if(isset($_GET["type"])) {
                     $table = $_GET["type"];
-                    if ($table == "medic")
-                      echo '<option value="medic" selected>Medic</option>
+                    if ($table == "Medic")
+                      echo '<option value="Medic" selected>Medic</option>
+                            <option value="Investigator">Investigator</option>
+                            <option value="Admin">Admin</option>';
+                    else if ($table == "Investigator")
+                      echo '<option value="Medic">Medic</option>
+                            <option value="Investigator" selected>Investigator</option>
+                            <option value="Admin">Admin</option>';
+                    else if ($table == "Admin")
+                      echo '<option value="Medic">Medic</option>
                             <option value="investigator">Investigator</option>
-                            <option value="admin">Admin</option>';
-                    else if ($table == "investigator")
-                      echo '<option value="medic">Medic</option>
-                            <option value="investigator" selected>Investigator</option>
-                            <option value="admin">Admin</option>';
-                    else if ($table == "admin")
-                      echo '<option value="medic">Medic</option>
-                            <option value="investigator">Investigator</option>
-                            <option value="admin" selected>Admin</option>';
+                            <option value="Admin" selected>Admin</option>';
                   } else {
-                    $table = "medic";
-                    echo '<option value="medic" selected>Medic</option>
-                          <option value="investigator">Investigator</option>
-                          <option value="admin">Admin</option>';
+                    $table = "Medic";
+                    echo '<option value="Medic" selected>Medic</option>
+                          <option value="Investigator">Investigator</option>
+                          <option value="Admin">Admin</option>';
                   }
                 ?>
               </select>
@@ -104,7 +113,7 @@
             ?>
           </div>
           <div class="staff-button">
-            <a href="#">Create New Staff Member</a>
+            <a href="../signup/adminNewStaff">Create New Staff Member</a>
           </div>
         </div>
       </div>

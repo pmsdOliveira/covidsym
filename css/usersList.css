@@ -159,3 +159,27 @@ body {
   color: black;
   text-decoration: none;
 }
+
+.staff-button {
+    cursor: pointer;
+    display: flex;
+    background: linear-gradient(270deg, var(--darkerColor), var(--lighterColor));
+    border-radius: 25px;
+    justify-content: center;
+    margin: 2vh auto;
+    padding: 2vh 0;
+    transition: all 0.3s ease;
+    width: calc(100% - 4vw);
+  }
+  
+  .staff-button:active {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+  }
+  
+  .staff-button a {
+    color: white;
+    font-size: 2vmin;
+    font-weight: bolder;
+    text-decoration: none;
+  }

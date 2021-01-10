@@ -38,7 +38,7 @@
                     case 4: $staffType = "Admin"; break;
                 }
         
-            } else if (isset($_GET["id"]) && !isset($_GET["staff"]) && $_SESSION["userType"] > 1) {
+            } else if (isset($_GET["id"]) && isset($_GET["staff"]) && $_SESSION["userType"] > 1) {
                 $staffType = $_GET["staff"];
                 $staffID = $_GET["id"];
             }
@@ -71,6 +71,7 @@
 
           <form action="checkStaffProfile.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $staffID?>"/>
+            <input type="hidden" name="staffType" value="<?php echo $staffType?>"/>
             <table class="form">
               <tr>
                 <td>

@@ -3,10 +3,10 @@
 <?php
    session_start();
 
-    
     if (!isset($_SESSION["userType"]) || $_SESSION["userType"]!=4) {
         header('Location: ../commons/accessDenied.php');
     }
+
     include("../commons/config.php");
 ?>
 
