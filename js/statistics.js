@@ -14,7 +14,15 @@ var colors = ["#1d66af", "#0a8bdb", "#0daaf2", "#4dc9ff",
 
 // Labels
 var users = ["Patients", "Medics", "Investigators", "Admins"]
-var prescribed = ["Prescribed", "Waiting"]
+
+// Second Data Auxiliary Variables
+var result = []
+var countRes = []
+
+secondData.forEach(element => {
+    result.push(element["result"]);
+    countRes.push(element["countRes"]);
+});
 
 // Third Data Auxiliary Variables
 var lastYear = null;
@@ -70,7 +78,7 @@ for(var i = 0;  i < 6; i++) {
 
 // Chart Editing
 makeChart(firstChart, "bar", users, [firstData["patients"], firstData["medics"], firstData["investigators"], firstData["admins"]], "Num. Platform Users");
-makeChart(secondChart, "pie", prescribed, [secondData["prescribed"], secondData["waiting"]], "COVID-19 Tests Prescribed");
+makeChart(secondChart, "pie", result, countRes, "Support System Results");
 makeChart(thirdChart, "line", months, countPerMonth, "Num. Appointments per Month");
 makeChart(fourthChart, "horizontalBar", symptomsAndRisks, numSymptomAndRisk, "Most Common Symptoms and Risks");
 

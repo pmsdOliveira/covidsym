@@ -75,9 +75,13 @@
                             }
                         ?>
                     </div>
-                    <div class="staff-button">
-                        <a href="../signup/adminNewUser">Create New User</a>
-                    </div>
+                    <?php
+                        if($_SESSION["userType"] == 4) {
+                            echo "<div class='staff-button'>
+                                      <a href='../signup/adminNewUser'>Create New User</a>
+                                  </div>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>

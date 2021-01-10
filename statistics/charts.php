@@ -32,11 +32,20 @@
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
         $firstChartData = mysqli_fetch_array($result);
 
-        $query = "SELECT (SELECT COUNT(*) FROM `appointment` WHERE appointment.prescription IS NULL) as waiting,
-                         (SELECT COUNT(*) FROM `appointment` WHERE appointment.prescription IS NOT NULL) as prescribed";
+        $query = "SELECT result, COUNT(result) as countRes FROM appointment where result = 'Low Risk' UNION
+                  SELECT result, COUNT(result) as countRes FROM appointment where result = 'Medium Risk' UNION
+                  SELECT result, COUNT(result) as countRes FROM appointment where result = 'High Risk' UNION
+                  SELECT result, COUNT(result) as countRes FROM appointment where result = 'Inconclusive'";
+
+        // $query = "SELECT (SELECT COUNT(*) FROM `appointment` WHERE appointment.prescription IS NULL) as waiting,
+        //                  (SELECT COUNT(*) FROM `appointment` WHERE appointment.prescription IS NOT NULL) as prescribed";
 
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-        $secondChartData = mysqli_fetch_array($result);
+        $secondChartData = [];
+
+        while($row = mysqli_fetch_array($result)) {
+            array_push($secondChartData, $row);
+        }
 
         $query = "SELECT extract(year FROM appointment.date) as year,
                          extract(month FROM appointment.date) as month,

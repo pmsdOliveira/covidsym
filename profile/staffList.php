@@ -57,7 +57,7 @@
                             <option value="Admin">Admin</option>';
                     else if ($table == "Admin")
                       echo '<option value="Medic">Medic</option>
-                            <option value="investigator">Investigator</option>
+                            <option value="Investigator">Investigator</option>
                             <option value="Admin" selected>Admin</option>';
                   } else {
                     $table = "Medic";
