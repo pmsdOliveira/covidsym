@@ -56,11 +56,27 @@
                             Appointments
                         </a>';
                 } else if($_SESSION["userType"] == 3) {
+                    $sidebarQuery = 'SELECT id FROM investigator WHERE investigator.user_id = ' . $_SESSION["id"];
+                    $sidebarResult = mysqli_query($connect, $sidebarQuery) or die(mysqli_error($connect));
+                    $sidebarInvestigator = mysqli_fetch_array($sidebarResult);
+
+                    echo '<a class="sidebar-button" href="../profile/staffProfile.php?id=' . $sidebarInvestigator["id"] . '">
+                              <i class="far fa-id-card icon"></i>    
+                              Profile
+                          </a>';
                     echo '<a class="sidebar-button" href="../statistics/charts">
                               <i class="fas fa-chart-line icon"></i>    
                               Statistics
                           </a>';
                 } else if($_SESSION["userType"] == 4) {
+                    $sidebarQuery = 'SELECT id FROM admin WHERE admin.user_id = ' . $_SESSION["id"];
+                    $sidebarResult = mysqli_query($connect, $sidebarQuery) or die(mysqli_error($connect));
+                    $sidebarAdmin = mysqli_fetch_array($sidebarResult);
+
+                    echo '<a class="sidebar-button" href="../profile/staffProfile.php?id=' . $sidebarAdmin["id"] . '">
+                              <i class="far fa-id-card icon"></i>    
+                              Profile
+                          </a>';
                     echo '<a class="sidebar-button" href="../profile/usersList">
                               <i class="fas fa-users icon"></i>    
                               Users
