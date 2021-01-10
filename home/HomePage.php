@@ -15,7 +15,7 @@
     } else if($_SESSION["userType"] == 2) {
         $query = "SELECT medic.id, medic.name FROM medic JOIN user ON medic.user_id = user.id WHERE medic.user_id = $id";
     } else if($_SESSION["userType"] == 3) {
-        $query = "SELECT investigator.id, investigator.name FROM investigator JOIN user ON investigator.user_id = user.user_id WHERE investigator.id = $id";
+        $query = "SELECT investigator.id, investigator.name FROM investigator JOIN user ON investigator.user_id = user.id WHERE investigator.id = $id";
     } else if($_SESSION["userType"] == 4) {
         $query = "SELECT admin.id, admin.name FROM admin JOIN user ON admin.user_id = user.id WHERE admin.user_id = $id";
     }
