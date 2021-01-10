@@ -120,6 +120,7 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 2vmin;
   font-weight: bold;
+  outline: none;
   padding: 1vh 0;
   transition: all 0.3s ease;
   width: 10vw;

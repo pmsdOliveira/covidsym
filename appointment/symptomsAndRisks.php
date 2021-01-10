@@ -46,15 +46,16 @@
           <div class="symptoms">
             <h4>Fill in the following Symptoms and Risk Factors:</h4>
           </div>
-          <form class="form" action="../appointment/checkSymptomsAndRisks.php" method="POST">
+          <form class="form" action="../appointment/checkSymptomsAndRisks.php" method="POST" onsubmit="return validateForm();">
             <table>
               <tr>
                 <td><Label> Body Temperature(ºC)</Label></td>
                 <td>
                   <input
+                    id="temperature"
                     class="temperature"
                     name="temperature"
-                    value="36.0"
+                    value="37.0"
                     type="number"
                     step=".5"
                     required
@@ -126,5 +127,7 @@
     </div>
 
     <?php include('../commons/footer.php'); ?>
+
+    <script src="../js/symptomsAndRisks.js"></script>
   </body>
 </html>
