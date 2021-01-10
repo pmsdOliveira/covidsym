@@ -60,7 +60,7 @@
                         </div>
                         <?php 
                             if (isset($_SESSION["userType"])) {
-                                if ($_SESSION["userType"] ==1){
+                                if ($_SESSION["userType"] == 1) {
                                     echo '<a href="appointment/newAppointment.php">Make an Appointment</a>';
                                 }else{
                                     echo '<a href="home/homePage">Go to Home Page</a>';
@@ -81,7 +81,7 @@
                     Project developed for Medical Information Systems Course @
                     FCT-NOVA
                 </p>
-                <p>Copyright &copy; 2020</p>
+                <p>Copyright &copy; 2021</p>
             </div>
         </section>
     </body>
