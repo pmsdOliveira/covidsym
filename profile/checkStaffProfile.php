@@ -18,16 +18,28 @@
         }
     }
 
-    $staffID = $_POST["id"];
-    $name = $_POST["name"];
-    $phone = $_POST["phone"];
-    $address = $_POST["address"];
+    if ($_SESSION["userType"] == 4 && isset($_POST["delete"])) {
+        $query = 'SELECT user_id FROM ' . $staffType . ' INNER JOIN user ON ' 
+            . $staffType . '.user_id = user.id WHERE ' . $staffType . '.id = ' . $_POST["id"];
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+        $userID = mysqli_fetch_array($result);
 
-    $query = 'UPDATE ' . $staffType . ' SET name = "' . $_POST["name"]
-    . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
-    . '" WHERE id = ' . $staffID;
+        $query = 'DELETE FROM user WHERE id = ' . $userID["user_id"];
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+    } else {
+        $staffID = $_POST["id"];
+        $name = $_POST["name"];
+        $phone = $_POST["phone"];
+        $address = $_POST["address"];
 
-    $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+        $query = 'UPDATE ' . $staffType . ' SET name = "' . $_POST["name"]
+        . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
+        . '" WHERE id = ' . $staffID;
+
+        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+    }
+
+    
 ?>
 
 <html>
@@ -57,11 +69,16 @@
                 
                 <div class="modal-content">
                     <?php
-                        echo '<p class="central-text">Profile successfully updated.</p>';
-                        if($_POST["staffType"] == null) {
-                            echo '<a class="login-button" href="../profile/staffProfile.php?id=' . $staffID . '">Go Back to Profile</a>';
+                        if (isset($_POST["delete"])) {
+                            echo '<p class="central-text">' . $staffType . ' successfully deleted.</p>';
+                            echo '<a class="login-button" href="../profile/staffList.php">Go Back to Staff List</a>';
                         } else {
-                            echo '<a class="login-button" href="../profile/staffProfile.php?staff=' . $staffType . '&id=' . $staffID . '">Go Back to Profile</a>';
+                            echo '<p class="central-text">Profile successfully updated.</p>';
+                            if($_POST["staffType"] == null) {
+                                echo '<a class="login-button" href="../profile/staffProfile.php?id=' . $staffID . '">Go Back to Profile</a>';
+                            } else {
+                                echo '<a class="login-button" href="../profile/staffProfile.php?staff=' . $staffType . '&id=' . $staffID . '">Go Back to Profile</a>';
+                            }
                         }
                     ?>
                 </div>

@@ -40,27 +40,32 @@
 
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
     } else {
-        $query = 'SELECT id, profile_pic FROM patient WHERE patient.user_id = ' . $_POST["id"];
-        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-        $patient = mysqli_fetch_array($result);
-
-        if($image != null) {
-            $query = 'UPDATE patient SET name = "' . $_POST["name"]
-            . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
-            . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
-            . '", local = "' . $_POST["local"] . '", district = "' . $_POST["district"]
-            . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"]
-            . '", profile_pic = "' . $image . '" WHERE id = ' . $patient["id"];
+        if (isset($_POST["delete"])) {
+            $query = 'DELETE FROM user WHERE id = ' . $_POST["id"];
+            $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
         } else {
-            $query = 'UPDATE patient SET name = "' . $_POST["name"]
-            . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
-            . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
-            . '", local = "' . $_POST["local"] . '", district = "' . $_POST["district"]
-            . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"]
-            . '" WHERE id = ' . $patient["id"];
-        }
+            $query = 'SELECT id, profile_pic FROM patient WHERE patient.user_id = ' . $_POST["id"];
+            $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+            $patient = mysqli_fetch_array($result);
 
-        $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+            if($image != null) {
+                $query = 'UPDATE patient SET name = "' . $_POST["name"]
+                . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
+                . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
+                . '", local = "' . $_POST["local"] . '", district = "' . $_POST["district"]
+                . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"]
+                . '", profile_pic = "' . $image . '" WHERE id = ' . $patient["id"];
+            } else {
+                $query = 'UPDATE patient SET name = "' . $_POST["name"]
+                . '", gender = "' . $_POST["gender"] . '", birthdate = "' . $_POST["birthdate"]
+                . '", phone = "' . $_POST["phone"] . '", address = "' . $_POST["address"]
+                . '", local = "' . $_POST["local"] . '", district = "' . $_POST["district"]
+                . '", fiscal_number = "' . $_POST["fiscal"] . '", healthcare_number = "' . $_POST["healthcare"]
+                . '" WHERE id = ' . $patient["id"];
+            }
+
+            $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
+        }
     }
 ?>
 
@@ -98,8 +103,14 @@
 
                             unset($_SESSION["userType"]);
                         } else {
-                            echo '<p class="central-text">Profile successfully updated.</p>';
-                            echo '<a class="login-button" href="../profile/userProfile.php?id=' . $patient["id"] . '">Go Back to Profile</a>';
+                            if (isset($_POST["delete"])) {
+                                echo '<p class="central-text">User successfully deleted.</p>';
+                                echo '<a class="login-button" href="../profile/usersList.php?page=1">Go Back to Users List</a>';
+                            } else {
+                                echo '<p class="central-text">Profile successfully updated.</p>';
+                                echo '<a class="login-button" href="../profile/userProfile.php?id=' . $patient["id"] . '">Go Back to Profile</a>';
+                            }
+
                         }
                     ?>
                     

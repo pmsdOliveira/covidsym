@@ -179,6 +179,11 @@
                       </td>
                     </tr>
                   </table>
+                  <?php
+                    if ($_SESSION["userType"] == 4) {
+                      echo '<input type="submit" name="delete" value="Delete User">';
+                    }
+                  ?>
                   <input type="submit" value="<?php echo $_SESSION["userType"] == 0 ? 'Create Profile' : 'Update Profile'?>" />
                   <?php
                     if ($_SESSION["userType"] == 0) {

@@ -77,6 +77,11 @@
                     <td><label><?php echo $staffID?></label></td>
                     <td class="buttonSide">
                       <input type="submit" value="Update Profile" />
+                      <?php
+                        if ($_SESSION["userType"] == 4) {
+                          echo '<input type="submit" name="delete" value="Delete ' . $staffType . '">';
+                        }
+                      ?>
                     </td>
                   </tr>
                   <tr>

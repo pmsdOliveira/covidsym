@@ -12,7 +12,7 @@ const validatePassword = (password) =>
 const validateName = (name) =>
     /^(?=.{5,100}$)[A-zÀ-ú]+(?: [A-zÀ-ú]+)*$/.test(name);
 
-const validatePhone = (phone) => /^(?=.{8,20}$)[+]{1}[-\s0-9]*$/.test(phone);
+const validatePhone = (phone) => /^(?=.{8,20}$)[-\s0-9]*$/.test(phone);
 
 const validateAddress = (address) =>
     /^(?=.{5,100}$)[\s\dA-zÀ-ú,.ºª'"@#-]+$/.test(address);
@@ -75,7 +75,7 @@ const validateAdminUserSingup = () => {
 
     if (!validatePhone(phone)) {
         alert(
-            "Please insert a valid phone number (8 to 20 digits starting with '+' and your country code)."
+            "Please insert a valid phone number (8 to 20 digits)."
         );
         return false;
     }
