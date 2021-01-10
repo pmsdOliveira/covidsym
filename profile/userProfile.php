@@ -84,7 +84,7 @@
                   ?>
 
                     <label for="file-upload" class="file-upload">
-                        <input type="hidden" name="id" value="<?php echo $user["id"]?>"/>
+                        <input type="hidden" name="id" value="<?php echo $_SESSION["userType"] == 0 ? null : $user["id"];?>"/>
                         <input name="picture" onchange=fileChanged() id="file-upload" type="file" accept="image/*"/>
                         Upload Picture
                     </label>

@@ -71,12 +71,13 @@
                                     $query = 'SELECT medic.id, medic.name, count(appointment.medic_id) AS nrAppointments 
                                         FROM medic LEFT JOIN appointment ON medic.id = appointment.medic_id 
                                         WHERE appointment.prescription IS NULL GROUP BY medic.id 
-                                        ORDER BY waiting_list';
+                                        -- ORDER BY nrAppointments';
                                     $appointmentsAuxString = 'Users waiting: ';
                                 } else if ($_SESSION["userType"] == 2) {
                                     $query = 'SELECT patient.id, patient.name, count(appointment.patient_id) AS nrAppointments 
                                         FROM patient LEFT JOIN appointment ON patient.id = appointment.patient_id 
-                                        GROUP BY patient.id ORDER BY nrAppointments';
+                                        GROUP BY patient.id 
+                                        -- ORDER BY nrAppointments';
                                     $appointmentsAuxString = 'Appointments: ';
                                 }
 
