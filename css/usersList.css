@@ -116,6 +116,7 @@ body {
   outline: none;
   padding: 0.5vh 1vw;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .user .patient-button:active {

@@ -65,6 +65,8 @@
                         ?>
                         <form action="../appointment/checkNewAppointment.php" method="POST">
                             <?php
+                                include("../commons/stringManipulation.php");
+
                                 if ($_SESSION["userType"] == 1) {
                                     $query = 'SELECT medic.id, medic.name, count(appointment.medic_id) AS nrAppointments 
                                         FROM medic LEFT JOIN appointment ON medic.id = appointment.medic_id 
@@ -88,7 +90,7 @@
                                 for ($i = 0; $i < 5; $i++) {
                                     echo '<div class="medic">';
                                     if ($user = mysqli_fetch_array($result)) {
-                                        echo '<p>' . $user["name"] . '</p>
+                                        echo '<p>' . getFirstAndLast($user["name"]) . '</p>
                                             <p>' . $appointmentsAuxString . $user["nrAppointments"] . '</p>
                                             <button type="submit" name="userID" value=' . $user["id"] . '>Select</button>';
                                     }

@@ -69,7 +69,7 @@
                                     <p><span>Users waiting for appointment: </span>' . $count . '</p>
                                     <div class="buttons">
                                         <a href="../appointment/appointmentsList">See Appointments</a>
-                                        <a href="../profile/usersList">New Appointment</a>
+                                        <a href="../appointment/newAppointment">New Appointment</a>
                                     </div>
                             </div>';
                         }else if ($_SESSION["userType"] == 4) {
