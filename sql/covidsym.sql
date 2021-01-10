@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 09-Jan-2021 às 20:21
+-- Tempo de geração: 10-Jan-2021 às 17:20
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -71,20 +71,20 @@ CREATE TABLE IF NOT EXISTS `appointment` (
 --
 
 INSERT INTO `appointment` (`id`, `date`, `result`, `prescription`, `notes`, `patient_id`, `medic_id`) VALUES
-(1, '2021-01-10', NULL, NULL, NULL, 3, 6),
-(2, '2021-01-11', NULL, NULL, NULL, 1, 7),
-(3, '2021-01-11', 'Medium Risk', '1', 'Adio Adieu Aufiederzien Goodbye!', 2, 5),
-(4, '2021-01-10', NULL, NULL, NULL, 4, 2),
-(5, '2021-01-10', NULL, NULL, NULL, 5, 4),
-(6, '2021-01-12', NULL, NULL, NULL, 6, 1),
-(7, '2021-01-11', NULL, NULL, NULL, 8, 3),
-(8, '2021-01-11', NULL, NULL, NULL, 7, 7),
-(9, '2021-01-12', NULL, NULL, NULL, 10, 6),
-(10, '2021-01-13', NULL, NULL, NULL, 9, 5),
-(11, '2021-01-13', NULL, NULL, NULL, 11, 2),
-(12, '2021-01-14', NULL, NULL, NULL, 12, 1),
-(13, '2021-01-14', NULL, NULL, NULL, 14, 3),
-(14, '2021-01-12', NULL, NULL, NULL, 13, 4);
+(1, '2020-01-21', NULL, NULL, NULL, 3, 6),
+(2, '2020-02-26', NULL, NULL, NULL, 1, 7),
+(3, '2020-05-18', NULL, NULL, NULL, 2, 5),
+(4, '2020-10-08', NULL, NULL, NULL, 4, 2),
+(5, '2020-10-09', NULL, NULL, NULL, 5, 4),
+(6, '2021-02-03', NULL, NULL, NULL, 6, 1),
+(7, '2021-03-02', NULL, NULL, NULL, 8, 3),
+(8, '2021-04-28', NULL, NULL, NULL, 7, 7),
+(9, '2021-05-06', NULL, NULL, NULL, 10, 6),
+(10, '2021-05-12', NULL, NULL, NULL, 9, 5),
+(11, '2021-07-20', NULL, NULL, NULL, 11, 2),
+(12, '2021-08-06', NULL, NULL, NULL, 12, 1),
+(13, '2021-09-24', NULL, NULL, NULL, 14, 3),
+(14, '2021-10-21', NULL, NULL, NULL, 13, 4);
 
 -- --------------------------------------------------------
 
@@ -280,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `district` varchar(50) NOT NULL,
   `fiscal_number` varchar(20) NOT NULL,
   `healthcare_number` varchar(20) NOT NULL,
-  `profile_pic` blob,
+  `profile_pic` longblob,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `name` (`name`),
