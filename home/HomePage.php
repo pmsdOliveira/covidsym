@@ -59,7 +59,7 @@
                         if ($_SESSION["userType"] == 2) {
                             $query = 'SELECT medic.id, medic.name, count(appointment.medic_id) AS waiting_list 
                                 FROM medic INNER JOIN appointment ON medic.id = appointment.medic_id 
-                                WHERE medic.id = ' . $user["id"] . ' GROUP BY medic.id';
+                                WHERE medic.id = ' . $user["id"] . ' AND appointment.prescription IS NULL GROUP BY medic.id';
                             $result = mysqli_query($connect, $query)
                                 or die(mysqli_error($connect));
                             $medic = mysqli_fetch_array($result);
