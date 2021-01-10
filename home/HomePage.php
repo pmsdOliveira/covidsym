@@ -72,7 +72,7 @@
                                         <a href="../appointment/newAppointment">New Appointment</a>
                                     </div>
                             </div>';
-                        }else if ($_SESSION["userType"] == 4) {
+                        } else if ($_SESSION["userType"] == 4) {
                             echo '<div class="modal-body">
                                     <div class="buttons">
                                         <a href="../signup/adminNewUser">Create New User</a>

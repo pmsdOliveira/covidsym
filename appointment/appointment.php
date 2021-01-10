@@ -31,38 +31,32 @@
         include("../commons/config.php");
         $query = 'SELECT MAX(id) AS maxID FROM appointment';
         $result = mysqli_query($connect, $query);
-        $appointment = mysqli_fetch_array($result);
+        $maxID = mysqli_fetch_array($result);
 
-        if (isset($_GET["id"]) && $_GET["id"] <= $appointment["maxID"])
+        if (isset($_GET["id"]) && $_GET["id"] <= $maxID["maxID"])
           $appointmentID = $_GET["id"];
         else
           header('Location: ../commons/pageNotFound.php');
 
-        $query = "SELECT appointment.id AS id, appointment.date AS date, medic.name AS medicName,
-                  patient.id AS patientID, patient.name AS patientName, appointment.result AS supportResult,
-                  appointment.prescription as prescription, appointment.notes as notes
-                  FROM appointment
-                  JOIN patient ON appointment.patient_id = patient.id
-                  JOIN medic ON appointment.medic_id = medic.id
-                  WHERE appointment.id = $appointmentID";
+        $query = "SELECT appointment.id AS id, appointment.date AS date, medic.id AS medicID, 
+                  medic.name AS medicName, patient.id AS patientID, patient.name AS patientName, 
+                  appointment.result AS supportResult, appointment.prescription as prescription,
+                  appointment.notes as notes FROM appointment JOIN patient
+                  ON appointment.patient_id = patient.id JOIN medic
+                  ON appointment.medic_id = medic.id WHERE appointment.id = $appointmentID";
 
         $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
         $count = mysqli_num_rows($result);
-
-        if ($count == 1) {
-            $appointment = mysqli_fetch_array($result);
-        }
+        $appointment = mysqli_fetch_array($result);
 
         $query = "SELECT * FROM appointment_symptoms
                     JOIN symptom ON appointment_symptoms.symptom_id = symptom.id
                     WHERE appointment_symptoms.appointment_id = $appointmentID";
-
         $symptoms = mysqli_query($connect, $query) or die(mysqli_error($connect));
 
         $query = "SELECT * FROM appointment_riskfactors
                     JOIN riskfactor ON appointment_riskfactors.riskfactor_id = riskfactor.id
                     WHERE appointment_riskfactors.appointment_id = $appointmentID";
-
         $riskfactors = mysqli_query($connect, $query) or die(mysqli_error($connect));
 
         $numSymptoms = mysqli_num_rows($symptoms);
@@ -135,43 +129,49 @@
             </p>
           </div>
           <?php
-
+            if ($_SESSION["userType"] == 2)
+              echo '<form action="checkAppointment.php" method="POST">';
           ?>
-          <form>
-          <div class="grid">
-            <div class="sypmtoms-risks">
-              <p><span class="bold">Symptoms and Risks:</span></p>
-              <textarea rows="8" readonly><?php echo $symptomsAndRisks?></textarea>
-            </div>
-            <?php
-              if ($_SESSION["userType"] == 2)
-                echo '<div class="diagnosis">
-                        <p><span class="bold">Support System Result:</span></p>
-                        <textarea rows="8" readonly>' . $appointment["supportResult"] . '</textarea>
-                      </div>';
-            ?>
-            <div class="prescription">
-              <p><span class="bold">Prescription:</span></p>
+            <div class="grid">
+              <div class="sypmtoms-risks">
+                <p><span class="bold">Symptoms and Risks:</span></p>
+                <textarea rows="8" readonly><?php echo $symptomsAndRisks?></textarea>
+              </div>
               <?php
-                echo '<textarea rows="8" ' . ($_SESSION["userType"] == 2 ? '' : 'readonly') . '>'
-                  . $appointment["prescription"] . '</textarea>';
+                if ($_SESSION["userType"] == 2)
+                  echo '<div class="diagnosis">
+                          <p><span class="bold">Support System Result:</span></p>
+                          <textarea rows="8" readonly>' . $appointment["supportResult"] . '</textarea>
+                        </div>';
+              ?>
+              <div class="prescription">
+                <p><span class="bold">Prescription:</span></p>
+                <?php
+                  echo '<textarea rows="8" name="prescription" ' . ($_SESSION["userType"] == 2 ? '' : 'readonly') . '>'
+                    . $appointment["prescription"] . '</textarea>';
+                ?>
+              </div>
+              <?php
+                if ($_SESSION["userType"] == 1)
+                  echo '<div class="notes" style="grid-column: 1 / span 2;">
+                          <p><span class="bold">Decision Notes:</span></p>
+                          <textarea rows="8" readonly>' . $appointment["notes"] . '</textarea>
+                        </div>';
+                else if ($_SESSION["userType"] == 2) {
+                  echo '<div class="notes">
+                          <p><span class="bold">Decision Notes:</span></p>
+                          <textarea rows="8" name="notes">' . $appointment["notes"] . '</textarea>
+                        </div>
+                        <input type="hidden" name="appointmentID" value="' . $appointmentID . '">';
+                }
               ?>
             </div>
-            <?php
-              if ($_SESSION["userType"] == 1)
-                echo '<div class="notes" style="grid-column: 1 / span 2;">
-                        <p><span class="bold">Decision Notes:</span></p>
-                        <textarea rows="8" readonly>' . $appointment["notes"] . '</textarea>
-                      </div>';
-              else if ($_SESSION["userType"] == 2) {
-                echo '<div class="notes">
-                        <p><span class="bold">Decision Notes:</span></p>
-                        <textarea rows="8">' . $appointment["notes"] . '</textarea>
-                      </div>';
-              }
-            ?>
-          </div>
-          </form>
+          <?php
+            if ($_SESSION["userType"] == 2) {
+              echo '<button class="submit-button" type="submit" name="appointment">Update</button>';
+              echo '</form>';
+            }
+          ?>
         </div>
       </div>
     </div>
