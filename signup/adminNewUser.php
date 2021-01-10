@@ -38,185 +38,175 @@
             <div class="content-wrapper">
                 <div class="modal">
                     <div class="modal-header">
-                        
-                        <h1>New user Profile</h1>
+                        <h1>New User Profile</h1>
                     </div>
                     <form
                         method="POST"
                         action="checkNewUser.php"
                         onsubmit="return validateAdminUserSingup()"
                     >
-                        <table class="table">
+                        <table class="form">
                             <tr>
-                                <td class="table_left">
-                                    <div class="profile">
-                                        <i class="fas fa-user-circle"></i>
-                                        <button>Upload Picture</button>
-                                        <div class="credentials">
-                                            <label>Username</label>
+                                <td><label>Username</label></td>
+                                <td>
+                                    <input
+                                        id="profile-username"
+                                        name="username"
+                                        type="text"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Password</label></td>
+                                <td>
+                                    <input
+                                        id="profile-password"
+                                        name="password"
+                                        type="password"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Name</label></td>
+                                <td>
+                                    <input
+                                        id="profile-name"
+                                        name="name"
+                                        type="text"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Email</label></td>
+                                <td>
+                                    <input
+                                        id="profile-email"
+                                        name="email"
+                                        type="email"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Phone Number</label></td>
+                                <td>
+                                    <input
+                                        id="profile-phone"
+                                        name="phone"
+                                        type="text"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Address</label></td>
+                                <td>
+                                    <input
+                                        id="profile-address"
+                                        name="address"
+                                        type="text"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Local</label></td>
+                                <td>
+                                    <input
+                                        id="profile-local"
+                                        name="local"
+                                        type="text"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>District</label></td>
+                                <td>
+                                    <input
+                                        id="profile-district"
+                                        name="district"
+                                        type="text"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Birthdate</label></td>
+                                <td>
+                                    <input
+                                        id="profile-birthdate"
+                                        name="birthdate"
+                                        type="date"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Gender</label></td>
+                                <td>
+                                    <div class="gender">
+                                        <label
+                                            >Male
                                             <input
-                                                id="profile-username"
-                                                name="username"
-                                                type="text"
+                                                name="gender"
+                                                type="radio"
+                                                value="M"
                                                 required
                                             />
-                                            <label>Password</label>
+                                        </label>
+                                        <label
+                                            >Female
                                             <input
-                                                id="profile-password"
-                                                name="password"
-                                                type="password"
+                                                name="gender"
+                                                type="radio"
+                                                value="F"
                                                 required
                                             />
-                                        </div>
+                                        </label>
+                                        <label
+                                            >Other
+                                            <input
+                                                name="gender"
+                                                type="radio"
+                                                value="O"
+                                                required
+                                            />
+                                        </label>
                                     </div>
                                 </td>
+                            </tr>
+                            <tr>
                                 <td>
-                                    <table class="form">
-                                        <tr>
-                                            <td><label>Name</label></td>
-                                            <td>
-                                                <input
-                                                    id="profile-name"
-                                                    name="name"
-                                                    type="text"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label>Email</label></td>
-                                            <td>
-                                                <input
-                                                    id="profile-email"
-                                                    name="email"
-                                                    type="email"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label>Phone Number</label></td>
-                                            <td>
-                                                <input
-                                                    id="profile-phone"
-                                                    name="phone"
-                                                    type="text"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label>Address</label></td>
-                                            <td>
-                                                <input
-                                                    id="profile-address"
-                                                    name="address"
-                                                    type="text"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label>Local</label></td>
-                                            <td>
-                                                <input
-                                                    id="profile-local"
-                                                    name="local"
-                                                    type="text"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label>District</label></td>
-                                            <td>
-                                                <input
-                                                    id="profile-district"
-                                                    name="district"
-                                                    type="text"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label>Birthdate</label></td>
-                                            <td>
-                                                <input
-                                                    id="profile-birthdate"
-                                                    name="birthdate"
-                                                    type="date"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label>Gender</label></td>
-                                            <td>
-                                                <div class="gender">
-                                                    <label
-                                                        >Male
-                                                        <input
-                                                            name="gender"
-                                                            type="radio"
-                                                            value="M"
-                                                            required
-                                                        />
-                                                    </label>
-                                                    <label
-                                                        >Female
-                                                        <input
-                                                            name="gender"
-                                                            type="radio"
-                                                            value="F"
-                                                            required
-                                                        />
-                                                    </label>
-                                                    <label
-                                                        >Other
-                                                        <input
-                                                            name="gender"
-                                                            type="radio"
-                                                            value="O"
-                                                            required
-                                                        />
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label>Fiscal Number</label>
-                                            </td>
-                                            <td>
-                                                <input
-                                                    id="profile-fiscal"
-                                                    name="fiscal"
-                                                    type="text"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label>Healthcare Number</label>
-                                            </td>
-                                            <td>
-                                                <input
-                                                    id="profile-healthcare"
-                                                    name="healthcare"
-                                                    type="text"
-                                                    required
-                                                />
-                                            </td>
-                                        </tr>
-                                    </table>
+                                    <label>Fiscal Number</label>
+                                </td>
+                                <td>
                                     <input
-                                        type="submit"
-                                        value="Create Profile"
+                                        id="profile-fiscal"
+                                        name="fiscal"
+                                        type="text"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Healthcare Number</label>
+                                </td>
+                                <td>
+                                    <input
+                                        id="profile-healthcare"
+                                        name="healthcare"
+                                        type="text"
+                                        required
                                     />
                                 </td>
                             </tr>
                         </table>
+                        <input type="submit" value="Create Profile" />
                     </form>
                 </div>
             </div>
